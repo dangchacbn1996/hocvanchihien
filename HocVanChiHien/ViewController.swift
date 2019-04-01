@@ -12,6 +12,7 @@ import WebKit
 struct Option {
     var href : String
     var title : String
+    var content : String
 }
 
 class ListOptionViewController: WebViewController, UITableViewDelegate, UITableViewDataSource{
@@ -48,7 +49,7 @@ class ListOptionViewController: WebViewController, UITableViewDelegate, UITableV
             if let amount = Int(String(describing: result!)) {
                 for index in 0..<amount {
                     //Đọc góc học tập
-                    var newOption = Option(href: "", title: "")
+                    var newOption = Option(href: "", title: "", content : "")
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[0].children[\(JSContruct.BoxNewsEvent.EventTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4ContainTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4SubA)].href;", completionHandler: { (result, error) in
                         self.listOption[index].href = "\(result ?? "")"
                         if (index == amount - 1) {
@@ -61,6 +62,12 @@ class ListOptionViewController: WebViewController, UITableViewDelegate, UITableV
                             self.tableView.reloadData()
                         }
                     })
+                    self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[1].children[0].innerText;", completionHandler: { (result, error) in
+                        self.listOption[index].content = "\(result ?? "")"
+                        if (index == amount - 1) {
+                            self.tableView.reloadData()
+                        }
+                    })
                     self.listOption.append(newOption)
                 }
             }
@@ -69,12 +76,17 @@ class ListOptionViewController: WebViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOption.count
+        return listOption.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellImage", for: indexPath)
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOption", for: indexPath) as! CellOption
-        cell.title.text = listOption[indexPath.row].title
+        cell.title.text = listOption[indexPath.row - 1].title
+        cell.content.text = listOption[indexPath.row - 1].content
         return cell
     }
     
@@ -194,4 +206,5 @@ class ListOptionViewController: WebViewController, UITableViewDelegate, UITableV
 
 class CellOption : UITableViewCell {
     @IBOutlet weak var title : UILabel!
+    @IBOutlet weak var content : UILabel!
 }

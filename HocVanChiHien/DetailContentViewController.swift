@@ -11,7 +11,7 @@ import WebKit
 
 class DetailContentViewController : WebViewController {
     
-    var data = Option(href : "",title : "")
+    var data = Option(href : "",title : "", content : "")
     @IBOutlet weak var webViewContainer : UIView!
     
     override func viewDidLoad() {
