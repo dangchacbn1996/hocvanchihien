@@ -19,17 +19,6 @@ class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate, 
     var userContentController: WKUserContentController!
     
     func initWKWebView(view : UIView) {
-        //        let preferences = WKPreferences()
-        //        preferences.javaScriptEnabled = true
-        //        let contentController = WKUserContentController()
-        //        contentController.add(self, name: "callbackHandler")
-        //
-        //        let config = WKWebViewConfiguration()
-        //        config.websiteDataStore = WKWebsiteDataStore.default()
-        //        config.userContentController = contentController
-        
-        //        wkWebView = WKWebView(frame: CGRect.zero, configuration: config)
-        //        self.addSubview(wkWebView)
         userContentController = WKUserContentController()
         
         let configuration = WKWebViewConfiguration()
@@ -87,4 +76,10 @@ class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate, 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         print("Load Start")
     }
+}
+
+struct DetailContent {
+    var href : String
+    var html : String
+    var url : URL
 }
