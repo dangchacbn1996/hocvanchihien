@@ -9,23 +9,48 @@
 import UIKit
 import SideMenu
 
-class ActionMenuViewController: UIViewController {
+protocol ActionMenuParent {
+    func showViewController(viewController : UIViewController, title : String)
+}
+
+class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    @IBOutlet weak var tableView : UITableView!
+    var parentView : ActionMenuParent?
+    var listOption = ["Màn hình chính", "DS đã lưu"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listOption.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellMenu", for: indexPath) as! CellMenu
+        cell.lbTitle.text = listOption[indexPath.row]
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 1:
+            parentView?.showViewController(viewController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcSaved), title: "DS Đã lưu")
+        default:
+            parentView?.showViewController(viewController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcListWeb), title: "GÓC HỌC TẬP")
+        }
+    }
+}
 
+class CellMenu : UITableViewCell {
+    @IBOutlet weak var lbTitle : UILabel!
 }

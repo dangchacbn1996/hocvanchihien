@@ -32,6 +32,9 @@
 		F04CCBEB224FE80100503F84 /* JSContruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CCBEA224FE80100503F84 /* JSContruct.swift */; };
 		F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E19225107DE0058CA31 /* DetailContentViewController.swift */; };
 		F0597E1C22510A0E0058CA31 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E1B22510A0E0058CA31 /* WebViewController.swift */; };
+		F09B3BE122539C7F00C2ACD9 /* SavedListPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */; };
+		F09B3BE52253A6D500C2ACD9 /* ListWebViewElementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */; };
+		F09B3BE72253C77500C2ACD9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3BE62253C77500C2ACD9 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,9 @@
 		F04CCBEA224FE80100503F84 /* JSContruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSContruct.swift; sourceTree = "<group>"; };
 		F0597E19225107DE0058CA31 /* DetailContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentViewController.swift; sourceTree = "<group>"; };
 		F0597E1B22510A0E0058CA31 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListPosts.swift; sourceTree = "<group>"; };
+		F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWebViewElementsViewController.swift; sourceTree = "<group>"; };
+		F09B3BE62253C77500C2ACD9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,9 @@
 				F04CCBEA224FE80100503F84 /* JSContruct.swift */,
 				F0597E1B22510A0E0058CA31 /* WebViewController.swift */,
 				F024C01F22525C2F007C0887 /* ActionMenuViewController.swift */,
+				F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */,
+				F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */,
+				F09B3BE62253C77500C2ACD9 /* Constant.swift */,
 			);
 			path = HocVanChiHien;
 			sourceTree = "<group>";
@@ -472,7 +481,9 @@
 				5336904E22521A0700A0DA3B /* ConvertHelper.swift in Sources */,
 				5336907022521BC200A0DA3B /* CustomView.swift in Sources */,
 				F04CCBEB224FE80100503F84 /* JSContruct.swift in Sources */,
+				F09B3BE122539C7F00C2ACD9 /* SavedListPosts.swift in Sources */,
 				5336906722521A0700A0DA3B /* CustomRoundedView.swift in Sources */,
+				F09B3BE72253C77500C2ACD9 /* Constant.swift in Sources */,
 				F04CCBBD224FE07600503F84 /* AppDelegate.swift in Sources */,
 				5336904F22521A0700A0DA3B /* Loading.swift in Sources */,
 				5336906222521A0700A0DA3B /* PickerView.swift in Sources */,
@@ -484,6 +495,7 @@
 				F024C02022525C2F007C0887 /* ActionMenuViewController.swift in Sources */,
 				5336905122521A0700A0DA3B /* Toast.swift in Sources */,
 				F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */,
+				F09B3BE52253A6D500C2ACD9 /* ListWebViewElementsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
