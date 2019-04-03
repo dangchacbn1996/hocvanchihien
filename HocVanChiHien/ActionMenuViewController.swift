@@ -48,6 +48,7 @@ class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         default:
             parentView?.showViewController(viewController: UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcListWeb), title: "GÓC HỌC TẬP")
         }
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

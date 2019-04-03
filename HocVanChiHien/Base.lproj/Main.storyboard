@@ -92,7 +92,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmy-uS-8ra">
                                 <rect key="frame" x="0.0" y="206.33333333333331" width="375" height="605.66666666666674"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aNV-TQ-CML">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aNV-TQ-CML">
                                         <rect key="frame" x="16" y="16" width="343" height="573.66666666666663"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -100,20 +100,20 @@
                                                 <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JQw-gl-StE" id="vmL-Za-m5w">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RwE-xi-ulC">
                                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="piO-Pj-CJw">
-                                                                    <rect key="frame" x="0.0" y="8.6666666666666661" width="52.333333333333336" height="26.333333333333336"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_action" translatesAutoresizingMaskIntoConstraints="NO" id="piO-Pj-CJw">
+                                                                    <rect key="frame" x="0.0" y="8.6666666666666661" width="26.333333333333332" height="26.333333333333336"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="piO-Pj-CJw" secondAttribute="height" multiplier="2:1" id="ZK6-sC-613"/>
+                                                                        <constraint firstAttribute="width" secondItem="piO-Pj-CJw" secondAttribute="height" id="ZK6-sC-613"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw9-pF-E7q">
-                                                                    <rect key="frame" x="60.333333333333343" y="11.666666666666666" width="282.66666666666663" height="20.333333333333336"/>
+                                                                    <rect key="frame" x="34.333333333333343" y="11.666666666666666" width="308.66666666666663" height="20.333333333333336"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -317,7 +317,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2846" y="115"/>
+            <point key="canvasLocation" x="2719" y="-177"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="7oK-zM-cgc">
@@ -460,7 +460,7 @@
                                 <rect key="frame" x="16" y="76" width="343" height="720"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H1E-Oa-RDS">
-                                        <rect key="frame" x="16" y="16" width="311" height="36"/>
+                                        <rect key="frame" x="8" y="8" width="327" height="36"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back" translatesAutoresizingMaskIntoConstraints="NO" id="sIr-3z-AIU">
                                                 <rect key="frame" x="0.0" y="0.0" width="18" height="36"/>
@@ -469,7 +469,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quay lại" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRq-GD-SjA">
-                                                <rect key="frame" x="26" y="7.9999999999999982" width="285" height="20.333333333333329"/>
+                                                <rect key="frame" x="26" y="7.9999999999999982" width="301" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -484,20 +484,20 @@
                                         </connections>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5i-SB-KMX">
-                                        <rect key="frame" x="16" y="60" width="311" height="644"/>
+                                        <rect key="frame" x="8" y="52" width="327" height="660"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="H1E-Oa-RDS" firstAttribute="leading" secondItem="MqA-Ti-t02" secondAttribute="leading" constant="16" id="Fb2-mF-L9O"/>
-                                    <constraint firstAttribute="trailing" secondItem="j5i-SB-KMX" secondAttribute="trailing" constant="16" id="Tlt-yz-5BA"/>
+                                    <constraint firstItem="H1E-Oa-RDS" firstAttribute="leading" secondItem="MqA-Ti-t02" secondAttribute="leading" constant="8" id="Fb2-mF-L9O"/>
+                                    <constraint firstAttribute="trailing" secondItem="j5i-SB-KMX" secondAttribute="trailing" constant="8" id="Tlt-yz-5BA"/>
                                     <constraint firstItem="j5i-SB-KMX" firstAttribute="top" secondItem="H1E-Oa-RDS" secondAttribute="bottom" constant="8" id="asf-sn-krq"/>
-                                    <constraint firstAttribute="bottom" secondItem="j5i-SB-KMX" secondAttribute="bottom" constant="16" id="bGL-si-eVv"/>
-                                    <constraint firstAttribute="trailing" secondItem="H1E-Oa-RDS" secondAttribute="trailing" constant="16" id="g2f-23-Op1"/>
-                                    <constraint firstItem="j5i-SB-KMX" firstAttribute="leading" secondItem="MqA-Ti-t02" secondAttribute="leading" constant="16" id="i8x-Bd-IPU"/>
+                                    <constraint firstAttribute="bottom" secondItem="j5i-SB-KMX" secondAttribute="bottom" constant="8" id="bGL-si-eVv"/>
+                                    <constraint firstAttribute="trailing" secondItem="H1E-Oa-RDS" secondAttribute="trailing" constant="8" id="g2f-23-Op1"/>
+                                    <constraint firstItem="j5i-SB-KMX" firstAttribute="leading" secondItem="MqA-Ti-t02" secondAttribute="leading" constant="8" id="i8x-Bd-IPU"/>
                                     <constraint firstItem="j5i-SB-KMX" firstAttribute="top" secondItem="H1E-Oa-RDS" secondAttribute="bottom" id="qcn-nA-S0S"/>
-                                    <constraint firstItem="H1E-Oa-RDS" firstAttribute="top" secondItem="MqA-Ti-t02" secondAttribute="top" constant="16" id="vt6-Ou-gbw"/>
+                                    <constraint firstItem="H1E-Oa-RDS" firstAttribute="top" secondItem="MqA-Ti-t02" secondAttribute="top" constant="8" id="vt6-Ou-gbw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -532,7 +532,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3654" y="115"/>
+            <point key="canvasLocation" x="4012" y="115"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="9qd-Z3-mcA">
@@ -580,12 +580,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MUd-Fe-ViY">
-                                <rect key="frame" x="16" y="44" width="343" height="734"/>
+                                <rect key="frame" x="16" y="56" width="343" height="722"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellOption" rowHeight="161" id="WXq-2R-You" customClass="CellSaved" customModule="HocVanChiHien" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSaved" rowHeight="161" id="WXq-2R-You" customClass="CellSaved" customModule="HocVanChiHien" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="161"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WXq-2R-You" id="Ysz-CQ-asu">
@@ -655,10 +655,10 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MUd-Fe-ViY" firstAttribute="trailing" secondItem="lEz-JU-kaB" secondAttribute="trailing" constant="-16" id="Nfb-TK-cQh"/>
-                            <constraint firstItem="MUd-Fe-ViY" firstAttribute="top" secondItem="lEz-JU-kaB" secondAttribute="top" id="PnX-Sh-9XM"/>
+                            <constraint firstItem="MUd-Fe-ViY" firstAttribute="top" secondItem="lEz-JU-kaB" secondAttribute="top" constant="12" id="PnX-Sh-9XM"/>
                             <constraint firstItem="lEz-JU-kaB" firstAttribute="trailing" secondItem="MUd-Fe-ViY" secondAttribute="trailing" constant="16" id="VHE-jS-RWf"/>
                             <constraint firstItem="MUd-Fe-ViY" firstAttribute="bottom" secondItem="lEz-JU-kaB" secondAttribute="bottom" id="ema-Q6-Je2"/>
                             <constraint firstItem="MUd-Fe-ViY" firstAttribute="leading" secondItem="lEz-JU-kaB" secondAttribute="leading" constant="16" id="lJ4-Yc-EOz"/>
@@ -679,12 +679,13 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1964" y="819"/>
+            <point key="canvasLocation" x="2718" y="478"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background" width="375" height="812"/>
         <image name="Cho" width="1356" height="902"/>
+        <image name="ic_action" width="144" height="144"/>
         <image name="ic_arrow_down" width="108" height="108"/>
         <image name="ic_back" width="108" height="108"/>
         <image name="ic_download" width="108" height="108"/>

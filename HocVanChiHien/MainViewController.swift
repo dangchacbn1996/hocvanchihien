@@ -23,20 +23,33 @@ class MainViewController : UIViewController, ActionMenuParent{
     }
     
     func showViewController(viewController : UIViewController, title : String) {
-        if (self.children.count > 0) {
+        lbTitle.text = title
+        UIView.animate(withDuration: 0.1, animations: {
+            self.viewContainer.alpha = 0
+        }) { (success) in
+            self.viewContainer.subviews.forEach { (view) in
+                view.removeFromSuperview()
+            }
             self.children.forEach { (vc) in
                 vc.removeFromParent()
             }
+            self.viewContainer.addSubview(viewController.view)
+            viewController.view.frame = self.viewContainer.bounds
+            viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            viewController.modalPresentationStyle = .overCurrentContext
+            viewController.didMove(toParent: self)
+            self.addChild(viewController)
+            UIView.animate(withDuration: 0.1, animations: {
+                self.viewContainer.alpha = 1
+            })
         }
-        addChild(viewController)
-        self.viewContainer.addSubview(viewController.view)
-        viewController.view.frame = viewContainer.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viewController.didMove(toParent: self)
     }
     
     func setLeftMenu(){
         let menuLeftNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+        if (menuLeftNavigationController.topViewController is ActionMenuViewController) {
+            (menuLeftNavigationController.topViewController as! ActionMenuViewController).parentView = self
+        }
         SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
@@ -61,7 +74,15 @@ struct Option {
     var url : URL?
 }
 
-struct OptionToSave {
+struct ListSaved : Codable {
+    var listSaved : [OptionToSave]
+    
+    init() {
+        listSaved = [OptionToSave]()
+    }
+}
+
+struct OptionToSave : Codable{
     var url : URL?
     var title : String
 }

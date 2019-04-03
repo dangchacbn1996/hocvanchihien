@@ -59,12 +59,25 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                     do {
                         try text.write(to: fileURL, atomically: false, encoding: .utf8)
                         self.listOption[self.isSave].url = fileURL
-                        var listSaved : [OptionToSave]? = UserDefaults.standard.object(forKey: "option_to_save") as? [OptionToSave]
-                        if (listSaved == nil) {
-                            listSaved = [OptionToSave]()
+                        var listSaved = ListSaved()
+                        if let savedList = UserDefaults.standard.object(forKey: "list_post_saved") as? Data {
+                            let decoder = JSONDecoder()
+                            if let loadedList : ListSaved = try? decoder.decode(ListSaved.self, from: savedList) {
+                                listSaved = loadedList
+                            }
                         }
-                        listSaved!.append(OptionToSave(url : fileURL, title : self.listOption[self.isSave].title))
-                        UserDefaults.standard.set(listSaved, forKey: "option_to_save")
+                        listSaved.listSaved.append(OptionToSave(url : fileURL, title : self.listOption[self.isSave].title))
+                        let encoder = JSONEncoder()
+                        if let encoded = try? encoder.encode(listSaved) {
+                            let defaults = UserDefaults.standard
+                            defaults.set(encoded, forKey: "list_post_saved")
+                        }
+//                        var listSaved : ListSaved = UserDefaults.standard.object(forKey: "option_to_save") as? Lis
+//                        if (listSaved == nil) {
+//                            listSaved = [OptionToSave]()
+//                        }
+//                        listSaved!.append(OptionToSave(url : fileURL, title : self.listOption[self.isSave].title))
+//                        UserDefaults.standard.set(listSaved, forKey: "option_to_save")
                     }
                     catch {/* error handling here */}
                 }
