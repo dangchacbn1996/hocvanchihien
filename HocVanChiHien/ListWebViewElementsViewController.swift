@@ -18,6 +18,7 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
     
     @IBOutlet weak var tableView : UITableView!
     var listOption = [Option]()
+    var target = OptionToSave(url : URL(string: "http://hocvanchihien.com/"), title : "Trang chủ")
     var isSave = -1
     var listSaved = [OptionToSave]()
     
@@ -29,7 +30,7 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadPage(urlString: "http://hocvanchihien.com/", partialContentQuerySelector: ".ListBoxNewsEvent")
+        loadPage(urlString: target.url?.absoluteString ?? "http://hocvanchihien.com/", partialContentQuerySelector: ".NewsEvent")
     }
     
     @IBAction func openMenu(){
@@ -40,7 +41,8 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
     override func didFinishLoadWebview(){
         if (isSave != -1) {
             wkWebView.evaluateJavaScript("document.documentElement.outerHTML.toString();") {(result, wkError) in
-                guard wkError == nil else {
+                print("HTMLErr: \(wkError)")
+                guard wkError != nil else {
                     print("HTMLErr: \(wkError!)")
                     Loading.sharedInstance.dismiss()
                     return
@@ -108,10 +110,23 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                             self.tableView.reloadData()
                         }
                     })
-                    self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[1].children[0].innerText;", completionHandler: { (result, error) in
-                        self.listOption[index].html = "\(result ?? "")"
-                        if (index == amount - 1) {
-                            self.tableView.reloadData()
+                    self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)]\(JSContruct.BoxNewsEvent.getContent)", completionHandler: { (result, error) in
+                        if error != nil {
+                            self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)]\(JSContruct.BoxNewsEvent.getHomePageContent)", completionHandler: { (result, error) in
+                                if error != nil {
+                                    self.listOption[index].html = ""
+                                } else {
+                                    self.listOption[index].html = "\(result ?? "")"
+                                }
+                                if (index == amount - 1) {
+                                    self.tableView.reloadData()
+                                }
+                            })
+                        } else {
+                            self.listOption[index].html = "\(result ?? "")"
+                            if (index == amount - 1) {
+                                self.tableView.reloadData()
+                            }
                         }
                     })
                     self.listOption.append(newOption)

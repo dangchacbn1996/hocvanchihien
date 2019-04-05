@@ -82,11 +82,6 @@ struct ListSaved : Codable {
     }
 }
 
-struct OptionToSave : Codable{
-    var url : URL?
-    var title : String
-}
-
 class CellOption : UITableViewCell {
     @IBOutlet weak var title : UILabel!
     @IBOutlet weak var content : UILabel!
