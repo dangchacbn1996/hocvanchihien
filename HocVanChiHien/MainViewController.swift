@@ -19,7 +19,13 @@ class MainViewController : UIViewController, ActionMenuParent{
     override func viewDidLoad() {
         super.viewDidLoad()
         setLeftMenu()
-        showViewController(viewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idListBoxWebViewVC"), title: "GÓC HỌC TẬP")
+//        tfSearch.delegate = self
+        tfSearch.addTarget(self, action: #selector(searchItem(_:)), for: UIControl.Event.editingChanged)
+        showViewController(viewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idListBoxWebViewVC"), title: "TRANG CHỦ")
+    }
+    
+    @objc func searchItem(_ textField : UITextField) {
+        (self.children.first as? MainSubViewController)?.searchResult(string: textField.text ?? "")
     }
     
     func showViewController(viewController : UIViewController, title : String) {
@@ -53,7 +59,6 @@ class MainViewController : UIViewController, ActionMenuParent{
         SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-//        SideMenuManager.default.view
         SideMenuManager.default.menuWidth = self.view.frame.width * 0.8
         SideMenuManager.default.menuPresentMode = .menuSlideIn
         SideMenuManager.default.menuShadowOpacity = 0.5
@@ -86,4 +91,8 @@ class CellOption : UITableViewCell {
     @IBOutlet weak var title : UILabel!
     @IBOutlet weak var content : UILabel!
     @IBOutlet weak var btnSave : UIButton!
+}
+
+protocol MainSubViewController {
+    func searchResult(string : String)
 }

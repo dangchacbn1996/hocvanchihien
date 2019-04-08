@@ -8,11 +8,26 @@
 
 import UIKit
 
-class SavedListPosts: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class SavedListPosts: UIViewController, MainSubViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    func searchResult(string: String) {
+        if (string != "") {
+            listShow = ListSaved()
+            for item in listSaved.listSaved {
+                if (ConvertHelper.convertVietNam(text: item.title).contains(ConvertHelper.convertVietNam(text: string))) {
+                    listShow.listSaved.append(item)
+                }
+            }
+            tableView.reloadData()
+            return
+        }
+        listShow = listSaved
+        tableView.reloadData()
+    }
     
     @IBOutlet weak var tableView : UITableView!
     var listSaved = ListSaved()
-    
+    var listShow = ListSaved()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -21,18 +36,19 @@ class SavedListPosts: UIViewController, UITableViewDelegate, UITableViewDataSour
             let decoder = JSONDecoder()
             if let loadedList : ListSaved = try? decoder.decode(ListSaved.self, from: savedList) {
                 listSaved = loadedList
+                listShow = listSaved
                 tableView.reloadData()
             }
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listSaved.listSaved.count
+        return listShow.listSaved.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellSaved", for: indexPath) as! CellSaved
-        cell.title.text = listSaved.listSaved[indexPath.row].title
+        cell.title.text = listShow.listSaved[indexPath.row].title
         cell.selectionStyle = .none
         return cell
     }
@@ -42,7 +58,7 @@ class SavedListPosts: UIViewController, UITableViewDelegate, UITableViewDataSour
             return
         }
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailContentVC") as! DetailContentViewController
-        viewController.data = Option(href : "", title : listSaved.listSaved[indexPath.row].title, html : "", url : listSaved.listSaved[indexPath.row].url)
+        viewController.data = Option(href : "", title : listSaved.listSaved[indexPath.row].title, html : "", url : listShow.listSaved[indexPath.row].url)
         viewController.modalPresentationStyle = .overCurrentContext
         //        let file = "\(self.listOption[self.isSave].href.split(separator: "/").last ?? "").txt"
         self.present(viewController, animated: true, completion: nil)

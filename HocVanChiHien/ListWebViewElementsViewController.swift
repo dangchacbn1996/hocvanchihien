@@ -20,12 +20,15 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
     var listOption = [Option]()
     var target = OptionToSave(url : URL(string: "http://hocvanchihien.com/"), title : "Trang chủ")
     var isSave = -1
+    var index = 0
+    var page = 0
     var listSaved = [OptionToSave]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        target = Constant.AddressInfo.getWebInfo(type: index, page: page)
         initWKWebView(view : UIView(frame: CGRect.zero))
     }
     
@@ -42,7 +45,7 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
         if (isSave != -1) {
             wkWebView.evaluateJavaScript("document.documentElement.outerHTML.toString();") {(result, wkError) in
                 print("HTMLErr: \(wkError)")
-                guard wkError != nil else {
+                guard wkError == nil else {
                     print("HTMLErr: \(wkError!)")
                     Loading.sharedInstance.dismiss()
                     return
@@ -74,12 +77,6 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                             let defaults = UserDefaults.standard
                             defaults.set(encoded, forKey: "list_post_saved")
                         }
-//                        var listSaved : ListSaved = UserDefaults.standard.object(forKey: "option_to_save") as? Lis
-//                        if (listSaved == nil) {
-//                            listSaved = [OptionToSave]()
-//                        }
-//                        listSaved!.append(OptionToSave(url : fileURL, title : self.listOption[self.isSave].title))
-//                        UserDefaults.standard.set(listSaved, forKey: "option_to_save")
                     }
                     catch {/* error handling here */}
                 }
@@ -94,18 +91,18 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                 return
             }
             print("HTMLEvaC: \(String(describing: result!))")
+            let lastIndex = self.listOption.count
             if let amount = Int(String(describing: result!)) {
                 for index in 0..<amount {
-                    //Đọc góc học tập
                     var newOption = Option(href: "", title: "", html: "", url: nil)
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[0].children[\(JSContruct.BoxNewsEvent.EventTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4ContainTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4SubA)].href;", completionHandler: { (result, error) in
-                        self.listOption[index].href = "\(result ?? "")"
+                        self.listOption[lastIndex + index].href = "\(result ?? "")"
                         if (index == amount - 1) {
                             self.tableView.reloadData()
                         }
                     })
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[0].children[\(JSContruct.BoxNewsEvent.EventTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4ContainTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4SubA)].title;", completionHandler: { (result, error) in
-                        self.listOption[index].title = "\(result ?? "")"
+                        self.listOption[lastIndex + index].title = "\(result ?? "")"
                         if (index == amount - 1) {
                             self.tableView.reloadData()
                         }
@@ -114,16 +111,16 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                         if error != nil {
                             self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)]\(JSContruct.BoxNewsEvent.getHomePageContent)", completionHandler: { (result, error) in
                                 if error != nil {
-                                    self.listOption[index].html = ""
+                                    self.listOption[lastIndex + index].html = ""
                                 } else {
-                                    self.listOption[index].html = "\(result ?? "")"
+                                    self.listOption[lastIndex + index].html = "\(result ?? "")"
                                 }
                                 if (index == amount - 1) {
                                     self.tableView.reloadData()
                                 }
                             })
                         } else {
-                            self.listOption[index].html = "\(result ?? "")"
+                            self.listOption[lastIndex + index].html = "\(result ?? "")"
                             if (index == amount - 1) {
                                 self.tableView.reloadData()
                             }
@@ -133,6 +130,19 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                 }
             }
             
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        page += 1
+        target = Constant.AddressInfo.getWebInfo(type: index, page: page)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (indexPath.row == listOption.count - 1) {
+            page += 1
+            target = Constant.AddressInfo.getWebInfo(type: index, page: page)
+            loadPage(urlString: target.url?.absoluteString ?? "http://hocvanchihien.com/", partialContentQuerySelector: ".NewsEvent")
         }
     }
     
@@ -162,7 +172,6 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailContentVC") as! DetailContentViewController
         viewController.data = listOption[indexPath.row - 1]
         viewController.modalPresentationStyle = .overCurrentContext
-        //        let file = "\(self.listOption[self.isSave].href.split(separator: "/").last ?? "").txt"
         self.present(viewController, animated: true, completion: nil)
     }
     

@@ -17,16 +17,33 @@ struct Constant {
     }
     
     struct AddressInfo {
-        static let add_GOC_HOC_TAP = OptionToSave(url: URL(string: "http://hocvanchihien.com/"),
-                                                  title: "Góc học tập")
-        static let add_GIOI_THIEU = OptionToSave(url: URL(string: "http://hocvanchihien.com/Vn/Gioi-thieu-ListNews-1-16"),
-                                                 title: "Giới thiệu")
-        static let add_VAN_HOC_THPT = OptionToSave(url: URL(string: "http://hocvanchihien.com/Vn/Van-hoc-THPT-ListNews-1-45"),
-                                                   title: "Văn học THPT")
-        static let add_DE_THI_DAI_HOC = OptionToSave(url: URL(string: "http://hocvanchihien.com/Vn/De-Thi-Dai-Hoc-ListNews-1-1060"),
-                                                     title: "Đề thi đại học")
-        static let add_SACH_VAN_CHI_HIEN = OptionToSave(url: URL(string: "http://hocvanchihien.com/Vn/Sach-Van-Chi-Hien-ListNews-1-42"),
-                                                        title: "Sách văn chị Hiên")
+        static func getWebInfo(type : Int, page : Int) -> (OptionToSave){
+            switch type {
+            case add_GIOI_THIEU:
+                return OptionToSave(url: URL(string: "http://hocvanchihien.com/"),
+                             title: "Góc học tập")
+            case add_GOC_HOC_TAP:
+                return OptionToSave(url: URL(string: "http://hocvanchihien.com/Vn/Gioi-thieu-ListNews-\(page + 1)-16"),
+                                    title: "Giới thiệu")
+            case add_VAN_HOC_THPT:
+                return OptionToSave(url: URL(string: "http://hocvanchihien.com/Vn/Van-hoc-THPT-ListNews-\(page + 1)-45"),
+                                    title: "Văn học THPT")
+            case add_DE_THI_DAI_HOC:
+                return OptionToSave(url: URL(string: "http://hocvanchihien.com/Vn/De-Thi-Dai-Hoc-ListNews-\(page + 1)-1060"),
+                                    title: "Đề thi đại học")
+            case add_SACH_VAN_CHI_HIEN:
+                return OptionToSave(url: URL(string: "http://hocvanchihien.com/Vn/Sach-Van-Chi-Hien-ListNews-\(page + 1)-42"),
+                                    title: "Sách văn chị Hiên")
+            default:
+                return OptionToSave(url: URL(string: "http://hocvanchihien.com/"),
+                                    title: "Góc học tập")
+            }
+        }
+        static let add_GIOI_THIEU = 0
+        static let add_GOC_HOC_TAP = 1
+        static let add_VAN_HOC_THPT = 2
+        static let add_DE_THI_DAI_HOC = 3
+        static let add_SACH_VAN_CHI_HIEN = 4
     }
 }
 
