@@ -10,7 +10,33 @@ import UIKit
 import SideMenu
 import WebKit
 
-class ListWebViewElementsViewController: WebViewController, UITableViewDelegate, UITableViewDataSource{
+class ListWebViewElementsViewController: WebViewController, MainSubViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    func searchResult(string: String) {
+        if (stringSearch != "" && string == "") {
+            page = 0
+            maxPage = 0
+            loadPage(urlString: Constant.AddressInfo.getWebInfo(type: index, page: 0).url?.absoluteString ?? "http://hocvanchihien.com/", partialContentQuerySelector: ".NewsEvent")
+            return
+        }
+        stringSearch = string
+        search()
+    }
+    
+    func search(){
+        if (stringSearch != "") {
+            listShow = [Option]()
+            for item in listOption {
+                if (ConvertHelper.convertVietNam(text: item.title).uppercased().contains(ConvertHelper.convertVietNam(text: stringSearch).uppercased())) {
+                    listShow.append(item)
+                }
+            }
+            tableView.reloadData()
+            return
+        }
+        listShow = listOption
+        tableView.reloadData()
+    }
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print("Load receive")
@@ -21,8 +47,11 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
     var target = OptionToSave(url : URL(string: "http://hocvanchihien.com/"), title : "Trang chủ")
     var isSave = -1
     var index = 0
+    var maxPage = 0
     var page = 0
     var listSaved = [OptionToSave]()
+    var stringSearch = ""
+    var listShow = [Option]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +80,7 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                     return
                 }
                 
-                let file = "\(self.listOption[self.isSave].href.split(separator: "/").last ?? "").txt"
+                let file = "\(self.listShow[self.isSave].href.split(separator: "/").last ?? "").txt"
                 //this is the file. we will write to and read from it
                 
                 let text = "\(String(describing: result ?? ""))"
@@ -63,7 +92,7 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                     //writing
                     do {
                         try text.write(to: fileURL, atomically: false, encoding: .utf8)
-                        self.listOption[self.isSave].url = fileURL
+                        self.listShow[self.isSave].url = fileURL
                         var listSaved = ListSaved()
                         if let savedList = UserDefaults.standard.object(forKey: "list_post_saved") as? Data {
                             let decoder = JSONDecoder()
@@ -71,7 +100,7 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                                 listSaved = loadedList
                             }
                         }
-                        listSaved.listSaved.append(OptionToSave(url : fileURL, title : self.listOption[self.isSave].title))
+                        listSaved.listSaved.append(OptionToSave(url : fileURL, title : self.listShow[self.isSave].title))
                         let encoder = JSONEncoder()
                         if let encoded = try? encoder.encode(listSaved) {
                             let defaults = UserDefaults.standard
@@ -93,8 +122,11 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
             print("HTMLEvaC: \(String(describing: result!))")
             let lastIndex = self.listOption.count
             if let amount = Int(String(describing: result!)) {
+                if (amount > 0) {
+                    self.maxPage += 1
+                }
                 for index in 0..<amount {
-                    var newOption = Option(href: "", title: "", html: "", url: nil)
+                    let newOption = Option(href: "", title: "", html: "", url: nil)
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[0].children[\(JSContruct.BoxNewsEvent.EventTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4ContainTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4SubA)].href;", completionHandler: { (result, error) in
                         self.listOption[lastIndex + index].href = "\(result ?? "")"
                         if (index == amount - 1) {
@@ -104,7 +136,8 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[0].children[\(JSContruct.BoxNewsEvent.EventTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4ContainTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4SubA)].title;", completionHandler: { (result, error) in
                         self.listOption[lastIndex + index].title = "\(result ?? "")"
                         if (index == amount - 1) {
-                            self.tableView.reloadData()
+                            self.search()
+//                            self.tableView.reloadData()
                         }
                     })
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)]\(JSContruct.BoxNewsEvent.getContent)", completionHandler: { (result, error) in
@@ -129,25 +162,32 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
                     self.listOption.append(newOption)
                 }
             }
-            
         }
+        search()
     }
     
     func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         page += 1
-        target = Constant.AddressInfo.getWebInfo(type: index, page: page)
+        if (page <= maxPage) {
+            target = Constant.AddressInfo.getWebInfo(type: index, page: page)
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if (indexPath.row == listOption.count - 1) {
-            page += 1
-            target = Constant.AddressInfo.getWebInfo(type: index, page: page)
-            loadPage(urlString: target.url?.absoluteString ?? "http://hocvanchihien.com/", partialContentQuerySelector: ".NewsEvent")
+        if (indexPath.row == listShow.count - 1) {
+            print("PageMax: \(maxPage)")
+            print("PageM  : \(page)")
+            if (page <= maxPage) {
+//                target = Constant.AddressInfo.getWebInfo(type: index, page: page)
+                page += 1
+                target = Constant.AddressInfo.getWebInfo(type: index, page: page)
+                loadPage(urlString: target.url?.absoluteString ?? "http://hocvanchihien.com/", partialContentQuerySelector: ".NewsEvent")
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOption.count + 1
+        return listShow.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -157,9 +197,9 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOption", for: indexPath) as! CellOption
-        cell.title.text = listOption[indexPath.row - 1].title
+        cell.title.text = listShow[indexPath.row - 1].title
         cell.selectionStyle = .none
-        cell.content.text = listOption[indexPath.row - 1].html
+        cell.content.text = listShow[indexPath.row - 1].html
         cell.btnSave.tag = indexPath.row - 1
         cell.btnSave.addTarget(self, action: #selector(saveWord(_:)), for: UIControl.Event.touchUpInside)
         return cell
@@ -170,7 +210,7 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
             return
         }
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailContentVC") as! DetailContentViewController
-        viewController.data = listOption[indexPath.row - 1]
+        viewController.data = listShow[indexPath.row - 1]
         viewController.modalPresentationStyle = .overCurrentContext
         self.present(viewController, animated: true, completion: nil)
     }
@@ -178,10 +218,6 @@ class ListWebViewElementsViewController: WebViewController, UITableViewDelegate,
     @objc func saveWord(_ cell : UIButton){
         isSave = cell.tag
         Loading.sharedInstance.show(in: tableView)
-        //        detailContentPage = Option(href: listOption[cell.tag].href,
-        //                                   title: listOption[cell.tag].title,
-        //                                   html: listOption[cell.tag].html,
-        //                                   url: listOption[cell.tag].url)
-        loadPage(urlString: listOption[cell.tag].href, partialContentQuerySelector: ".detailContent")
+        loadPage(urlString: listShow[cell.tag].href, partialContentQuerySelector: ".detailContent")
     }
 }
