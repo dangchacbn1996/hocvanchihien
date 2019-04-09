@@ -15,8 +15,13 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
     func searchResult(string: String) {
         if (stringSearch != "" && string == "") {
             page = 0
-            maxPage = 0
-            loadPage(urlString: Constant.AddressInfo.getWebInfo(type: index, page: 0).url?.absoluteString ?? "http://hocvanchihien.com/", partialContentQuerySelector: ".NewsEvent")
+            if (index == Constant.AddressInfo.add_GIOI_THIEU) {
+                maxPage = -2
+            } else {
+                maxPage = 0
+            }
+            listOption = [Option]()
+            loadPage(urlString: Constant.AddressInfo.getWebInfo(type: index, page: page).url?.absoluteString ?? "", partialContentQuerySelector: ".NewsEvent")
             return
         }
         stringSearch = string
@@ -36,10 +41,6 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
         }
         listShow = listOption
         tableView.reloadData()
-    }
-    
-    override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("Load receive")
     }
     
     @IBOutlet weak var tableView : UITableView!
@@ -62,11 +63,7 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadPage(urlString: target.url?.absoluteString ?? "http://hocvanchihien.com/", partialContentQuerySelector: ".NewsEvent")
-    }
-    
-    @IBAction func openMenu(){
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+        loadPage(urlString: target.url?.absoluteString ?? "", partialContentQuerySelector: ".NewsEvent")
     }
     
     
@@ -137,7 +134,6 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
                         self.listOption[lastIndex + index].title = "\(result ?? "")"
                         if (index == amount - 1) {
                             self.search()
-//                            self.tableView.reloadData()
                         }
                     })
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)]\(JSContruct.BoxNewsEvent.getContent)", completionHandler: { (result, error) in
@@ -166,22 +162,14 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
         search()
     }
     
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        page += 1
-        if (page <= maxPage) {
-            target = Constant.AddressInfo.getWebInfo(type: index, page: page)
-        }
-    }
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == listShow.count - 1) {
             print("PageMax: \(maxPage)")
             print("PageM  : \(page)")
-            if (page <= maxPage) {
-//                target = Constant.AddressInfo.getWebInfo(type: index, page: page)
+            if (page <= maxPage && index != Constant.AddressInfo.add_GIOI_THIEU) {
                 page += 1
                 target = Constant.AddressInfo.getWebInfo(type: index, page: page)
-                loadPage(urlString: target.url?.absoluteString ?? "http://hocvanchihien.com/", partialContentQuerySelector: ".NewsEvent")
+                loadPage(urlString: target.url?.absoluteString ?? "", partialContentQuerySelector: ".NewsEvent")
             }
         }
     }

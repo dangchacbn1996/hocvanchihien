@@ -19,9 +19,12 @@ class MainViewController : UIViewController, ActionMenuParent{
     override func viewDidLoad() {
         super.viewDidLoad()
         setLeftMenu()
-//        tfSearch.delegate = self
         tfSearch.addTarget(self, action: #selector(searchItem(_:)), for: UIControl.Event.editingChanged)
         showViewController(viewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idListBoxWebViewVC"), title: "TRANG CHỦ")
+    }
+    
+    @IBAction func openMenu(){
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     @objc func searchItem(_ textField : UITextField) {

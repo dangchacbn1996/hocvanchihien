@@ -104,16 +104,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RwE-xi-ulC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_action" translatesAutoresizingMaskIntoConstraints="NO" id="piO-Pj-CJw">
-                                                                    <rect key="frame" x="0.0" y="8.6666666666666661" width="26.333333333333332" height="26.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="8.6666666666666661" width="26.333333333333332" height="26.666666666666671"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="piO-Pj-CJw" secondAttribute="height" id="ZK6-sC-613"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw9-pF-E7q">
-                                                                    <rect key="frame" x="34.333333333333343" y="11.666666666666666" width="308.66666666666663" height="20.333333333333336"/>
+                                                                    <rect key="frame" x="34.333333333333343" y="11.999999999999998" width="308.66666666666663" height="20.333333333333329"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -340,6 +340,9 @@
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconMenu" translatesAutoresizingMaskIntoConstraints="NO" id="jdP-WO-3DA">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
                                                 <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="IGB-EH-a5R" appends="YES" id="Qzb-vR-ATi"/>
+                                                </connections>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qH6-OR-gRA" customClass="CustomView" customModule="HocVanChiHien" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="0.0" width="287" height="40"/>
@@ -445,6 +448,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o55-Bd-XlY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="IGB-EH-a5R" userLabel="openMenu">
+                    <connections>
+                        <action selector="openMenu" destination="5oI-IR-QST" id="wBf-JX-iVE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1855" y="115"/>
         </scene>
