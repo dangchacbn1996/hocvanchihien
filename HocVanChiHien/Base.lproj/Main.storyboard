@@ -340,6 +340,9 @@
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconMenu" translatesAutoresizingMaskIntoConstraints="NO" id="jdP-WO-3DA">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="40"/>
                                                 <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="IGB-EH-a5R" appends="YES" id="Qzb-vR-ATi"/>
+                                                </connections>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qH6-OR-gRA" customClass="CustomView" customModule="HocVanChiHien" customModuleProvider="target">
                                                 <rect key="frame" x="28" y="0.0" width="287" height="40"/>
@@ -450,6 +453,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o55-Bd-XlY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="IGB-EH-a5R" userLabel="openMenu">
+                    <connections>
+                        <action selector="openMenu" destination="5oI-IR-QST" id="wBf-JX-iVE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1855" y="115"/>
         </scene>

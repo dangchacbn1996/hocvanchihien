@@ -17,6 +17,9 @@
 		5336906D22521A0700A0DA3B /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336904B22521A0700A0DA3B /* CustomUIButton.swift */; };
 		5336907022521BC200A0DA3B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336906F22521BC200A0DA3B /* CustomView.swift */; };
 		5336907222521D6A00A0DA3B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336907122521D6A00A0DA3B /* UIColorExtension.swift */; };
+		5347AF3F225C7BE500D0AA06 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */; };
+		5347AF41225C8A1300D0AA06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */; };
+		5347AF43225CA47900D0AA06 /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347AF42225CA47900D0AA06 /* AudioStream.swift */; };
 		819B78D8D0FE9FC164E46355 /* Pods_HocVanChiHien.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */; };
 		BAC876D30C9DDB58476DCFFE /* Pods_HocVanChiHienTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C2BFC53DE5FCD0F455F264 /* Pods_HocVanChiHienTests.framework */; };
 		DCAC6E3BE3CF8F5B05E0D1B7 /* Pods_HocVanChiHienUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B58F9D6F6FCEBEC48E42F6F /* Pods_HocVanChiHienUITests.framework */; };
@@ -72,6 +75,9 @@
 		5336904B22521A0700A0DA3B /* CustomUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		5336906F22521BC200A0DA3B /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5336907122521D6A00A0DA3B /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5347AF42225CA47900D0AA06 /* AudioStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStream.swift; sourceTree = "<group>"; };
 		6E5C038FE9B00F8FFD65DF90 /* Pods-HocVanChiHienTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienTests.debug.xcconfig"; path = "Target Support Files/Pods-HocVanChiHienTests/Pods-HocVanChiHienTests.debug.xcconfig"; sourceTree = "<group>"; };
 		733F6FE7DB727561DBA3B2D4 /* Pods-HocVanChiHienTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HocVanChiHienTests/Pods-HocVanChiHienTests.release.xcconfig"; sourceTree = "<group>"; };
 		805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HocVanChiHien.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5347AF3F225C7BE500D0AA06 /* YouTubePlayer.framework in Frameworks */,
 				819B78D8D0FE9FC164E46355 /* Pods_HocVanChiHien.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +194,7 @@
 		CB18F2C7C38C54A253B23563 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */,
 				805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */,
 				36C2BFC53DE5FCD0F455F264 /* Pods_HocVanChiHienTests.framework */,
 				0B58F9D6F6FCEBEC48E42F6F /* Pods_HocVanChiHienUITests.framework */,
@@ -227,12 +235,14 @@
 				F04CCBC3224FE07800503F84 /* Assets.xcassets */,
 				F04CCBC5224FE07800503F84 /* LaunchScreen.storyboard */,
 				F04CCBC8224FE07800503F84 /* Info.plist */,
+				5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */,
 				F04CCBEA224FE80100503F84 /* JSContruct.swift */,
 				F0597E1B22510A0E0058CA31 /* WebViewController.swift */,
 				F024C01F22525C2F007C0887 /* ActionMenuViewController.swift */,
 				F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */,
 				F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */,
 				F09B3BE62253C77500C2ACD9 /* Constant.swift */,
+				5347AF42225CA47900D0AA06 /* AudioStream.swift */,
 			);
 			path = HocVanChiHien;
 			sourceTree = "<group>";
@@ -364,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04CCBC7224FE07800503F84 /* LaunchScreen.storyboard in Resources */,
+				5347AF41225C8A1300D0AA06 /* GoogleService-Info.plist in Resources */,
 				F04CCBC4224FE07800503F84 /* Assets.xcassets in Resources */,
 				F04CCBC2224FE07700503F84 /* Main.storyboard in Resources */,
 			);
@@ -478,6 +489,7 @@
 			files = (
 				5336906322521A0700A0DA3B /* CustomButton.swift in Sources */,
 				F04CCBBF224FE07600503F84 /* MainViewController.swift in Sources */,
+				5347AF43225CA47900D0AA06 /* AudioStream.swift in Sources */,
 				5336904E22521A0700A0DA3B /* ConvertHelper.swift in Sources */,
 				5336907022521BC200A0DA3B /* CustomView.swift in Sources */,
 				F04CCBEB224FE80100503F84 /* JSContruct.swift in Sources */,
@@ -601,13 +613,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -656,12 +669,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
