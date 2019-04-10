@@ -18,6 +18,7 @@ pod 'Alamofire', '~> 4.7'
   pod 'YouTubePlayer'
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|
