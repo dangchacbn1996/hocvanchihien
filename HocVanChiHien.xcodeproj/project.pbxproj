@@ -20,6 +20,9 @@
 		5347AF3F225C7BE500D0AA06 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */; };
 		5347AF41225C8A1300D0AA06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */; };
 		5347AF43225CA47900D0AA06 /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347AF42225CA47900D0AA06 /* AudioStream.swift */; };
+		53A12FB5225DE9A700B15195 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB4225DE9A700B15195 /* API.swift */; };
+		53A12FB7225DEA2400B15195 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB6225DEA2400B15195 /* APIManager.swift */; };
+		53A12FBA225DEAC300B15195 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB9225DEAC300B15195 /* UserInfoModel.swift */; };
 		819B78D8D0FE9FC164E46355 /* Pods_HocVanChiHien.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */; };
 		BAC876D30C9DDB58476DCFFE /* Pods_HocVanChiHienTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C2BFC53DE5FCD0F455F264 /* Pods_HocVanChiHienTests.framework */; };
 		DCAC6E3BE3CF8F5B05E0D1B7 /* Pods_HocVanChiHienUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B58F9D6F6FCEBEC48E42F6F /* Pods_HocVanChiHienUITests.framework */; };
@@ -81,6 +84,9 @@
 		5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5347AF42225CA47900D0AA06 /* AudioStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStream.swift; sourceTree = "<group>"; };
+		53A12FB4225DE9A700B15195 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		53A12FB6225DEA2400B15195 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		53A12FB9225DEAC300B15195 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		6E5C038FE9B00F8FFD65DF90 /* Pods-HocVanChiHienTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienTests.debug.xcconfig"; path = "Target Support Files/Pods-HocVanChiHienTests/Pods-HocVanChiHienTests.debug.xcconfig"; sourceTree = "<group>"; };
 		733F6FE7DB727561DBA3B2D4 /* Pods-HocVanChiHienTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HocVanChiHienTests/Pods-HocVanChiHienTests.release.xcconfig"; sourceTree = "<group>"; };
 		805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HocVanChiHien.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +185,25 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		53A12FB3225DE98400B15195 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				53A12FB8225DEAB000B15195 /* Model */,
+				F04CCBEA224FE80100503F84 /* JSContruct.swift */,
+				53A12FB4225DE9A700B15195 /* API.swift */,
+				53A12FB6225DEA2400B15195 /* APIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		53A12FB8225DEAB000B15195 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53A12FB9225DEAC300B15195 /* UserInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		69265085BFF325644C6C8DCE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +291,7 @@
 		F04CCBBB224FE07600503F84 /* HocVanChiHien */ = {
 			isa = PBXGroup;
 			children = (
+				53A12FB3225DE98400B15195 /* Network */,
 				F02E04A6225CF89F003D9FCE /* ViewController */,
 				F04CCBBC224FE07600503F84 /* AppDelegate.swift */,
 				5336902422521A0700A0DA3B /* CustomControls */,
@@ -275,7 +301,6 @@
 				F02E04A8225CF8D8003D9FCE /* Login.storyboard */,
 				F04CCBC8224FE07800503F84 /* Info.plist */,
 				5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */,
-				F04CCBEA224FE80100503F84 /* JSContruct.swift */,
 			);
 			path = HocVanChiHien;
 			sourceTree = "<group>";
@@ -543,6 +568,9 @@
 				F024C02022525C2F007C0887 /* ActionMenuViewController.swift in Sources */,
 				5336905122521A0700A0DA3B /* Toast.swift in Sources */,
 				F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */,
+				53A12FBA225DEAC300B15195 /* UserInfoModel.swift in Sources */,
+				53A12FB7225DEA2400B15195 /* APIManager.swift in Sources */,
+				53A12FB5225DE9A700B15195 /* API.swift in Sources */,
 				F09B3BE52253A6D500C2ACD9 /* ListWebViewElementsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -705,7 +733,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

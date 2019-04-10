@@ -14,6 +14,7 @@ struct Constant {
         static let vcListWeb = "idListBoxWebViewVC"
         static let vcDetail = "detailContentVC"
         static let vcSaved = "vcSavedList"
+        static let vcMain = "main_view_controller"
     }
     
     struct AddressInfo {

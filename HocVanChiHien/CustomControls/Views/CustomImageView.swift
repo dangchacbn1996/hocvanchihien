@@ -17,6 +17,17 @@ class CustomImageView: UIImageView {
     var _borderWidth: CGFloat = 0.0
     var _borderColor: UIColor = UIColor.clear
     var _dropShadow: CGFloat = 0
+    var _imageIcon = UIImage()
+    
+    @IBInspectable
+    var icon: UIImage {
+        set (newValue) {
+            self._imageIcon = newValue
+            self.image = _imageIcon.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        } get {
+            return _imageIcon
+        }
+    }
     
     @IBInspectable
     var dropShadow: CGFloat {

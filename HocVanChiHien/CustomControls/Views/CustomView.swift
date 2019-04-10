@@ -22,7 +22,7 @@ class CustomView: UIView {
     var dropShadow: CGFloat {
         set (newValue) {
             _dropShadow = newValue
-            self.layer.shadowColor = UIColor(hexString: "F0F3F4").cgColor
+            self.layer.shadowColor = self.tintColor.cgColor
             self.layer.shadowOpacity = _dropShadow > 0 ? 1 : 0
             self.layer.shadowOffset = CGSize.zero
             self.layer.shadowRadius = _dropShadow

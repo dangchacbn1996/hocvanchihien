@@ -9,17 +9,29 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, APIManagerProtocol{
+    func apiOnDidFail(mess: String) {
+        Toast.shared.makeToast(string: mess, inView: self.view)
+    }
+    
+    func apiOnGetUserInfoDone(data: UserInfoModel) {
+        print("DataLogin: \(data.audioPermission)")
+        print("DataLogin: \(data.name)")
+        print("DataLogin: \(data.phone)")
+        let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcMain)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     @IBOutlet weak var tfUserName : UITextField!
     @IBOutlet weak var tfPassword : UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tfUserName.text = "Học văn chị Hiên ^^"
+//        tfPassword.text = "dangchac"
     }
     
-    @IBAction func loginView(){
+    @IBAction func loginView(_ button : UIButton){
         self.view.endEditing(true)
         let email = tfUserName.text ?? ""
         let password = tfPassword.text ?? ""
@@ -37,6 +49,7 @@ class LoginViewController: UIViewController {
                 print("AccInfo: \(userInfo.uid)")
                 print("AccInfo: \(userInfo.email)")
                 print("AccInfo: -----------------")
+                APIManager.getUserInfo(callBack: self!, userID: userInfo.uid)
             }
         }
     }

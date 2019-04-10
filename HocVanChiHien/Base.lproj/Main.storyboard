@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="onP-SE-66U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="onP-SE-66U">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -322,7 +322,7 @@
         <!--Main View Controller-->
         <scene sceneID="7oK-zM-cgc">
             <objects>
-                <viewController id="5oI-IR-QST" customClass="MainViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main_view_controller" id="5oI-IR-QST" customClass="MainViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qqB-Ba-JTO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -469,6 +469,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEC-1j-xsl">
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.25916043133802819" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqA-Ti-t02" customClass="CustomView" customModule="HocVanChiHien" customModuleProvider="target">
                                 <rect key="frame" x="16" y="76" width="343" height="720"/>
                                 <subviews>
@@ -526,10 +530,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="K2M-uF-tM1" firstAttribute="trailing" secondItem="aEC-1j-xsl" secondAttribute="trailing" id="2Qd-Sx-jfx"/>
                             <constraint firstItem="MqA-Ti-t02" firstAttribute="leading" secondItem="FWF-Sb-7Rt" secondAttribute="leading" constant="16" id="KKl-Uw-vnN"/>
+                            <constraint firstAttribute="bottom" secondItem="aEC-1j-xsl" secondAttribute="bottom" id="ZYi-sg-bxe"/>
                             <constraint firstItem="MqA-Ti-t02" firstAttribute="top" secondItem="K2M-uF-tM1" secondAttribute="top" constant="32" id="bqS-Ih-Y2l"/>
                             <constraint firstAttribute="bottom" secondItem="MqA-Ti-t02" secondAttribute="bottom" constant="16" id="lQj-2C-XGy"/>
                             <constraint firstAttribute="trailing" secondItem="MqA-Ti-t02" secondAttribute="trailing" constant="16" id="nu0-tc-4dm"/>
+                            <constraint firstItem="aEC-1j-xsl" firstAttribute="top" secondItem="K2M-uF-tM1" secondAttribute="top" id="wil-wI-K6a"/>
+                            <constraint firstItem="aEC-1j-xsl" firstAttribute="leading" secondItem="K2M-uF-tM1" secondAttribute="leading" id="xtW-F5-vPs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K2M-uF-tM1"/>
                     </view>
@@ -698,12 +706,12 @@
     <resources>
         <image name="Background" width="375" height="812"/>
         <image name="Cho" width="1356" height="902"/>
-        <image name="ic_action" width="144" height="144"/>
-        <image name="ic_arrow_down" width="108" height="108"/>
-        <image name="ic_back" width="108" height="108"/>
-        <image name="ic_download" width="108" height="108"/>
-        <image name="ic_notifi_white" width="108" height="108"/>
-        <image name="ic_search_white" width="108" height="108"/>
+        <image name="ic_action" width="48" height="48"/>
+        <image name="ic_arrow_down" width="36" height="36"/>
+        <image name="ic_back" width="36" height="36"/>
+        <image name="ic_download" width="36" height="36"/>
+        <image name="ic_notifi_white" width="36" height="36"/>
+        <image name="ic_search_white" width="36" height="36"/>
         <image name="iconMenu" width="26" height="26"/>
     </resources>
 </document>
