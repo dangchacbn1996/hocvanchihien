@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="Hkv-fk-hbk">
             <objects>
-                <viewController id="52V-ja-KRu" customClass="LoginViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc_login_view" id="52V-ja-KRu" customClass="LoginViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4XK-QU-T5e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,13 +25,13 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="133.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_hien" translatesAutoresizingMaskIntoConstraints="NO" id="pf8-BI-dpF">
-                                        <rect key="frame" x="179.5" y="26.5" width="16" height="80"/>
+                                        <rect key="frame" x="179.5" y="13.5" width="16" height="106.5"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="pf8-BI-dpF" firstAttribute="centerY" secondItem="blZ-xH-Qg0" secondAttribute="centerY" id="VB6-8W-VpU"/>
-                                    <constraint firstItem="pf8-BI-dpF" firstAttribute="height" secondItem="blZ-xH-Qg0" secondAttribute="height" multiplier="0.6" id="Xgx-Dc-QV8"/>
+                                    <constraint firstItem="pf8-BI-dpF" firstAttribute="height" secondItem="blZ-xH-Qg0" secondAttribute="height" multiplier="0.8" id="Xgx-Dc-QV8"/>
                                     <constraint firstItem="pf8-BI-dpF" firstAttribute="centerX" secondItem="blZ-xH-Qg0" secondAttribute="centerX" id="koy-lh-9OK"/>
                                 </constraints>
                             </view>
@@ -71,7 +71,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -108,7 +108,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -137,7 +137,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="loginView" destination="52V-ja-KRu" eventType="touchUpInside" id="QDW-he-70t"/>
+                                                    <action selector="loginView:" destination="52V-ja-KRu" eventType="touchUpInside" id="zQz-iD-POB"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có tài khoản? Đăng ký" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvA-Qj-6lt">
@@ -207,16 +207,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sD2-i2-F3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="CeC-bh-8NL" userLabel="Register">
                     <connections>
-                        <segue destination="xN4-k9-NuF" kind="show" id="jAC-Uk-eSd"/>
+                        <segue destination="xN4-k9-NuF" kind="show" id="cKx-OR-167"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1120.8" y="152.47376311844079"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="mgF-db-Kku">
             <objects>
-                <viewController id="xN4-k9-NuF" customClass="LoginViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc_register_view" id="xN4-k9-NuF" customClass="RegisterViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WNR-Ed-QQk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,21 +225,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPt-HX-8wc" userLabel="ViewLogo">
-                                <rect key="frame" x="0.0" y="20" width="375" height="26.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_hien" translatesAutoresizingMaskIntoConstraints="NO" id="H0m-Nl-Yf9">
-                                        <rect key="frame" x="179.5" y="5.5" width="16" height="16"/>
+                                        <rect key="frame" x="179.5" y="2" width="16" height="16"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="H0m-Nl-Yf9" firstAttribute="centerX" secondItem="zPt-HX-8wc" secondAttribute="centerX" id="LSb-Sr-xUA"/>
-                                    <constraint firstItem="H0m-Nl-Yf9" firstAttribute="height" secondItem="zPt-HX-8wc" secondAttribute="height" multiplier="0.6" id="UJO-WZ-je3"/>
+                                    <constraint firstItem="H0m-Nl-Yf9" firstAttribute="height" secondItem="zPt-HX-8wc" secondAttribute="height" multiplier="0.8" id="UJO-WZ-je3"/>
                                     <constraint firstItem="H0m-Nl-Yf9" firstAttribute="centerY" secondItem="zPt-HX-8wc" secondAttribute="centerY" id="rSv-PL-erm"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRY-P7-qO7" customClass="CustomView" customModule="HocVanChiHien" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="46.5" width="300" height="442"/>
+                                <rect key="frame" x="37.5" y="40" width="300" height="442"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hPp-N6-dOj">
                                         <rect key="frame" x="16" y="16" width="268" height="410"/>
@@ -274,7 +274,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -311,7 +311,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="name"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -348,7 +348,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -385,7 +385,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -422,7 +422,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -451,7 +451,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="loginView" destination="xN4-k9-NuF" eventType="touchUpInside" id="d3d-rl-RO9"/>
+                                                    <action selector="registerNewAccount:" destination="xN4-k9-NuF" eventType="touchUpInside" id="ONt-V0-eoa"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã có tài khoản? Đăng nhập" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw3-Bf-CkT">
@@ -511,14 +511,17 @@
                         <viewLayoutGuide key="safeArea" id="rjn-Ud-sAz"/>
                     </view>
                     <connections>
-                        <outlet property="tfPassword" destination="RhJ-eT-U4b" id="Kui-CJ-ilN"/>
-                        <outlet property="tfUserName" destination="0l1-Mb-LMX" id="TxB-8T-RZk"/>
+                        <outlet property="tfComfirmPass" destination="jUb-av-ggQ" id="Xi8-cU-b2u"/>
+                        <outlet property="tfName" destination="RhJ-eT-U4b" id="I61-dj-xbl"/>
+                        <outlet property="tfPass" destination="EaK-gS-n58" id="0wx-od-Rcb"/>
+                        <outlet property="tfPhone" destination="ndf-Ea-ZN1" id="19F-PW-waz"/>
+                        <outlet property="tfUsername" destination="0l1-Mb-LMX" id="nES-CM-Hre"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sy2-eE-UUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="LvN-ol-CMC" userLabel="Login">
                     <connections>
-                        <segue destination="sw3-Hn-wTc" kind="show" id="Wko-0f-Ygr"/>
+                        <segue destination="52V-ja-KRu" kind="show" id="hGQ-Ft-bVI"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -547,6 +550,10 @@
         <image name="ic_pass" width="36" height="36"/>
         <image name="ic_phone" width="36" height="36"/>
         <image name="ic_username" width="36" height="36"/>
-        <image name="logo_hien" width="850" height="371"/>
+        <image name="logo_hien" width="425" height="185.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cKx-OR-167"/>
+        <segue reference="hGQ-Ft-bVI"/>
+    </inferredMetricsTieBreakers>
 </document>

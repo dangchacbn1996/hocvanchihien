@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UserInfoModel : NSObject, Decodable {
+public class ModelUserInfo : NSObject, Decodable {
     var audioPermission : [String]?
     var name : String?
     var phone : String?
