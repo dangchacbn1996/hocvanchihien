@@ -12,19 +12,13 @@ import Alamofire
 
 @objc protocol APIManagerProtocol {
     func apiOnDidFail(mess : String)
-    @objc optional func apiOnGetUserInfoDone(data : UserInfoModel)
+    @objc optional func apiOnGetUserInfoDone(data : ModelUserInfo)
+    @objc optional func apiOnUpdateAuthInfoDone(data : ModelUpdateAuthInfo)
+    @objc optional func apiOnGetAudioListDone(data : ModelAudioFreeList)
 }
 
 public class APIManager {
     static func getUserInfo(callBack: APIManagerProtocol, userID: String) {
-        
-//        let param = RequestManager.loadData(group: "B",
-//                                            user: user,
-//                                            session: sid,
-//                                            type: "cursor",
-//                                            cmd: "GetAllBankOnline",
-//                                            p1: "", p2: "", p3: "", p4: "")
-        
         Alamofire.request(API.apiCore + API.apiGetUserInfo,
                           method: HTTPMethod.post,
                           parameters: nil,
@@ -34,9 +28,54 @@ public class APIManager {
                 response in
                 switch response.result {
                 case .success:
-                    readData(callBack: callBack, data: response.data!, modelType: UserInfoModel.self, completion: { (Decodable) -> (Void) in
+                    readData(callBack: callBack, data: response.data!, modelType: ModelUserInfo.self, completion: { (Decodable) -> (Void) in
                         callBack.apiOnGetUserInfoDone!(data : Decodable)
                     })
+                case .failure:
+                    callBack.apiOnDidFail(mess: "Error: \(String(describing: response.description))")
+                }
+        }
+    }
+    
+    static func updateAuthData(callBack: APIManagerProtocol, userID: String, name : String, phone : String) {
+        let param = ["userID" : userID,
+                     "userName" : name,
+                     "userPhone" : phone]
+        Alamofire.request(API.apiCore + API.apiCreateNewAuth,
+                          method: HTTPMethod.post,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: param)
+            .responseJSON{
+                response in
+                switch response.result {
+                case .success:
+                    readData(callBack: callBack, data: response.data!, modelType: ModelUpdateAuthInfo.self, completion: { (Decodable) -> (Void) in
+                        callBack.apiOnUpdateAuthInfoDone!(data : Decodable)
+                    })
+                case .failure:
+                    callBack.apiOnDidFail(mess: "Error: \(String(describing: response.description))")
+                }
+        }
+    }
+    
+    static func getAudioList(callBack: APIManagerProtocol) {
+        Alamofire.request(API.apiCore + API.apiGetAudioList,
+                          method: HTTPMethod.post,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: [:])
+            .responseJSON{
+                response in
+                switch response.result {
+                case .success:
+                    do {
+                        let responseEx = try JSONDecoder().decode([DataAudioFreeList].self, from: response.data!)
+                        callBack.apiOnGetAudioListDone?(data: ModelAudioFreeList(data: responseEx))
+                    } catch let error {
+                        print("Error: Decode: \(error)")
+                        callBack.apiOnDidFail(mess: "Error: Có lỗi xảy ra")
+                    }
                 case .failure:
                     callBack.apiOnDidFail(mess: "Error: \(String(describing: response.description))")
                 }
@@ -56,7 +95,8 @@ extension APIManager {
         do {
             let responseEx = try JSONDecoder().decode(modelType, from: data)
             completion(responseEx)
-        } catch {
+        } catch let error {
+            print("Error: Decode: \(error)")
             callBack.apiOnDidFail(mess: "Error: Có lỗi xảy ra")
         }
     }

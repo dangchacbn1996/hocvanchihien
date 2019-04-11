@@ -10,6 +10,11 @@ import UIKit
 
 struct Constant {
     static let storyMain = "Main"
+    static let storyLogin = "Login"
+    struct idLoginViewController {
+        static let vcLogin = "vc_login_view"
+        static let vcRegister = "vc_register_view"
+    }
     struct idViewController {
         static let vcListWeb = "idListBoxWebViewVC"
         static let vcDetail = "detailContentVC"

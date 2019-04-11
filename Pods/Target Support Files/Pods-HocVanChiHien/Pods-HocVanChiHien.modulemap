@@ -1,0 +1,6 @@
+framework module Pods_HocVanChiHien {
+  umbrella header "Pods-HocVanChiHien-umbrella.h"
+
+  export *
+  module * { export * }
+}

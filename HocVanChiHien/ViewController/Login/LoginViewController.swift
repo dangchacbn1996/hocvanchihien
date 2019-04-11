@@ -12,14 +12,19 @@ import FirebaseAuth
 class LoginViewController: UIViewController, APIManagerProtocol{
     func apiOnDidFail(mess: String) {
         Toast.shared.makeToast(string: mess, inView: self.view)
+        Loading.sharedInstance.dismiss()
     }
     
-    func apiOnGetUserInfoDone(data: UserInfoModel) {
+    func apiOnGetUserInfoDone(data: ModelUserInfo) {
         print("DataLogin: \(data.audioPermission)")
         print("DataLogin: \(data.name)")
         print("DataLogin: \(data.phone)")
-        let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcMain)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        APIManager.getAudioList(callBack: self)
+    }
+    
+    func apiOnGetAudioListDone(data: ModelAudioFreeList) {
+        DataManager.instance.listAudio = data
+        enterMain()
     }
     
     @IBOutlet weak var tfUserName : UITextField!
@@ -31,24 +36,36 @@ class LoginViewController: UIViewController, APIManagerProtocol{
         tfPassword.text = "dangchac"
     }
     
+    func enterMain() {
+        let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcMain)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
     @IBAction func loginView(_ button : UIButton){
         self.view.endEditing(true)
+        Loading.sharedInstance.show(in: self.view)
         let email = tfUserName.text ?? ""
         let password = tfPassword.text ?? ""
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
-            guard let strongSelf = self else {
+            guard self != nil else {
                 Toast.shared.makeToast(string: "Sai tài khoản!", inView: self!.view)
+                Loading.sharedInstance.dismiss()
                 return
             }
             guard error == nil else {
-                print("AccInfo: \(error?.localizedDescription)")
-                Toast.shared.makeToast(string: error?.localizedDescription ?? "", inView: self!.view)
+                let errorCode = (error as NSError?)?.code
+                print("AccInfo: \(errorCode) | \(error!.localizedDescription ?? "")")
+                Loading.sharedInstance.dismiss()
+                Toast.shared.makeToast(string: errorCode == nil ? error!.localizedDescription : FirebaseConstant.checkCodeError(code: errorCode!), inView: self!.view)
                 return
             }
             if let userInfo = user?.user {
                 print("AccInfo: \(userInfo.uid)")
                 print("AccInfo: \(userInfo.email)")
                 print("AccInfo: -----------------")
+                DataManager.instance.userID = userInfo.uid ?? ""
+                DataManager.instance.userEmail = userInfo.email ?? ""
                 APIManager.getUserInfo(callBack: self!, userID: userInfo.uid)
             }
         }

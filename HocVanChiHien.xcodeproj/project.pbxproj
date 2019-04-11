@@ -20,9 +20,17 @@
 		5347AF3F225C7BE500D0AA06 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */; };
 		5347AF41225C8A1300D0AA06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */; };
 		5347AF43225CA47900D0AA06 /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347AF42225CA47900D0AA06 /* AudioStream.swift */; };
+		5349362C225F156F00854EB3 /* ModelUpdateAuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349362B225F156F00854EB3 /* ModelUpdateAuthInfo.swift */; };
+		5349362E225F173500854EB3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349362D225F173500854EB3 /* RegisterViewController.swift */; };
+		53493630225F23F700854EB3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349362F225F23F700854EB3 /* DataManager.swift */; };
+		53493632225F252B00854EB3 /* ModelAudioFreeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53493631225F252B00854EB3 /* ModelAudioFreeList.swift */; };
+		53493635225F3E3800854EB3 /* AudioFreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53493634225F3E3800854EB3 /* AudioFreeViewController.swift */; };
+		5349363F225F448100854EB3 /* AudioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349363D225F448100854EB3 /* AudioTableViewCell.swift */; };
+		53493640225F448100854EB3 /* AudioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5349363E225F448100854EB3 /* AudioTableViewCell.xib */; };
+		53493643225F46A800854EB3 /* ImageViewextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53493642225F46A800854EB3 /* ImageViewextension.swift */; };
 		53A12FB5225DE9A700B15195 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB4225DE9A700B15195 /* API.swift */; };
 		53A12FB7225DEA2400B15195 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB6225DEA2400B15195 /* APIManager.swift */; };
-		53A12FBA225DEAC300B15195 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB9225DEAC300B15195 /* UserInfoModel.swift */; };
+		53A12FBA225DEAC300B15195 /* ModelUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */; };
 		819B78D8D0FE9FC164E46355 /* Pods_HocVanChiHien.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */; };
 		BAC876D30C9DDB58476DCFFE /* Pods_HocVanChiHienTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C2BFC53DE5FCD0F455F264 /* Pods_HocVanChiHienTests.framework */; };
 		DCAC6E3BE3CF8F5B05E0D1B7 /* Pods_HocVanChiHienUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B58F9D6F6FCEBEC48E42F6F /* Pods_HocVanChiHienUITests.framework */; };
@@ -84,9 +92,17 @@
 		5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5347AF42225CA47900D0AA06 /* AudioStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStream.swift; sourceTree = "<group>"; };
+		5349362B225F156F00854EB3 /* ModelUpdateAuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUpdateAuthInfo.swift; sourceTree = "<group>"; };
+		5349362D225F173500854EB3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5349362F225F23F700854EB3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		53493631225F252B00854EB3 /* ModelAudioFreeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAudioFreeList.swift; sourceTree = "<group>"; };
+		53493634225F3E3800854EB3 /* AudioFreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFreeViewController.swift; sourceTree = "<group>"; };
+		5349363D225F448100854EB3 /* AudioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewCell.swift; sourceTree = "<group>"; };
+		5349363E225F448100854EB3 /* AudioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioTableViewCell.xib; sourceTree = "<group>"; };
+		53493642225F46A800854EB3 /* ImageViewextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewextension.swift; sourceTree = "<group>"; };
 		53A12FB4225DE9A700B15195 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		53A12FB6225DEA2400B15195 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		53A12FB9225DEAC300B15195 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUserInfo.swift; sourceTree = "<group>"; };
 		6E5C038FE9B00F8FFD65DF90 /* Pods-HocVanChiHienTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienTests.debug.xcconfig"; path = "Target Support Files/Pods-HocVanChiHienTests/Pods-HocVanChiHienTests.debug.xcconfig"; sourceTree = "<group>"; };
 		733F6FE7DB727561DBA3B2D4 /* Pods-HocVanChiHienTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HocVanChiHienTests/Pods-HocVanChiHienTests.release.xcconfig"; sourceTree = "<group>"; };
 		805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HocVanChiHien.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +169,7 @@
 		5336902422521A0700A0DA3B /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				53493641225F469700854EB3 /* Extensioon */,
 				F09B3BE62253C77500C2ACD9 /* Constant.swift */,
 				5336902522521A0700A0DA3B /* Utilitis */,
 				5336903B22521A0700A0DA3B /* Views */,
@@ -185,6 +202,32 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		53493633225F3E2000854EB3 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				53493636225F3E9F00854EB3 /* Cell */,
+				53493634225F3E3800854EB3 /* AudioFreeViewController.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		53493636225F3E9F00854EB3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5349363D225F448100854EB3 /* AudioTableViewCell.swift */,
+				5349363E225F448100854EB3 /* AudioTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		53493641225F469700854EB3 /* Extensioon */ = {
+			isa = PBXGroup;
+			children = (
+				53493642225F46A800854EB3 /* ImageViewextension.swift */,
+			);
+			path = Extensioon;
+			sourceTree = "<group>";
+		};
 		53A12FB3225DE98400B15195 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +235,7 @@
 				F04CCBEA224FE80100503F84 /* JSContruct.swift */,
 				53A12FB4225DE9A700B15195 /* API.swift */,
 				53A12FB6225DEA2400B15195 /* APIManager.swift */,
+				5349362F225F23F700854EB3 /* DataManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -199,7 +243,9 @@
 		53A12FB8225DEAB000B15195 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				53A12FB9225DEAC300B15195 /* UserInfoModel.swift */,
+				53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */,
+				5349362B225F156F00854EB3 /* ModelUpdateAuthInfo.swift */,
+				53493631225F252B00854EB3 /* ModelAudioFreeList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +292,7 @@
 		F02E04A7225CF8BF003D9FCE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				53493633225F3E2000854EB3 /* Audio */,
 				F04CCBBE224FE07600503F84 /* MainViewController.swift */,
 				F0597E19225107DE0058CA31 /* DetailContentViewController.swift */,
 				F0597E1B22510A0E0058CA31 /* WebViewController.swift */,
@@ -260,8 +307,9 @@
 		F02E04AA225CFAC7003D9FCE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F02E04AB225CFAD5003D9FCE /* LoginViewController.swift */,
 				F0482338225D02470086F9A5 /* FirebaseConstant.swift */,
+				F02E04AB225CFAD5003D9FCE /* LoginViewController.swift */,
+				5349362D225F173500854EB3 /* RegisterViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -436,6 +484,7 @@
 				F04CCBC4224FE07800503F84 /* Assets.xcassets in Resources */,
 				F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */,
 				F04CCBC2224FE07700503F84 /* Main.storyboard in Resources */,
+				53493640225F448100854EB3 /* AudioTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,11 +595,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53493630225F23F700854EB3 /* DataManager.swift in Sources */,
 				5336906322521A0700A0DA3B /* CustomButton.swift in Sources */,
+				53493635225F3E3800854EB3 /* AudioFreeViewController.swift in Sources */,
 				F04CCBBF224FE07600503F84 /* MainViewController.swift in Sources */,
+				53493643225F46A800854EB3 /* ImageViewextension.swift in Sources */,
 				5347AF43225CA47900D0AA06 /* AudioStream.swift in Sources */,
 				5336904E22521A0700A0DA3B /* ConvertHelper.swift in Sources */,
 				5336907022521BC200A0DA3B /* CustomView.swift in Sources */,
+				5349363F225F448100854EB3 /* AudioTableViewCell.swift in Sources */,
+				53493632225F252B00854EB3 /* ModelAudioFreeList.swift in Sources */,
 				F04CCBEB224FE80100503F84 /* JSContruct.swift in Sources */,
 				F0482339225D02470086F9A5 /* FirebaseConstant.swift in Sources */,
 				F09B3BE122539C7F00C2ACD9 /* SavedListPosts.swift in Sources */,
@@ -568,7 +622,9 @@
 				F024C02022525C2F007C0887 /* ActionMenuViewController.swift in Sources */,
 				5336905122521A0700A0DA3B /* Toast.swift in Sources */,
 				F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */,
-				53A12FBA225DEAC300B15195 /* UserInfoModel.swift in Sources */,
+				5349362C225F156F00854EB3 /* ModelUpdateAuthInfo.swift in Sources */,
+				5349362E225F173500854EB3 /* RegisterViewController.swift in Sources */,
+				53A12FBA225DEAC300B15195 /* ModelUserInfo.swift in Sources */,
 				53A12FB7225DEA2400B15195 /* APIManager.swift in Sources */,
 				53A12FB5225DE9A700B15195 /* API.swift in Sources */,
 				F09B3BE52253A6D500C2ACD9 /* ListWebViewElementsViewController.swift in Sources */,
