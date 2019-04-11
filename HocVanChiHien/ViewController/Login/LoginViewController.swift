@@ -27,8 +27,8 @@ class LoginViewController: UIViewController, APIManagerProtocol{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tfUserName.text = "Học văn chị Hiên ^^"
-//        tfPassword.text = "dangchac"
+        tfUserName.text = "dangchacbn1996@gmail.com"
+        tfPassword.text = "dangchac"
     }
     
     @IBAction func loginView(_ button : UIButton){
