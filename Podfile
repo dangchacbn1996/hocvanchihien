@@ -19,6 +19,8 @@ pod 'Alamofire', '~> 4.7'
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
+  pod 'RAMAnimatedTabBarController'
+  pod 'BubbleTransition', '~> 3.2.0'
 
   post_install do |installer|
       installer.pods_project.targets.each do |target|

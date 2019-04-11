@@ -20,6 +20,9 @@ struct Constant {
         static let vcDetail = "detailContentVC"
         static let vcSaved = "vcSavedList"
         static let vcMain = "main_view_controller"
+        struct idAudioTab {
+            static let vcListFree = "vc_list_audio_free"
+        }
     }
     
     struct AddressInfo {

@@ -49,6 +49,8 @@
 		F04CCBEB224FE80100503F84 /* JSContruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CCBEA224FE80100503F84 /* JSContruct.swift */; };
 		F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E19225107DE0058CA31 /* DetailContentViewController.swift */; };
 		F0597E1C22510A0E0058CA31 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E1B22510A0E0058CA31 /* WebViewController.swift */; };
+		F07F3017225F961F004FB615 /* MainAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F3016225F961F004FB615 /* MainAudioViewController.swift */; };
+		F07F301A225F9C5D004FB615 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F3019225F9C5D004FB615 /* MainTabBarViewController.swift */; };
 		F09B3BE122539C7F00C2ACD9 /* SavedListPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */; };
 		F09B3BE52253A6D500C2ACD9 /* ListWebViewElementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */; };
 		F09B3BE72253C77500C2ACD9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B3BE62253C77500C2ACD9 /* Constant.swift */; };
@@ -132,6 +134,8 @@
 		F04CCBEA224FE80100503F84 /* JSContruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSContruct.swift; sourceTree = "<group>"; };
 		F0597E19225107DE0058CA31 /* DetailContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentViewController.swift; sourceTree = "<group>"; };
 		F0597E1B22510A0E0058CA31 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F07F3016225F961F004FB615 /* MainAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioViewController.swift; sourceTree = "<group>"; };
+		F07F3019225F9C5D004FB615 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedListPosts.swift; sourceTree = "<group>"; };
 		F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWebViewElementsViewController.swift; sourceTree = "<group>"; };
 		F09B3BE62253C77500C2ACD9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 			children = (
 				53493636225F3E9F00854EB3 /* Cell */,
 				53493634225F3E3800854EB3 /* AudioFreeViewController.swift */,
+				F07F3016225F961F004FB615 /* MainAudioViewController.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -294,12 +299,10 @@
 			children = (
 				53493633225F3E2000854EB3 /* Audio */,
 				F04CCBBE224FE07600503F84 /* MainViewController.swift */,
-				F0597E19225107DE0058CA31 /* DetailContentViewController.swift */,
-				F0597E1B22510A0E0058CA31 /* WebViewController.swift */,
+				F07F3018225F9C39004FB615 /* TinTuc */,
 				F024C01F22525C2F007C0887 /* ActionMenuViewController.swift */,
-				F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */,
-				F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */,
 				5347AF42225CA47900D0AA06 /* AudioStream.swift */,
+				F07F3019225F9C5D004FB615 /* MainTabBarViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -369,6 +372,17 @@
 				F04CCBDE224FE07900503F84 /* Info.plist */,
 			);
 			path = HocVanChiHienUITests;
+			sourceTree = "<group>";
+		};
+		F07F3018225F9C39004FB615 /* TinTuc */ = {
+			isa = PBXGroup;
+			children = (
+				F0597E19225107DE0058CA31 /* DetailContentViewController.swift */,
+				F0597E1B22510A0E0058CA31 /* WebViewController.swift */,
+				F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */,
+				F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */,
+			);
+			path = TinTuc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -605,6 +619,8 @@
 				5336907022521BC200A0DA3B /* CustomView.swift in Sources */,
 				5349363F225F448100854EB3 /* AudioTableViewCell.swift in Sources */,
 				53493632225F252B00854EB3 /* ModelAudioFreeList.swift in Sources */,
+				F07F301A225F9C5D004FB615 /* MainTabBarViewController.swift in Sources */,
+				F07F3017225F961F004FB615 /* MainAudioViewController.swift in Sources */,
 				F04CCBEB224FE80100503F84 /* JSContruct.swift in Sources */,
 				F0482339225D02470086F9A5 /* FirebaseConstant.swift in Sources */,
 				F09B3BE122539C7F00C2ACD9 /* SavedListPosts.swift in Sources */,

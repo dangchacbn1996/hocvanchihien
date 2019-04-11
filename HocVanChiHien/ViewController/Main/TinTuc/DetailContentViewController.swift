@@ -18,19 +18,20 @@ class DetailContentViewController : WebViewController {
     
     override func viewDidLoad() {
         initWKWebView(view: webViewContainer)
-        if (data.url == nil) {
-            Toast.shared.makeToastNotification(mess: "Bài viết chưa được lưu lại. Vui lòng bật mạng lên nhé!", inView: self.view)
-        } else {
-            let fileURL = data.url ?? URL(string: "")!
-            do {
-                let html = try String(contentsOf: fileURL, encoding: .utf8)
-                print("Read back text: \(html)")
-                wkWebView.loadHTMLString(html , baseURL: nil)
-            }
-            catch {
-                print("failed with error: \(error)")
-            }
-        }
+//        if (data.url == nil) {
+//            Toast.shared.makeToastNotification(mess: "Bài viết chưa được lưu lại. Vui lòng bật mạng lên nhé!", inView: self.view)
+//        } else {
+//            let fileURL = data.url ?? URL(string: "")!
+//            do {
+//                let html = try String(contentsOf: fileURL, encoding: .utf8)
+//                print("Read back text: \(html)")
+//                wkWebView.loadHTMLString(html , baseURL: nil)
+//            }
+//            catch {
+//                print("failed with error: \(error)")
+//            }
+//        }
+        loadPage(urlString: data?.href ?? "", partialContentQuerySelector: ".detailContent")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

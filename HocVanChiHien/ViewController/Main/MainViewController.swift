@@ -18,7 +18,7 @@ class MainViewController : UIViewController, ActionMenuParent{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLeftMenu()
+//        setLeftMenu()
         tfSearch.addTarget(self, action: #selector(searchItem(_:)), for: UIControl.Event.editingChanged)
         showViewController(viewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idListBoxWebViewVC"), title: "TRANG CHỦ")
     }
