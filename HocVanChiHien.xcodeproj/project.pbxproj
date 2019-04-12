@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53115A542260660C007EBC2F /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53115A532260660C007EBC2F /* AudioPlayerViewController.swift */; };
+		53115A5722608C5F007EBC2F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53115A5622608C5F007EBC2F /* AudioManager.swift */; };
 		5336904E22521A0700A0DA3B /* ConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336902622521A0700A0DA3B /* ConvertHelper.swift */; };
 		5336904F22521A0700A0DA3B /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336902722521A0700A0DA3B /* Loading.swift */; };
 		5336905022521A0700A0DA3B /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336902822521A0700A0DA3B /* DatePickerDialog.swift */; };
@@ -81,6 +83,8 @@
 		4B73E231283E5D91EF8FF5DD /* Pods-HocVanChiHien.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHien.release.xcconfig"; path = "Target Support Files/Pods-HocVanChiHien/Pods-HocVanChiHien.release.xcconfig"; sourceTree = "<group>"; };
 		4FEF33F2A1CBEF7D5C56CB30 /* Pods-HocVanChiHien.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHien.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HocVanChiHien/Pods-HocVanChiHien.debug.xcconfig"; sourceTree = "<group>"; };
 		52027F65A843481667C15A1C /* Pods-HocVanChiHien.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHien.release.xcconfig"; path = "Pods/Target Support Files/Pods-HocVanChiHien/Pods-HocVanChiHien.release.xcconfig"; sourceTree = "<group>"; };
+		53115A532260660C007EBC2F /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		53115A5622608C5F007EBC2F /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		5336902622521A0700A0DA3B /* ConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertHelper.swift; sourceTree = "<group>"; };
 		5336902722521A0700A0DA3B /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		5336902822521A0700A0DA3B /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
@@ -170,6 +174,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53115A5522608C4E007EBC2F /* AudioManager */ = {
+			isa = PBXGroup;
+			children = (
+				53115A5622608C5F007EBC2F /* AudioManager.swift */,
+			);
+			path = AudioManager;
+			sourceTree = "<group>";
+		};
 		5336902422521A0700A0DA3B /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +224,7 @@
 				53493636225F3E9F00854EB3 /* Cell */,
 				53493634225F3E3800854EB3 /* AudioFreeViewController.swift */,
 				F07F3016225F961F004FB615 /* MainAudioViewController.swift */,
+				53115A532260660C007EBC2F /* AudioPlayerViewController.swift */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -342,6 +355,7 @@
 		F04CCBBB224FE07600503F84 /* HocVanChiHien */ = {
 			isa = PBXGroup;
 			children = (
+				53115A5522608C4E007EBC2F /* AudioManager */,
 				53A12FB3225DE98400B15195 /* Network */,
 				F02E04A6225CF89F003D9FCE /* ViewController */,
 				F04CCBBC224FE07600503F84 /* AppDelegate.swift */,
@@ -611,12 +625,14 @@
 			files = (
 				53493630225F23F700854EB3 /* DataManager.swift in Sources */,
 				5336906322521A0700A0DA3B /* CustomButton.swift in Sources */,
+				53115A5722608C5F007EBC2F /* AudioManager.swift in Sources */,
 				53493635225F3E3800854EB3 /* AudioFreeViewController.swift in Sources */,
 				F04CCBBF224FE07600503F84 /* MainViewController.swift in Sources */,
 				53493643225F46A800854EB3 /* ImageViewextension.swift in Sources */,
 				5347AF43225CA47900D0AA06 /* AudioStream.swift in Sources */,
 				5336904E22521A0700A0DA3B /* ConvertHelper.swift in Sources */,
 				5336907022521BC200A0DA3B /* CustomView.swift in Sources */,
+				53115A542260660C007EBC2F /* AudioPlayerViewController.swift in Sources */,
 				5349363F225F448100854EB3 /* AudioTableViewCell.swift in Sources */,
 				53493632225F252B00854EB3 /* ModelAudioFreeList.swift in Sources */,
 				F07F301A225F9C5D004FB615 /* MainTabBarViewController.swift in Sources */,

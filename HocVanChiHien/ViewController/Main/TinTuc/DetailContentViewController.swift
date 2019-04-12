@@ -15,23 +15,17 @@ class DetailContentViewController : WebViewController {
     var data : Option!
     @IBOutlet weak var webViewContainer : UIView!
     @IBOutlet weak var viewContainer : UIView!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
+    var bottomSpace : CGFloat = 0
     
     override func viewDidLoad() {
         initWKWebView(view: webViewContainer)
-//        if (data.url == nil) {
-//            Toast.shared.makeToastNotification(mess: "Bài viết chưa được lưu lại. Vui lòng bật mạng lên nhé!", inView: self.view)
-//        } else {
-//            let fileURL = data.url ?? URL(string: "")!
-//            do {
-//                let html = try String(contentsOf: fileURL, encoding: .utf8)
-//                print("Read back text: \(html)")
-//                wkWebView.loadHTMLString(html , baseURL: nil)
-//            }
-//            catch {
-//                print("failed with error: \(error)")
-//            }
-//        }
         loadPage(urlString: data?.href ?? "", partialContentQuerySelector: ".detailContent")
+        if (bottomSpace != 0) {
+            bottom.isActive = false
+            bottom = self.viewContainer.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -bottomSpace - 32)
+            bottom.isActive = true
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

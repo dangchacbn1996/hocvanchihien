@@ -39,6 +39,7 @@ class LoginViewController: UIViewController, APIManagerProtocol{
     func enterMain() {
         let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcMain)
         self.navigationController?.pushViewController(viewController, animated: true)
+//        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = viewController
     }
     
     

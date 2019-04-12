@@ -8,25 +8,77 @@
 
 import UIKit
 import RAMAnimatedTabBarController
+import BubbleTransition
 
-class MainTabBarViewController: UITabBarController {
+class MainTabBarViewController: UITabBarController, UIViewControllerTransitioningDelegate{
+    
+    var btn = CustomButton()
+    var startPoint = CGPoint(x: 0, y: 0)
+    let transition = BubbleTransition()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.insertSubview(btn, belowSubview: self.tabBar)
+        btn.clipsToBounds = true
+        btn.backgroundColor = UIColor(hexString: "#ef0078")
+        btn.layer.cornerRadius = 24
+        btn.setImage(UIImage(named: "ic_player")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: UIControl.State.normal)
+        btn.tintColor = UIColor.white
+        btn.alpha = 0
+        btn.isUserInteractionEnabled = false
+        
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:[button(48)]-32-|", options: NSLayoutConstraint.FormatOptions.init(rawValue: 0), metrics: nil, views: ["button" : btn]))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:[button(48)]-\(self.tabBar.bounds.height + 32)-|", options: NSLayoutConstraint.FormatOptions.init(rawValue: 0), metrics: nil, views: ["button" : btn]))
+        btn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openPlayer)))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func openPlayer(){
+        startPoint = btn.center
+        startAnim()
     }
-    */
+    
+    func startAnim(){
+        let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.idAudioTab.vcPlayer) as! AudioPlayerViewController
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.transitioningDelegate = self
+        viewController.modalPresentationStyle = .custom
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func openPlayerFromPoint(position : CGPoint) {
+        startPoint = position
+        startAnim()
+    }
+    
+//    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let controller = segue.destination
+//        controller.transitioningDelegate = self
+//        controller.modalPresentationStyle = .custom
+//    }
+    
+    // MARK: UIViewControllerTransitioningDelegate
+    
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = startPoint
+        transition.bubbleColor = UIColor(hexString: "#000000").withAlphaComponent(0.5)
+        return transition
+    }
+    
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if (btn.alpha == 0) {
+            UIView.animate(withDuration: 0.2) {
+                self.btn.alpha = 1
+            }
+        }
+        btn.isUserInteractionEnabled = true
+        transition.transitionMode = .dismiss
+        transition.startingPoint = btn.center
+        startPoint = btn.center
+        transition.bubbleColor = UIColor(hexString: "#000000").withAlphaComponent(0.5)
+        return transition
+    }
 
 }
 

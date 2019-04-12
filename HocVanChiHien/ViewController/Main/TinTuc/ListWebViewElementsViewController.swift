@@ -199,6 +199,7 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
         }
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailContentVC") as! DetailContentViewController
         viewController.data = listShow[indexPath.row - 1]
+        viewController.bottomSpace = self.tabBarController?.tabBar.frame.height ?? 0
         viewController.modalPresentationStyle = .overCurrentContext
         self.present(viewController, animated: true, completion: nil)
     }

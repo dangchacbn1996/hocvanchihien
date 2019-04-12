@@ -27,6 +27,11 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Ua-Ip-2ei" secondAttribute="height" multiplier="560/315" id="NYu-G2-11H"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chữ người tử tù" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUY-99-1A2">
                                 <rect key="frame" x="57" y="0.0" width="195.5" height="27.5"/>
@@ -34,16 +39,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OlT-VI-bUF" customClass="CustomImageView" customModule="HocVanChiHien" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Asx-7h-qim">
                                 <rect key="frame" x="260.5" y="0.0" width="27.5" height="27.5"/>
-                                <color key="tintColor" red="0.2274509804" green="0.2274509804" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6z-d1-qYe">
+                                        <rect key="frame" x="0.0" y="0.0" width="27.5" height="27.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="v6z-d1-qYe" secondAttribute="height" multiplier="1:1" id="Eow-DH-GDn"/>
+                                        </constraints>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OlT-VI-bUF" customClass="CustomImageView" customModule="HocVanChiHien" customModuleProvider="target">
+                                        <rect key="frame" x="9" y="0.0" width="18.5" height="27.5"/>
+                                        <color key="tintColor" red="0.2274509804" green="0.2274509804" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="OlT-VI-bUF" secondAttribute="height" multiplier="2:3" id="c1K-Yo-6mS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="ic_more"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="OlT-VI-bUF" secondAttribute="height" multiplier="1:1" id="c1K-Yo-6mS"/>
+                                    <constraint firstAttribute="bottom" secondItem="v6z-d1-qYe" secondAttribute="bottom" id="2ve-Sy-e5K"/>
+                                    <constraint firstAttribute="bottom" secondItem="OlT-VI-bUF" secondAttribute="bottom" id="91K-b8-F8p"/>
+                                    <constraint firstItem="v6z-d1-qYe" firstAttribute="top" secondItem="Asx-7h-qim" secondAttribute="top" id="AVi-xh-VQy"/>
+                                    <constraint firstAttribute="trailing" secondItem="OlT-VI-bUF" secondAttribute="trailing" id="G8Q-yJ-RC7"/>
+                                    <constraint firstAttribute="width" secondItem="Asx-7h-qim" secondAttribute="height" multiplier="1:1" id="Mxh-T7-PNp"/>
+                                    <constraint firstItem="OlT-VI-bUF" firstAttribute="trailing" secondItem="v6z-d1-qYe" secondAttribute="trailing" id="VIE-h9-y0O"/>
+                                    <constraint firstItem="v6z-d1-qYe" firstAttribute="leading" secondItem="Asx-7h-qim" secondAttribute="leading" id="bfB-Vg-WRp"/>
+                                    <constraint firstItem="OlT-VI-bUF" firstAttribute="top" secondItem="Asx-7h-qim" secondAttribute="top" id="zLm-xh-Kd5"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="ic_download"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
+                            </view>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -58,12 +85,13 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnMore" destination="v6z-d1-qYe" id="Vo0-X9-Jub"/>
                 <outlet property="icon" destination="9Ua-Ip-2ei" id="zDL-6g-okk"/>
                 <outlet property="lbTitle" destination="RUY-99-1A2" id="7Cu-iO-4dg"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_download" width="36" height="36"/>
+        <image name="ic_more" width="36" height="36"/>
     </resources>
 </document>

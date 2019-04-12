@@ -47,7 +47,7 @@ class SavedListPosts: UIViewController, MainSubViewController, UITableViewDelega
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Play", for: UIControl.State.normal)
         button.backgroundColor = UIColor.brown
-        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playVideo)))
+//        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playVideo)))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[button]-16-|",
                                                                    options: NSLayoutConstraint.FormatOptions.alignAllTop,
                                                                    metrics: nil,
@@ -57,42 +57,11 @@ class SavedListPosts: UIViewController, MainSubViewController, UITableViewDelega
                                                                    metrics: nil,
                                                                    views: ["button" : button]))
         
-        let storage = Storage.storage()
-        storage.reference().child("song.mp3").downloadURL { (url, error) in
-            guard error == nil else {
-                print("Firebase: \(String(describing: error))")
-                return
-            }
-            self.url = url
-            guard self.url != nil else {
-                print("Firebase: URL nil")
-                return
-            }
-            do {
-                self.data = try Data(contentsOf: self.url!)
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-                self.mediaPlayer = try AVAudioPlayer(data: self.data, fileTypeHint: AVFileType.mp3.rawValue)
-                
-            } catch let error {
-                print("Firebase:Pl \(error)")
-            }
-            print("Firebase:url \(url?.absoluteString)")
-        }
+        
     }
     
     
-    @objc func playVideo(){
-        if (mediaPlayer == nil) {
-            Toast.shared.makeToast(string: "AudioChuasansang", inView: self.view)
-            return
-        }
-        if (!mediaPlayer.isPlaying) {
-            mediaPlayer.play()
-        } else {
-            mediaPlayer.pause()
-        }
-    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listShow.listSaved.count
