@@ -66,6 +66,13 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
         loadPage(urlString: target.url?.absoluteString ?? "", partialContentQuerySelector: ".NewsEvent")
     }
     
+    func reloadInput(index : Int) {
+        self.index = index
+        self.page = 0
+        target = Constant.AddressInfo.getWebInfo(type: self.index, page: page)
+        loadPage(urlString: target.url?.absoluteString ?? "", partialContentQuerySelector: ".NewsEvent")
+    }
+    
     
     override func didFinishLoadWebview(){
         if (isSave != -1) {
@@ -199,6 +206,8 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
         }
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailContentVC") as! DetailContentViewController
         viewController.data = listShow[indexPath.row - 1]
+        //viewController.modalTransitionStyle = .flipHorizontal
+        viewController.modalTransitionStyle = .crossDissolve
         viewController.bottomSpace = self.tabBarController?.tabBar.frame.height ?? 0
         viewController.modalPresentationStyle = .overCurrentContext
         self.present(viewController, animated: true, completion: nil)

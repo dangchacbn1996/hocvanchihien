@@ -12,12 +12,16 @@ import BubbleTransition
 
 class MainTabBarViewController: UITabBarController, UIViewControllerTransitioningDelegate{
     
-    var btn = CustomButton()
+    var btn : CustomButton!
+    var origin : CGPoint!
     var startPoint = CGPoint(x: 0, y: 0)
     let transition = BubbleTransition()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        origin = CGPoint(x: self.view.frame.width - 80, y: self.view.frame.height - (self.tabBar.bounds.height + 80))
+        print("Origin: \(origin)")
+        btn = CustomButton(frame: CGRect(origin: origin, size: CGSize(width: 48, height: 48)))
         self.view.insertSubview(btn, belowSubview: self.tabBar)
         btn.clipsToBounds = true
         btn.backgroundColor = UIColor(hexString: "#ef0078")
@@ -26,15 +30,48 @@ class MainTabBarViewController: UITabBarController, UIViewControllerTransitionin
         btn.tintColor = UIColor.white
         btn.alpha = 0
         btn.isUserInteractionEnabled = false
+//        btn.addTarget(self, action: #selector(dragButton(withEvent:)), for: UIControl.Event.touchDragInside)
         
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:[button(48)]-32-|", options: NSLayoutConstraint.FormatOptions.init(rawValue: 0), metrics: nil, views: ["button" : btn]))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:[button(48)]-\(self.tabBar.bounds.height + 32)-|", options: NSLayoutConstraint.FormatOptions.init(rawValue: 0), metrics: nil, views: ["button" : btn]))
+//        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openPlayer)))
+        btn.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragButton(panGesture:))))
+    }
+    
+    @objc func dragButton(panGesture recognizer: UIPanGestureRecognizer){
+        var newPosition = recognizer.location(in: self.view)
+        if (newPosition.x < btn.frame.width / 2 + 4) {
+            newPosition.x = btn.frame.width / 2 + 4
+        }
+        if (newPosition.x > self.view.frame.width - btn.frame.width / 2 - 4) {
+            newPosition.x = self.view.frame.width - btn.frame.width / 2 - 4
+        }
+        if (newPosition.y < btn.frame.height / 2 + 4 + UIApplication.shared.statusBarFrame.height) {
+            newPosition.y = btn.frame.height / 2 + 4 + UIApplication.shared.statusBarFrame.height
+        }
+        if (newPosition.y > self.view.frame.height - (self.tabBar.bounds.height + btn.frame.height / 2 + 4)) {
+            newPosition.y = self.view.frame.height - (self.tabBar.bounds.height + btn.frame.height / 2 + 4)
+        }
+        if recognizer.state == .began {
+            btn.center = btn.center
+        } else if recognizer.state == .ended || recognizer.state == .failed || recognizer.state == .cancelled {
+            if (newPosition.x < self.view.frame.width / 2) {
+                newPosition.x = btn.frame.width / 2 + 4
+            } else {
+                newPosition.x = self.view.frame.width - btn.frame.width / 2 - 4
+            }
+            UIView.animate(withDuration: 0.2) {
+                self.btn.center = newPosition
+            }
+        } else {
+            btn.center = newPosition // set button to where finger is
+        }
     }
     
     @objc func openPlayer(){
         startPoint = btn.center
+        UIView.animate(withDuration: 0.2) {
+            self.btn.alpha = 1
+        }
         startAnim()
     }
     

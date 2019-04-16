@@ -246,6 +246,13 @@
 			path = Extensioon;
 			sourceTree = "<group>";
 		};
+		5363976F22658AFD000E5715 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		53A12FB3225DE98400B15195 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +317,7 @@
 		F02E04A7225CF8BF003D9FCE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5363976F22658AFD000E5715 /* Game */,
 				53493633225F3E2000854EB3 /* Audio */,
 				F04CCBBE224FE07600503F84 /* MainViewController.swift */,
 				F07F3018225F9C39004FB615 /* TinTuc */,

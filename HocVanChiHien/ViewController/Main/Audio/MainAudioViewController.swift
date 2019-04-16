@@ -9,13 +9,16 @@
 import UIKit
 
 class MainAudioViewController: UIViewController {
+    
+    @IBOutlet weak var viewContainer : UIView!
+//    @IBOutlet weak var
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.idAudioTab.vcListFree)
-        self.view.addSubview(viewController.view)
-        viewController.view.frame = self.view.bounds
+        self.viewContainer.addSubview(viewController.view)
+        viewController.view.frame = self.viewContainer.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewController.modalPresentationStyle = .overCurrentContext
         viewController.didMove(toParent: self)

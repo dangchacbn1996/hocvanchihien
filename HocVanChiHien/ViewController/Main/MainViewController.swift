@@ -8,24 +8,56 @@
 
 import UIKit
 import WebKit
-import SideMenu
+import DropDown
 
 class MainViewController : UIViewController, ActionMenuParent{
     
     @IBOutlet weak var lbTitle : UILabel!
     @IBOutlet weak var tfSearch : UITextField!
     @IBOutlet weak var viewContainer : UIView!
+    @IBOutlet weak var viewOption : UIView!
+    var dropList = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setLeftMenu()
+        dropList.anchorView = viewOption
+        dropList.dataSource = [Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_GIOI_THIEU, page: 0).title,
+                               Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_GOC_HOC_TAP, page: 0).title,
+                               Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_VAN_HOC_THPT, page: 0).title,
+                               Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_DE_THI_DAI_HOC, page: 0).title,
+                               Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_SACH_VAN_CHI_HIEN, page: 0).title,
+                               "DS Đã lưu"]
+        dropList.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            if (self.children.last is SavedListPosts) {
+                return
+            }
+            if (self.children.last is ListWebViewElementsViewController) {
+                if ((self.children.last as! ListWebViewElementsViewController).index == index) {
+                    return
+                }
+            }
+            self.lbTitle.text = item
+            if (index == self.dropList.dataSource.count - 1) {
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcSaved) as! SavedListPosts
+                self.showViewController(viewController: viewController, title: item)
+                return
+            }
+            let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idListBoxWebViewVC") as! ListWebViewElementsViewController
+            viewController.index = index
+            self.showViewController(viewController: viewController, title: item)
+        }
         tfSearch.addTarget(self, action: #selector(searchItem(_:)), for: UIControl.Event.editingChanged)
         showViewController(viewController: UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idListBoxWebViewVC"), title: "TRANG CHỦ")
     }
     
-    @IBAction func openMenu(){
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    @IBAction func openListOption(){
+        dropList.show()
     }
+    
+//    @IBAction func openMenu(){
+//        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+//    }
     
     @objc func searchItem(_ textField : UITextField) {
         (self.children.first as? MainSubViewController)?.searchResult(string: textField.text ?? "")
@@ -51,26 +83,6 @@ class MainViewController : UIViewController, ActionMenuParent{
             UIView.animate(withDuration: 0.1, animations: {
                 self.viewContainer.alpha = 1
             })
-        }
-    }
-    
-    func setLeftMenu(){
-        let menuLeftNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
-        if (menuLeftNavigationController.topViewController is ActionMenuViewController) {
-            (menuLeftNavigationController.topViewController as! ActionMenuViewController).parentView = self
-        }
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-        SideMenuManager.default.menuWidth = self.view.frame.width * 0.8
-        SideMenuManager.default.menuPresentMode = .menuSlideIn
-        SideMenuManager.default.menuShadowOpacity = 0.5
-        SideMenuManager.default.menuFadeStatusBar = true
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let sideMenuNavigationController = segue.destination as? ActionMenuViewController {
-            sideMenuNavigationController.parentView = self
         }
     }
 }

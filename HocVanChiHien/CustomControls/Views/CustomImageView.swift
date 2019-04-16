@@ -84,6 +84,7 @@ class CustomImageView: UIImageView {
         set (newValue) {
             if (newValue) {
                 layer.cornerRadius = self.frame.height / 2
+                self.clipsToBounds = true
             }
         } get {
             return _circleView

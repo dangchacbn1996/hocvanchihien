@@ -16,8 +16,8 @@ protocol ActionMenuParent {
 class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var avatar : CustomImageView!
     var parentView : ActionMenuParent?
-//    var listOption = ["Màn hình chính", "DS đã lưu"]
     var listOption = [String]()
     var index = 0
 
@@ -25,12 +25,12 @@ class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        listOption.append(Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_GIOI_THIEU, page: 0).title)
-        listOption.append(Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_GOC_HOC_TAP, page: 0).title)
-        listOption.append(Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_VAN_HOC_THPT, page: 0).title)
-        listOption.append(Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_DE_THI_DAI_HOC, page: 0).title)
-        listOption.append(Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_SACH_VAN_CHI_HIEN, page: 0).title)
-        listOption.append("DS Đã lưu")
+        listOption.append("Cài đặt")
+        listOption.append("Đăng xuất")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        avatar.layer.cornerRadius = 0.5 * avatar.frame.height
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
