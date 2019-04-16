@@ -40,6 +40,9 @@
 		F024C02022525C2F007C0887 /* ActionMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024C01F22525C2F007C0887 /* ActionMenuViewController.swift */; };
 		F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02E04A8225CF8D8003D9FCE /* Login.storyboard */; };
 		F02E04AC225CFAD5003D9FCE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E04AB225CFAD5003D9FCE /* LoginViewController.swift */; };
+		F045CB30226622EA0022EB1F /* CellNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045CB2E226622EA0022EB1F /* CellNewsTableViewCell.swift */; };
+		F045CB31226622EA0022EB1F /* CellNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F045CB2F226622EA0022EB1F /* CellNewsTableViewCell.xib */; };
+		F045CB332266252C0022EB1F /* DetailSavedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045CB322266252C0022EB1F /* DetailSavedPostViewController.swift */; };
 		F0482339225D02470086F9A5 /* FirebaseConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0482338225D02470086F9A5 /* FirebaseConstant.swift */; };
 		F04CCBBD224FE07600503F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CCBBC224FE07600503F84 /* AppDelegate.swift */; };
 		F04CCBBF224FE07600503F84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CCBBE224FE07600503F84 /* MainViewController.swift */; };
@@ -121,6 +124,9 @@
 		F024C01F22525C2F007C0887 /* ActionMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMenuViewController.swift; sourceTree = "<group>"; };
 		F02E04A8225CF8D8003D9FCE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F02E04AB225CFAD5003D9FCE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F045CB2E226622EA0022EB1F /* CellNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNewsTableViewCell.swift; sourceTree = "<group>"; };
+		F045CB2F226622EA0022EB1F /* CellNewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellNewsTableViewCell.xib; sourceTree = "<group>"; };
+		F045CB322266252C0022EB1F /* DetailSavedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSavedPostViewController.swift; sourceTree = "<group>"; };
 		F0482338225D02470086F9A5 /* FirebaseConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstant.swift; sourceTree = "<group>"; };
 		F04CCBB9224FE07600503F84 /* HocVanChiHien.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HocVanChiHien.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04CCBBC224FE07600503F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -338,6 +344,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		F045CB2D226622AF0022EB1F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F045CB2E226622EA0022EB1F /* CellNewsTableViewCell.swift */,
+				F045CB2F226622EA0022EB1F /* CellNewsTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F04CCBB0224FE07600503F84 = {
 			isa = PBXGroup;
 			children = (
@@ -399,10 +414,12 @@
 		F07F3018225F9C39004FB615 /* TinTuc */ = {
 			isa = PBXGroup;
 			children = (
+				F045CB2D226622AF0022EB1F /* Cell */,
 				F0597E19225107DE0058CA31 /* DetailContentViewController.swift */,
 				F0597E1B22510A0E0058CA31 /* WebViewController.swift */,
 				F09B3BE022539C7F00C2ACD9 /* SavedListPosts.swift */,
 				F09B3BE42253A6D500C2ACD9 /* ListWebViewElementsViewController.swift */,
+				F045CB322266252C0022EB1F /* DetailSavedPostViewController.swift */,
 			);
 			path = TinTuc;
 			sourceTree = "<group>";
@@ -526,6 +543,7 @@
 				F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */,
 				F04CCBC2224FE07700503F84 /* Main.storyboard in Resources */,
 				53493640225F448100854EB3 /* AudioTableViewCell.xib in Resources */,
+				F045CB31226622EA0022EB1F /* CellNewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +660,7 @@
 				53493635225F3E3800854EB3 /* AudioFreeViewController.swift in Sources */,
 				F04CCBBF224FE07600503F84 /* MainViewController.swift in Sources */,
 				53493643225F46A800854EB3 /* ImageViewextension.swift in Sources */,
+				F045CB30226622EA0022EB1F /* CellNewsTableViewCell.swift in Sources */,
 				5347AF43225CA47900D0AA06 /* AudioStream.swift in Sources */,
 				5336904E22521A0700A0DA3B /* ConvertHelper.swift in Sources */,
 				5336907022521BC200A0DA3B /* CustomView.swift in Sources */,
@@ -660,6 +679,7 @@
 				5336904F22521A0700A0DA3B /* Loading.swift in Sources */,
 				5336906222521A0700A0DA3B /* PickerView.swift in Sources */,
 				F024C01E225246A4007C0887 /* CustomImageView.swift in Sources */,
+				F045CB332266252C0022EB1F /* DetailSavedPostViewController.swift in Sources */,
 				5336905022521A0700A0DA3B /* DatePickerDialog.swift in Sources */,
 				5336907222521D6A00A0DA3B /* UIColorExtension.swift in Sources */,
 				5336906D22521A0700A0DA3B /* CustomUIButton.swift in Sources */,

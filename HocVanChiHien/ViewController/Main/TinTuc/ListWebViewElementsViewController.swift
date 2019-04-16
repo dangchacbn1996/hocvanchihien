@@ -58,6 +58,8 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+//        tableView.re
+        tableView.register(UINib(nibName: CellNewsTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: CellNewsTableViewCell.cellID)
         target = Constant.AddressInfo.getWebInfo(type: index, page: page)
         initWKWebView(view : UIView(frame: CGRect.zero))
     }
@@ -191,7 +193,7 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
             cell.selectionStyle = .none
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellOption", for: indexPath) as! CellOption
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellNewsTableViewCell.cellID, for: indexPath) as! CellNewsTableViewCell
         cell.title.text = listShow[indexPath.row - 1].title
         cell.selectionStyle = .none
         cell.content.text = listShow[indexPath.row - 1].html

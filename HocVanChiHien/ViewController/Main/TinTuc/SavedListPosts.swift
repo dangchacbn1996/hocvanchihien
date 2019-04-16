@@ -42,21 +42,30 @@ class SavedListPosts: UIViewController, MainSubViewController, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button = UIButton(frame: CGRect.zero)
-        self.view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Play", for: UIControl.State.normal)
-        button.backgroundColor = UIColor.brown
-//        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playVideo)))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[button]-16-|",
-                                                                   options: NSLayoutConstraint.FormatOptions.alignAllTop,
-                                                                   metrics: nil,
-                                                                   views: ["button" : button]))
-        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-16-[button(16)]-|",
-                                                                   options: NSLayoutConstraint.FormatOptions.alignAllLeft,
-                                                                   metrics: nil,
-                                                                   views: ["button" : button]))
-        
+        if let savedList = UserDefaults.standard.object(forKey: "list_post_saved") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedList : ListSaved = try? decoder.decode(ListSaved.self, from: savedList) {
+                self.listSaved = loadedList
+                self.listShow = listSaved
+            }
+        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: CellNewsTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: CellNewsTableViewCell.cellID)
+//        let button = UIButton(frame: CGRect.zero)
+//        self.view.addSubview(button)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.setTitle("Play", for: UIControl.State.normal)
+//        button.backgroundColor = UIColor.brown
+////        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playVideo)))
+//        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[button]-16-|",
+//                                                                   options: NSLayoutConstraint.FormatOptions.alignAllTop,
+//                                                                   metrics: nil,
+//                                                                   views: ["button" : button]))
+//        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-16-[button(16)]-|",
+//                                                                   options: NSLayoutConstraint.FormatOptions.alignAllLeft,
+//                                                                   metrics: nil,
+//                                                                   views: ["button" : button]))
         
     }
     
@@ -68,19 +77,19 @@ class SavedListPosts: UIViewController, MainSubViewController, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellSaved", for: indexPath) as! CellSaved
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellNewsTableViewCell.cellID, for: indexPath) as! CellNewsTableViewCell
         cell.title.text = listShow.listSaved[indexPath.row].title
+//        cell.content.text = listShow.listSaved[indexPath.row]
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 0) {
-            return
-        }
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailContentVC") as! DetailContentViewController
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailSavedVC") as! DetailSavedPostViewController
         viewController.data = Option(href : "", title : listSaved.listSaved[indexPath.row].title, html : "", url : listShow.listSaved[indexPath.row].url)
         viewController.modalPresentationStyle = .overCurrentContext
+        viewController.modalTransitionStyle = .crossDissolve
+        viewController.bottomSpace = self.tabBarController?.tabBar.frame.height ?? 0
         //        let file = "\(self.listOption[self.isSave].href.split(separator: "/").last ?? "").txt"
         self.present(viewController, animated: true, completion: nil)
     }

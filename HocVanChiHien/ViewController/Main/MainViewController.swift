@@ -29,19 +29,19 @@ class MainViewController : UIViewController, ActionMenuParent{
                                "DS Đã lưu"]
         dropList.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
-            if (self.children.last is SavedListPosts) {
+            self.lbTitle.text = item
+            if (index == self.dropList.dataSource.count - 1) {
+                if (self.children.last is SavedListPosts) {
+                    return
+                }
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcSaved) as! SavedListPosts
+                self.showViewController(viewController: viewController, title: item)
                 return
             }
             if (self.children.last is ListWebViewElementsViewController) {
                 if ((self.children.last as! ListWebViewElementsViewController).index == index) {
                     return
                 }
-            }
-            self.lbTitle.text = item
-            if (index == self.dropList.dataSource.count - 1) {
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcSaved) as! SavedListPosts
-                self.showViewController(viewController: viewController, title: item)
-                return
             }
             let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idListBoxWebViewVC") as! ListWebViewElementsViewController
             viewController.index = index
@@ -100,12 +100,6 @@ struct ListSaved : Codable {
     init() {
         listSaved = [OptionToSave]()
     }
-}
-
-class CellOption : UITableViewCell {
-    @IBOutlet weak var title : UILabel!
-    @IBOutlet weak var content : UILabel!
-    @IBOutlet weak var btnSave : UIButton!
 }
 
 protocol MainSubViewController {

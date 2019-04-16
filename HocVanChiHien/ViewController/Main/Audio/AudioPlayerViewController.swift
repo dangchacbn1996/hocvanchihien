@@ -18,6 +18,7 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
             let current = AudioManager.instance.mediaPlayer.currentTime
             let duration = AudioManager.instance.mediaPlayer.duration.rounded()
             self.progressView.setProgress(Float(current/duration), animated: false)
+            Loading.sharedInstance.dismiss()
             if (AudioManager.instance.mediaPlayer.isPlaying) {
                 btnPlay.setImage(UIImage(named: "ic_pause"), for: UIControl.State.normal)
             } else {
@@ -56,6 +57,7 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
     func startTimer() {
         let current = AudioManager.instance.mediaPlayer.currentTime
         let duration = AudioManager.instance.mediaPlayer.duration.rounded()
+        Loading.sharedInstance.dismiss()
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgressView), userInfo: nil, repeats: true)
         self.progressView.setProgress(Float(AudioManager.instance.mediaPlayer.currentTime/AudioManager.instance.mediaPlayer.duration), animated: false)
         self.lbDuration.text = "\(Int(duration/60)):\(Int(duration.truncatingRemainder(dividingBy: 60)))"

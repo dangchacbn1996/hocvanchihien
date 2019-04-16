@@ -30,9 +30,6 @@ class MainTabBarViewController: UITabBarController, UIViewControllerTransitionin
         btn.tintColor = UIColor.white
         btn.alpha = 0
         btn.isUserInteractionEnabled = false
-//        btn.addTarget(self, action: #selector(dragButton(withEvent:)), for: UIControl.Event.touchDragInside)
-        
-//        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openPlayer)))
         btn.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragButton(panGesture:))))
     }
