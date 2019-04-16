@@ -38,6 +38,7 @@ class AudioManager{
                 if (nextSong.audioUrl == self.audioTarget.audioUrl) {
                     delegate.reloadPlayerView()
                     delegate.startTimer()
+                    Loading.sharedInstance.dismiss()
                     return
                 }
             }
@@ -48,9 +49,12 @@ class AudioManager{
                 if let url = URL(string: audioTarget.audioUrl!) {
                     self.data = try Data(contentsOf: url)
                     try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+//                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
                     try AVAudioSession.sharedInstance().setActive(true)
+//                    UIApplication.shared.beginReceivingRemoteControlEvents()
                     self.mediaPlayer = try AVAudioPlayer(data: self.data, fileTypeHint: AVFileType.mp3.rawValue)
                     delegate.startTimer()
+                    Loading.sharedInstance.dismiss()
 //                    Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
 //                    self.progressView.setProgress(Float(self.mediaPlayer.currentTime/self.mediaPlayer.duration), animated: false)
 //                    self.duration = mediaPlayer.duration.rounded()

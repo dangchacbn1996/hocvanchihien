@@ -19,7 +19,9 @@ class AudioTableViewCell: UITableViewCell {
     func setData(data : DataAudioFreeList) {
         print("AudioURL: \(data.audioImage ?? "")")
         if (data.audioImage != nil) {
-            icon.downloaded(from: URL(string: data.audioImage!)!)
+            if let url = URL(string: data.audioImage!) {
+                icon.downloaded(from: url)
+            }
         }
         lbTitle.text = data.audioName
     }

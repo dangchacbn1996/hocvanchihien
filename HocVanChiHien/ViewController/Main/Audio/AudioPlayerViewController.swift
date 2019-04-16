@@ -54,7 +54,6 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
     }
     
     func startTimer() {
-        Loading.sharedInstance.dismiss()
         let current = AudioManager.instance.mediaPlayer.currentTime
         let duration = AudioManager.instance.mediaPlayer.duration.rounded()
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateProgressView), userInfo: nil, repeats: true)
@@ -84,6 +83,7 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
     override func viewDidLoad() {
         super.viewDidLoad()
         AudioManager.instance.delegate = self
+        Loading.sharedInstance.show(in: self.view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +91,6 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        Loading.sharedInstance.show(in: self.view)
         AudioManager.instance.loadSong()
     }
     
