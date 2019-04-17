@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SideMenu
+import FirebaseAuth
 
 protocol ActionMenuParent {
     func showViewController(viewController : UIViewController, title : String)
@@ -50,15 +50,20 @@ class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == listOption.count - 1) {
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcSaved) as! SavedListPosts
-            parentView?.showViewController(viewController: viewController, title: listOption[indexPath.row])
-            self.dismiss(animated: true, completion: nil)
-            return
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+                DataManager.instance.userInfo = nil
+                self.tabBarController?.navigationController?.popViewController(animated: true)
+                return
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
         }
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcListWeb) as! ListWebViewElementsViewController
-        viewController.index = indexPath.row
-        parentView?.showViewController(viewController: viewController, title: listOption[indexPath.row])
-        self.dismiss(animated: true, completion: nil)
+//        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcListWeb) as! ListWebViewElementsViewController
+//        viewController.index = indexPath.row
+//        parentView?.showViewController(viewController: viewController, title: listOption[indexPath.row])
+//        self.dismiss(animated: true, completion: nil)
     }
 }
 

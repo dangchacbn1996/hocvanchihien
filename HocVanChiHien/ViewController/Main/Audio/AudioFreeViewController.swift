@@ -22,10 +22,6 @@ class AudioFreeViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.register(UINib(nibName: AudioTableViewCell.CELL_IDENTIFY, bundle: nil), forCellReuseIdentifier: AudioTableViewCell.CELL_IDENTIFY)
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        lastTouch = touches.first?.location(in: self.view) ?? CGPoint(x: 0, y: 0)
-//    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 56
     }

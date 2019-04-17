@@ -19,21 +19,37 @@ class LoginViewController: UIViewController, APIManagerProtocol{
         print("DataLogin: \(data.audioPermission)")
         print("DataLogin: \(data.name)")
         print("DataLogin: \(data.phone)")
-        APIManager.getAudioList(callBack: self)
+        DataManager.instance.userInfo = data
+        if (loadDone) {
+            Loading.sharedInstance.dismiss()
+            enterMain()
+        } else {
+            loadDone = true
+        }
     }
     
     func apiOnGetAudioListDone(data: ModelAudioFreeList) {
         DataManager.instance.listAudio = data
-        enterMain()
+        if (loadDone) {
+            Loading.sharedInstance.dismiss()
+            enterMain()
+        } else {
+            loadDone = true
+        }
     }
     
     @IBOutlet weak var tfUserName : UITextField!
     @IBOutlet weak var tfPassword : UITextField!
+    var loadDone = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tfUserName.text = "dangchacbn1996@gmail.com"
         tfPassword.text = "dangchac"
+        let queue = DispatchQueue(label: "loadListFreeAudio")
+        queue.async {
+            APIManager.getAudioList(callBack: self)
+        }
     }
     
     func enterMain() {

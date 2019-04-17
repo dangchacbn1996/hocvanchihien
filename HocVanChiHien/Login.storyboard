@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="Hkv-fk-hbk">
             <objects>
-                <viewController id="52V-ja-KRu" customClass="LoginViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vc_login_view" id="52V-ja-KRu" customClass="LoginViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4XK-QU-T5e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="1120.8" y="152.47376311844079"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="mgF-db-Kku">
             <objects>
-                <viewController id="xN4-k9-NuF" sceneMemberID="viewController">
+                <viewController id="xN4-k9-NuF" customClass="RegisterViewController" customModule="HocVanChiHien" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WNR-Ed-QQk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -450,6 +450,9 @@
                                                         <real key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="registerNewAccount:" destination="xN4-k9-NuF" eventType="touchUpInside" id="V6a-oY-4VG"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã có tài khoản? Đăng nhập" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw3-Bf-CkT">
                                                 <rect key="frame" x="0.0" y="392" width="268" height="18"/>
@@ -507,6 +510,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rjn-Ud-sAz"/>
                     </view>
+                    <connections>
+                        <outlet property="tfComfirmPass" destination="jUb-av-ggQ" id="S2x-Kh-GL2"/>
+                        <outlet property="tfName" destination="RhJ-eT-U4b" id="VMg-ho-iwL"/>
+                        <outlet property="tfPass" destination="EaK-gS-n58" id="4bw-4l-Ldz"/>
+                        <outlet property="tfPhone" destination="ndf-Ea-ZN1" id="TxM-xJ-VTZ"/>
+                        <outlet property="tfUsername" destination="0l1-Mb-LMX" id="aum-wm-yFN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sy2-eE-UUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="LvN-ol-CMC" userLabel="Login">
@@ -515,7 +525,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2014" y="152"/>
+            <point key="canvasLocation" x="2023" y="152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uFB-pb-ATL">
@@ -543,6 +553,7 @@
         <image name="logo_hien" width="850" height="371"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="FMu-tS-Mlr"/>
         <segue reference="rAx-Us-7oB"/>
     </inferredMetricsTieBreakers>
 </document>

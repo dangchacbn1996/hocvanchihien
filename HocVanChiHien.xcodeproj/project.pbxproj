@@ -20,7 +20,6 @@
 		5336907022521BC200A0DA3B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336906F22521BC200A0DA3B /* CustomView.swift */; };
 		5336907222521D6A00A0DA3B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5336907122521D6A00A0DA3B /* UIColorExtension.swift */; };
 		5347AF3F225C7BE500D0AA06 /* YouTubePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */; };
-		5347AF41225C8A1300D0AA06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */; };
 		5347AF43225CA47900D0AA06 /* AudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347AF42225CA47900D0AA06 /* AudioStream.swift */; };
 		5349362C225F156F00854EB3 /* ModelUpdateAuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349362B225F156F00854EB3 /* ModelUpdateAuthInfo.swift */; };
 		5349362E225F173500854EB3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349362D225F173500854EB3 /* RegisterViewController.swift */; };
@@ -30,6 +29,7 @@
 		5349363F225F448100854EB3 /* AudioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349363D225F448100854EB3 /* AudioTableViewCell.swift */; };
 		53493640225F448100854EB3 /* AudioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5349363E225F448100854EB3 /* AudioTableViewCell.xib */; };
 		53493643225F46A800854EB3 /* ImageViewextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53493642225F46A800854EB3 /* ImageViewextension.swift */; };
+		534EEE5B22671A8800BA9AE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 534EEE5A22671A8800BA9AE6 /* GoogleService-Info.plist */; };
 		53A12FB5225DE9A700B15195 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB4225DE9A700B15195 /* API.swift */; };
 		53A12FB7225DEA2400B15195 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB6225DEA2400B15195 /* APIManager.swift */; };
 		53A12FBA225DEAC300B15195 /* ModelUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */; };
@@ -99,7 +99,6 @@
 		5336906F22521BC200A0DA3B /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		5336907122521D6A00A0DA3B /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5347AF3E225C7BE500D0AA06 /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5347AF42225CA47900D0AA06 /* AudioStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStream.swift; sourceTree = "<group>"; };
 		5349362B225F156F00854EB3 /* ModelUpdateAuthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUpdateAuthInfo.swift; sourceTree = "<group>"; };
 		5349362D225F173500854EB3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		5349363D225F448100854EB3 /* AudioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewCell.swift; sourceTree = "<group>"; };
 		5349363E225F448100854EB3 /* AudioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioTableViewCell.xib; sourceTree = "<group>"; };
 		53493642225F46A800854EB3 /* ImageViewextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewextension.swift; sourceTree = "<group>"; };
+		534EEE5A22671A8800BA9AE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53A12FB4225DE9A700B15195 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		53A12FB6225DEA2400B15195 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUserInfo.swift; sourceTree = "<group>"; };
@@ -388,7 +388,7 @@
 				F04CCBC5224FE07800503F84 /* LaunchScreen.storyboard */,
 				F02E04A8225CF8D8003D9FCE /* Login.storyboard */,
 				F04CCBC8224FE07800503F84 /* Info.plist */,
-				5347AF40225C8A1300D0AA06 /* GoogleService-Info.plist */,
+				534EEE5A22671A8800BA9AE6 /* GoogleService-Info.plist */,
 			);
 			path = HocVanChiHien;
 			sourceTree = "<group>";
@@ -538,7 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04CCBC7224FE07800503F84 /* LaunchScreen.storyboard in Resources */,
-				5347AF41225C8A1300D0AA06 /* GoogleService-Info.plist in Resources */,
+				534EEE5B22671A8800BA9AE6 /* GoogleService-Info.plist in Resources */,
 				F04CCBC4224FE07800503F84 /* Assets.xcassets in Resources */,
 				F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */,
 				F04CCBC2224FE07700503F84 /* Main.storyboard in Resources */,
