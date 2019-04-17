@@ -325,7 +325,6 @@
 			children = (
 				5363976F22658AFD000E5715 /* Game */,
 				53493633225F3E2000854EB3 /* Audio */,
-				F04CCBBE224FE07600503F84 /* MainViewController.swift */,
 				F07F3018225F9C39004FB615 /* TinTuc */,
 				F024C01F22525C2F007C0887 /* ActionMenuViewController.swift */,
 				5347AF42225CA47900D0AA06 /* AudioStream.swift */,
@@ -414,6 +413,7 @@
 		F07F3018225F9C39004FB615 /* TinTuc */ = {
 			isa = PBXGroup;
 			children = (
+				F04CCBBE224FE07600503F84 /* MainViewController.swift */,
 				F045CB2D226622AF0022EB1F /* Cell */,
 				F0597E19225107DE0058CA31 /* DetailContentViewController.swift */,
 				F0597E1B22510A0E0058CA31 /* WebViewController.swift */,
