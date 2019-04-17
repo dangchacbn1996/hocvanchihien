@@ -24,15 +24,27 @@ class RegisterViewController: UIViewController, APIManagerProtocol{
     
     func apiOnUpdateAuthInfoDone(data: ModelUpdateAuthInfo) {
         Loading.sharedInstance.dismiss()
-        let viewController = UIStoryboard(name: Constant.storyLogin, bundle: nil).instantiateViewController(withIdentifier: Constant.idLoginViewController.vcLogin)
-        self.present(viewController, animated: true) {
-            Toast.shared.makeToast(string: "Tạo tài khoản thành công rồi ^^\nThử đăng nhập lần đầu nhé", inView: viewController.view)
+//        self.dismiss(animated: true) {
+//            Toast.shared.makeToast(string: "Tạo tài khoản thành công rồi ^^\nThử đăng nhập lần đầu nhé", inView: viewController.view)
+//        }
+//        let viewController = UIStoryboard(name: Constant.storyLogin, bundle: nil).instantiateViewController(withIdentifier: Constant.idLoginViewController.vcLogin)
+//        self.present(viewController, animated: true) {
+//            Toast.shared.makeToast(string: "Tạo tài khoản thành công rồi ^^\nThử đăng nhập lần đầu nhé", inView: viewController.view)
+//        }
+        self.dismiss(animated: true) {
+            if let view = (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.view {
+                Toast.shared.makeToast(string: "Tạo tài khoản thành công rồi ^^\nThử đăng nhập lần đầu nhé", inView: view)
+            }
         }
+    }
+    
+    @IBAction func backLogin(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tfUsername.text = "dangchacbn196@gmail.com"
+        tfUsername.text = "dangchacbn1996@gmail.com"
         tfPhone.text = "0989864537"
         tfName.text = "Dang Chac"
         tfPass.text = "dangchac"

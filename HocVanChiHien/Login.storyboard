@@ -207,7 +207,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sD2-i2-F3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="CeC-bh-8NL" userLabel="Register">
                     <connections>
-                        <segue destination="xN4-k9-NuF" kind="show" id="FMu-tS-Mlr"/>
+                        <segue destination="xN4-k9-NuF" kind="presentation" id="Dqp-tR-UdW"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -521,7 +521,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sy2-eE-UUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="LvN-ol-CMC" userLabel="Login">
                     <connections>
-                        <segue destination="52V-ja-KRu" kind="show" id="rAx-Us-7oB"/>
+                        <action selector="backLogin" destination="xN4-k9-NuF" id="cdD-xW-vnp"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -552,8 +552,4 @@
         <image name="ic_username" width="36" height="36"/>
         <image name="logo_hien" width="850" height="371"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="FMu-tS-Mlr"/>
-        <segue reference="rAx-Us-7oB"/>
-    </inferredMetricsTieBreakers>
 </document>

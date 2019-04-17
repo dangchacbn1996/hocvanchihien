@@ -20,21 +20,17 @@ class LoginViewController: UIViewController, APIManagerProtocol{
         print("DataLogin: \(data.name)")
         print("DataLogin: \(data.phone)")
         DataManager.instance.userInfo = data
-        if (loadDone) {
+        if (DataManager.instance.listAudio != nil) {
             Loading.sharedInstance.dismiss()
             enterMain()
-        } else {
-            loadDone = true
         }
     }
     
     func apiOnGetAudioListDone(data: ModelAudioFreeList) {
         DataManager.instance.listAudio = data
-        if (loadDone) {
+        if (DataManager.instance.userInfo != nil) {
             Loading.sharedInstance.dismiss()
             enterMain()
-        } else {
-            loadDone = true
         }
     }
     
@@ -50,12 +46,12 @@ class LoginViewController: UIViewController, APIManagerProtocol{
         queue.async {
             APIManager.getAudioList(callBack: self)
         }
+
     }
     
     func enterMain() {
         let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcMain)
         self.navigationController?.pushViewController(viewController, animated: true)
-//        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = viewController
     }
     
     
