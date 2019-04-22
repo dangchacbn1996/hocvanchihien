@@ -72,7 +72,6 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - RAMAnimatedTabBarController (4.0.1)
   - SideMenu (5.0.3)
   - Toast-Swift (3.0.1)
   - YouTubePlayer (0.4.0)
@@ -88,7 +87,6 @@ DEPENDENCIES:
   - JGProgressHUD (~> 2.0)
   - Localize-Swift (~> 2.0)
   - M13Checkbox (~> 3.2)
-  - RAMAnimatedTabBarController
   - SideMenu
   - Toast-Swift (~> 3.0)
   - YouTubePlayer
@@ -113,7 +111,6 @@ SPEC REPOS:
     - Localize-Swift
     - M13Checkbox
     - nanopb
-    - RAMAnimatedTabBarController
     - SideMenu
     - Toast-Swift
     - YouTubePlayer
@@ -137,11 +134,10 @@ SPEC CHECKSUMS:
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   M13Checkbox: d75dca81d61c9903e7f091f32b35a3254bc97dce
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  RAMAnimatedTabBarController: 677d6f7ec7e88b1089486f4db49b0a5067e8ad1c
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 3b8d4b24caaeb9651a1a7807a709a1b22bcba55e
+PODFILE CHECKSUM: e5ae6eb36a156d90c5d0d8151535e35222884176
 
 COCOAPODS: 1.7.0.beta.3
