@@ -25,19 +25,10 @@ class MainViewController : UIViewController, ActionMenuParent{
                                Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_GOC_HOC_TAP, page: 0).title,
                                Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_VAN_HOC_THPT, page: 0).title,
                                Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_DE_THI_DAI_HOC, page: 0).title,
-                               Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_SACH_VAN_CHI_HIEN, page: 0).title,
-                               "DS Đã lưu"]
+                               Constant.AddressInfo.getWebInfo(type: Constant.AddressInfo.add_SACH_VAN_CHI_HIEN, page: 0).title]
         dropList.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self.lbTitle.text = item
-            if (index == self.dropList.dataSource.count - 1) {
-                if (self.children.last is SavedListPosts) {
-                    return
-                }
-                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcSaved) as! SavedListPosts
-                self.showViewController(viewController: viewController, title: item)
-                return
-            }
             if (self.children.last is ListWebViewElementsViewController) {
                 if ((self.children.last as! ListWebViewElementsViewController).index == index) {
                     return

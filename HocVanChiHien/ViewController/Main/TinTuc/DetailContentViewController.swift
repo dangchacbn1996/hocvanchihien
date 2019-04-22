@@ -11,7 +11,6 @@ import WebKit
 
 class DetailContentViewController : WebViewController {
     
-//    var data = Option(href : "",title : "", content : "")
     var data : Option!
     @IBOutlet weak var webViewContainer : UIView!
     @IBOutlet weak var viewContainer : UIView!

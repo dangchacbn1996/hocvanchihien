@@ -26,7 +26,8 @@ class AudioManager{
     var duration : TimeInterval = 0
     var current : TimeInterval = 0
     var loadDone = false
-    var delegate : AudioManagerDelegate!
+    var delegate : AVAudioPlayerDelegate!
+    var reloadDelegate : AudioManagerDelegate!
     var avatar = UIImage(named: "Cho")
     
     private init(){
@@ -36,8 +37,8 @@ class AudioManager{
         if (self.audioTarget != nil) {
             if (self.audioTarget.audioUrl != nil) {
                 if (nextSong.audioUrl == self.audioTarget.audioUrl) {
-                    delegate.reloadPlayerView()
-                    delegate.startTimer()
+                    reloadDelegate.reloadPlayerView()
+                    reloadDelegate.startTimer()
 //                    Loading.sharedInstance.dismiss()
                     return
                 }
@@ -51,15 +52,11 @@ class AudioManager{
                     try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
 //                    try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
                     try AVAudioSession.sharedInstance().setActive(true)
-//                    UIApplication.shared.beginReceivingRemoteControlEvents()
                     self.mediaPlayer = try AVAudioPlayer(data: self.data, fileTypeHint: AVFileType.mp3.rawValue)
-                    delegate.startTimer()
-//                    Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
-//                    self.progressView.setProgress(Float(self.mediaPlayer.currentTime/self.mediaPlayer.duration), animated: false)
-//                    self.duration = mediaPlayer.duration.rounded()
-//                    self.lbDuration.text = "\(Int(self.duration/60)):\(Int(self.duration.truncatingRemainder(dividingBy: 60)))"
-//                    Loading.sharedInstance.dismiss()
-                    delegate.playAudio()
+                    self.mediaPlayer.delegate = self.delegate
+//                    self.mediaPlayer.
+                    reloadDelegate.startTimer()
+                    reloadDelegate.playAudio()
                 }
                 
             } catch let error {
@@ -71,7 +68,7 @@ class AudioManager{
     }
     
     func playVideo(){
-        delegate.playAudio()
+        reloadDelegate.playAudio()
 //        btnPlay.setImage(mediaPlayer.isPlaying ? UIImage(named: "ic_play") : UIImage(named: "ic_pause"), for: UIControl.State.normal)
 //        if (!mediaPlayer.isPlaying) {
 //            mediaPlayer.play()

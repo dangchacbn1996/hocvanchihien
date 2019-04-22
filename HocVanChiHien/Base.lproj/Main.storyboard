@@ -372,22 +372,22 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm kiếm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wka-f8-9k6">
-                                                                <rect key="frame" x="28" y="0.0" width="169.33333333333334" height="40"/>
+                                                                <rect key="frame" x="28" y="0.0" width="243" height="40"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                                                             </textField>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-Qi-Pec">
-                                                                <rect key="frame" x="205.33333333333331" y="0.0" width="65.666666666666686" height="40"/>
+                                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-Qi-Pec">
+                                                                <rect key="frame" x="271" y="0.0" width="24" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmO-IG-n9G">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yrO-C8-gOX" customClass="CustomImageView" customModule="HocVanChiHien" customModuleProvider="target">
-                                                                        <rect key="frame" x="45.666666666666686" y="0.0" width="20" height="40"/>
+                                                                        <rect key="frame" x="4" y="0.0" width="20" height="40"/>
                                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="icon" value="ic_arrow_down"/>
@@ -708,22 +708,22 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm kiếm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwX-kj-Nhf">
-                                                                <rect key="frame" x="28" y="0.0" width="169.33333333333334" height="40"/>
+                                                                <rect key="frame" x="28" y="0.0" width="243" height="40"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                                                             </textField>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kfb-aB-Tnu">
-                                                                <rect key="frame" x="205.33333333333331" y="0.0" width="65.666666666666686" height="40"/>
+                                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kfb-aB-Tnu">
+                                                                <rect key="frame" x="271" y="0.0" width="24" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDd-Uy-yZe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-B9-Cve" customClass="CustomImageView" customModule="HocVanChiHien" customModuleProvider="target">
-                                                                        <rect key="frame" x="45.666666666666686" y="0.0" width="20" height="40"/>
+                                                                        <rect key="frame" x="4" y="0.0" width="20" height="40"/>
                                                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="icon" value="ic_arrow_down"/>
@@ -849,10 +849,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0q-1O-3xY" customClass="CustomView" customModule="HocVanChiHien" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="233" width="343" height="346"/>
+                                        <rect key="frame" x="16" y="229" width="343" height="354"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-pJ-Zb8">
-                                                <rect key="frame" x="0.0" y="16" width="343" height="314"/>
+                                                <rect key="frame" x="0.0" y="16" width="343" height="322"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gnv-Zc-Yww" userLabel="StackInfo">
                                                         <rect key="frame" x="16" y="0.0" width="311" height="183"/>
@@ -884,7 +884,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Hx-Sg-RK4">
-                                                        <rect key="frame" x="16" y="216" width="311" height="98"/>
+                                                        <rect key="frame" x="16" y="216" width="311" height="106"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khj-nq-ps9">
                                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
@@ -893,10 +893,12 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dS7-kj-yLg">
-                                                                <rect key="frame" x="0.0" y="58" width="311" height="40"/>
+                                                                <rect key="frame" x="0.0" y="58" width="311" height="48"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jM-tn-gft" customClass="CustomButton" customModule="HocVanChiHien" customModuleProvider="target">
+
                                                                         <rect key="frame" x="0.0" y="5" width="30" height="30"/>
+
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="9jM-tn-gft" secondAttribute="height" multiplier="1:1" id="7Iu-80-g39"/>
                                                                         </constraints>
@@ -909,10 +911,12 @@
                                                                         </connections>
                                                                     </button>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jsR-7S-ejT">
+
                                                                         <rect key="frame" x="38" y="8" width="273" height="24"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ghh-TI-uIx">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="273" height="18"/>
+
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11y-Q0-dGC">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="18"/>
@@ -927,7 +931,9 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pS2-5P-Qs9">
+
                                                                                         <rect key="frame" x="54.333333333333329" y="0.0" width="218.66666666666669" height="18"/>
+
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -935,14 +941,16 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rpf-Qd-5wa">
+
                                                                                 <rect key="frame" x="0.0" y="22" width="273" height="2"/>
+
                                                                                 <color key="tintColor" red="0.26274509800000001" green="0.62745098040000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </progressView>
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="Tzo-k1-yCf"/>
+                                                                    <constraint firstAttribute="height" constant="48" id="Tzo-k1-yCf"/>
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>

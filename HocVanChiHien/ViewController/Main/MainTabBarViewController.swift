@@ -9,16 +9,19 @@
 import UIKit
 import RAMAnimatedTabBarController
 import BubbleTransition
+import AVKit
 
-class MainTabBarViewController: UITabBarController, UIViewControllerTransitioningDelegate{
+class MainTabBarViewController: UITabBarController, UIViewControllerTransitioningDelegate, AVAudioPlayerDelegate{
     
     var btn : CustomButton!
     var origin : CGPoint!
     var startPoint = CGPoint(x: 0, y: 0)
     let transition = BubbleTransition()
+    var viewPlayer : AudioPlayerViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        AudioManager.instance.delegate = self
         origin = CGPoint(x: self.view.frame.width - 80, y: self.view.frame.height - (self.tabBar.bounds.height + 80))
         print("Origin: \(origin)")
         btn = CustomButton(frame: CGRect(origin: origin, size: CGSize(width: 48, height: 48)))
@@ -32,6 +35,19 @@ class MainTabBarViewController: UITabBarController, UIViewControllerTransitionin
         btn.isUserInteractionEnabled = false
         btn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openPlayer)))
         btn.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dragButton(panGesture:))))
+        
+        viewPlayer = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.idAudioTab.vcPlayer) as! AudioPlayerViewController
+        viewPlayer.modalPresentationStyle = .overCurrentContext
+        viewPlayer.transitioningDelegate = self
+        viewPlayer.modalPresentationStyle = .custom
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        self.btn.isUserInteractionEnabled = false
+        viewPlayer.dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.2) {
+            self.btn.alpha = 0
+        }
     }
     
     @objc func dragButton(panGesture recognizer: UIPanGestureRecognizer){
@@ -73,11 +89,7 @@ class MainTabBarViewController: UITabBarController, UIViewControllerTransitionin
     }
     
     func startAnim(){
-        let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.idAudioTab.vcPlayer) as! AudioPlayerViewController
-        viewController.modalPresentationStyle = .overCurrentContext
-        viewController.transitioningDelegate = self
-        viewController.modalPresentationStyle = .custom
-        self.present(viewController, animated: true, completion: nil)
+        self.present(viewPlayer, animated: true, completion: nil)
     }
     
     func openPlayerFromPoint(position : CGPoint) {

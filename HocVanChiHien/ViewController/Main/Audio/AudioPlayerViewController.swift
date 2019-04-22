@@ -84,7 +84,7 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        AudioManager.instance.delegate = self
+        AudioManager.instance.reloadDelegate = self
         Loading.sharedInstance.show(in: self.view)
     }
     
