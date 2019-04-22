@@ -52,6 +52,10 @@
 		F04CCBD2224FE07800503F84 /* HocVanChiHienTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CCBD1224FE07800503F84 /* HocVanChiHienTests.swift */; };
 		F04CCBDD224FE07900503F84 /* HocVanChiHienUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CCBDC224FE07900503F84 /* HocVanChiHienUITests.swift */; };
 		F04CCBEB224FE80100503F84 /* JSContruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CCBEA224FE80100503F84 /* JSContruct.swift */; };
+		F0537E82226C943500C65F97 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0537E80226C943500C65F97 /* QuizTableViewCell.swift */; };
+		F0537E83226C943500C65F97 /* QuizTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0537E81226C943500C65F97 /* QuizTableViewCell.xib */; };
+		F0537E85226C94E100C65F97 /* GameQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0537E84226C94E100C65F97 /* GameQuizViewController.swift */; };
+		F0537E87226C953A00C65F97 /* ModelQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0537E86226C953A00C65F97 /* ModelQuiz.swift */; };
 		F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E19225107DE0058CA31 /* DetailContentViewController.swift */; };
 		F0597E1C22510A0E0058CA31 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E1B22510A0E0058CA31 /* WebViewController.swift */; };
 		F07F3017225F961F004FB615 /* MainAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F3016225F961F004FB615 /* MainAudioViewController.swift */; };
@@ -142,6 +146,10 @@
 		F04CCBDC224FE07900503F84 /* HocVanChiHienUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HocVanChiHienUITests.swift; sourceTree = "<group>"; };
 		F04CCBDE224FE07900503F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F04CCBEA224FE80100503F84 /* JSContruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSContruct.swift; sourceTree = "<group>"; };
+		F0537E80226C943500C65F97 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
+		F0537E81226C943500C65F97 /* QuizTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizTableViewCell.xib; sourceTree = "<group>"; };
+		F0537E84226C94E100C65F97 /* GameQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameQuizViewController.swift; sourceTree = "<group>"; };
+		F0537E86226C953A00C65F97 /* ModelQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelQuiz.swift; sourceTree = "<group>"; };
 		F0597E19225107DE0058CA31 /* DetailContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentViewController.swift; sourceTree = "<group>"; };
 		F0597E1B22510A0E0058CA31 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F07F3016225F961F004FB615 /* MainAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +263,8 @@
 		5363976F22658AFD000E5715 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				F0537E7F226C941D00C65F97 /* Cell */,
+				F0537E84226C94E100C65F97 /* GameQuizViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -277,6 +287,7 @@
 				53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */,
 				5349362B225F156F00854EB3 /* ModelUpdateAuthInfo.swift */,
 				53493631225F252B00854EB3 /* ModelAudioFreeList.swift */,
+				F0537E86226C953A00C65F97 /* ModelQuiz.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -410,6 +421,15 @@
 			path = HocVanChiHienUITests;
 			sourceTree = "<group>";
 		};
+		F0537E7F226C941D00C65F97 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0537E80226C943500C65F97 /* QuizTableViewCell.swift */,
+				F0537E81226C943500C65F97 /* QuizTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F07F3018225F9C39004FB615 /* TinTuc */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +559,7 @@
 			files = (
 				F04CCBC7224FE07800503F84 /* LaunchScreen.storyboard in Resources */,
 				5347AF41225C8A1300D0AA06 /* GoogleService-Info.plist in Resources */,
+				F0537E83226C943500C65F97 /* QuizTableViewCell.xib in Resources */,
 				F04CCBC4224FE07800503F84 /* Assets.xcassets in Resources */,
 				F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */,
 				F04CCBC2224FE07700503F84 /* Main.storyboard in Resources */,
@@ -655,8 +676,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				53493630225F23F700854EB3 /* DataManager.swift in Sources */,
+				F0537E85226C94E100C65F97 /* GameQuizViewController.swift in Sources */,
 				5336906322521A0700A0DA3B /* CustomButton.swift in Sources */,
 				53115A5722608C5F007EBC2F /* AudioManager.swift in Sources */,
+				F0537E87226C953A00C65F97 /* ModelQuiz.swift in Sources */,
 				53493635225F3E3800854EB3 /* AudioFreeViewController.swift in Sources */,
 				F04CCBBF224FE07600503F84 /* MainViewController.swift in Sources */,
 				53493643225F46A800854EB3 /* ImageViewextension.swift in Sources */,
@@ -692,6 +715,7 @@
 				53A12FBA225DEAC300B15195 /* ModelUserInfo.swift in Sources */,
 				53A12FB7225DEA2400B15195 /* APIManager.swift in Sources */,
 				53A12FB5225DE9A700B15195 /* API.swift in Sources */,
+				F0537E82226C943500C65F97 /* QuizTableViewCell.swift in Sources */,
 				F09B3BE52253A6D500C2ACD9 /* ListWebViewElementsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,7 +901,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TechNi.HocVanChiHien;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DangChacPC.HocVanChiHien;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -896,7 +920,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TechNi.HocVanChiHien;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DangChacPC.HocVanChiHien;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

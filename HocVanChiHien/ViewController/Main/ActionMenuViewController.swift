@@ -17,6 +17,9 @@ class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var avatar : CustomImageView!
+    @IBOutlet weak var lbName : UILabel!
+    @IBOutlet weak var lbPhone : UILabel!
+    @IBOutlet weak var lbCredit : UILabel!
     var parentView : ActionMenuParent?
     var listOption = [String]()
     var index = 0
@@ -27,6 +30,9 @@ class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         listOption.append("Cài đặt")
         listOption.append("Đăng xuất")
+        lbName.text = DataManager.instance.userInfo?.name ?? "No name"
+        lbPhone.text = DataManager.instance.userInfo?.phone ?? ""
+        lbCredit.text = "12,000đ"
     }
     
     override func viewDidAppear(_ animated: Bool) {

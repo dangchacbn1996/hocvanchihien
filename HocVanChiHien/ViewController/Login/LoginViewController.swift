@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, APIManagerProtocol{
     }
     
     func apiOnGetUserInfoDone(data: ModelUserInfo) {
+        DataManager.instance.userInfo = data
         print("DataLogin: \(data.audioPermission)")
         print("DataLogin: \(data.name)")
         print("DataLogin: \(data.phone)")
