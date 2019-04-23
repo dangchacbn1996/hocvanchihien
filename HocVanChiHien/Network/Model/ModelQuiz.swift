@@ -20,10 +20,21 @@ public class DataQuiz : NSObject, Decodable {
     }
 }
 
-//public class SubDataAudioFreeList : NSObject, Decodable {
-//    var audioList : [DataAudioFreeList]?
-//}
+public class SubModelQuiz: NSObject, Decodable {
+    var listQues: [DataQuiz]?
+    var title : String?
+    
+    public init(title : String, listQues : [DataQuiz]) {
+        self.title = title
+        self.listQues = listQues
+    }
+}
 
 public class ModelQuiz: NSObject, Decodable {
-    var listQues: [DataQuiz]?
+    var listSubject: [SubModelQuiz]?
+    
+    public override init() {
+        listSubject = [SubModelQuiz]()
+    }
 }
+

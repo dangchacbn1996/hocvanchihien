@@ -29,7 +29,7 @@
 		5349363F225F448100854EB3 /* AudioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349363D225F448100854EB3 /* AudioTableViewCell.swift */; };
 		53493640225F448100854EB3 /* AudioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5349363E225F448100854EB3 /* AudioTableViewCell.xib */; };
 		53493643225F46A800854EB3 /* ImageViewextension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53493642225F46A800854EB3 /* ImageViewextension.swift */; };
-		535C3210226DAE7900C6D15E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 535C320F226DAE7900C6D15E /* GoogleService-Info.plist */; };
+
 		53A12FB5225DE9A700B15195 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB4225DE9A700B15195 /* API.swift */; };
 		53A12FB7225DEA2400B15195 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB6225DEA2400B15195 /* APIManager.swift */; };
 		53A12FBA225DEAC300B15195 /* ModelUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */; };
@@ -56,6 +56,9 @@
 		F0537E83226C943500C65F97 /* QuizTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0537E81226C943500C65F97 /* QuizTableViewCell.xib */; };
 		F0537E85226C94E100C65F97 /* GameQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0537E84226C94E100C65F97 /* GameQuizViewController.swift */; };
 		F0537E87226C953A00C65F97 /* ModelQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0537E86226C953A00C65F97 /* ModelQuiz.swift */; };
+		F054E561226E0773007BA7EE /* CellQuizCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054E55F226E0773007BA7EE /* CellQuizCVC.swift */; };
+		F054E562226E0773007BA7EE /* CellQuizCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F054E560226E0773007BA7EE /* CellQuizCVC.xib */; };
+		F054E564226E0BF2007BA7EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */; };
 		F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E19225107DE0058CA31 /* DetailContentViewController.swift */; };
 		F0597E1C22510A0E0058CA31 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E1B22510A0E0058CA31 /* WebViewController.swift */; };
 		F07F3017225F961F004FB615 /* MainAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F3016225F961F004FB615 /* MainAudioViewController.swift */; };
@@ -112,7 +115,7 @@
 		5349363D225F448100854EB3 /* AudioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewCell.swift; sourceTree = "<group>"; };
 		5349363E225F448100854EB3 /* AudioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioTableViewCell.xib; sourceTree = "<group>"; };
 		53493642225F46A800854EB3 /* ImageViewextension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewextension.swift; sourceTree = "<group>"; };
-		535C320F226DAE7900C6D15E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+
 		53A12FB4225DE9A700B15195 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		53A12FB6225DEA2400B15195 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUserInfo.swift; sourceTree = "<group>"; };
@@ -150,6 +153,9 @@
 		F0537E81226C943500C65F97 /* QuizTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizTableViewCell.xib; sourceTree = "<group>"; };
 		F0537E84226C94E100C65F97 /* GameQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameQuizViewController.swift; sourceTree = "<group>"; };
 		F0537E86226C953A00C65F97 /* ModelQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelQuiz.swift; sourceTree = "<group>"; };
+		F054E55F226E0773007BA7EE /* CellQuizCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellQuizCVC.swift; sourceTree = "<group>"; };
+		F054E560226E0773007BA7EE /* CellQuizCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellQuizCVC.xib; sourceTree = "<group>"; };
+		F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0597E19225107DE0058CA31 /* DetailContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentViewController.swift; sourceTree = "<group>"; };
 		F0597E1B22510A0E0058CA31 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F07F3016225F961F004FB615 /* MainAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioViewController.swift; sourceTree = "<group>"; };
@@ -399,6 +405,7 @@
 				F02E04A8225CF8D8003D9FCE /* Login.storyboard */,
 				535C320F226DAE7900C6D15E /* GoogleService-Info.plist */,
 				F04CCBC8224FE07800503F84 /* Info.plist */,
+				F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */,
 			);
 			path = HocVanChiHien;
 			sourceTree = "<group>";
@@ -426,6 +433,8 @@
 			children = (
 				F0537E80226C943500C65F97 /* QuizTableViewCell.swift */,
 				F0537E81226C943500C65F97 /* QuizTableViewCell.xib */,
+				F054E55F226E0773007BA7EE /* CellQuizCVC.swift */,
+				F054E560226E0773007BA7EE /* CellQuizCVC.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -558,11 +567,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04CCBC7224FE07800503F84 /* LaunchScreen.storyboard in Resources */,
-				535C3210226DAE7900C6D15E /* GoogleService-Info.plist in Resources */,
+
 				F0537E83226C943500C65F97 /* QuizTableViewCell.xib in Resources */,
+				F054E564226E0BF2007BA7EE /* GoogleService-Info.plist in Resources */,
 				F04CCBC4224FE07800503F84 /* Assets.xcassets in Resources */,
 				F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */,
 				F04CCBC2224FE07700503F84 /* Main.storyboard in Resources */,
+				F054E562226E0773007BA7EE /* CellQuizCVC.xib in Resources */,
 				53493640225F448100854EB3 /* AudioTableViewCell.xib in Resources */,
 				F045CB31226622EA0022EB1F /* CellNewsTableViewCell.xib in Resources */,
 			);
@@ -705,6 +716,7 @@
 				F045CB332266252C0022EB1F /* DetailSavedPostViewController.swift in Sources */,
 				5336905022521A0700A0DA3B /* DatePickerDialog.swift in Sources */,
 				5336907222521D6A00A0DA3B /* UIColorExtension.swift in Sources */,
+				F054E561226E0773007BA7EE /* CellQuizCVC.swift in Sources */,
 				5336906D22521A0700A0DA3B /* CustomUIButton.swift in Sources */,
 				F0597E1C22510A0E0058CA31 /* WebViewController.swift in Sources */,
 				F024C02022525C2F007C0887 /* ActionMenuViewController.swift in Sources */,
