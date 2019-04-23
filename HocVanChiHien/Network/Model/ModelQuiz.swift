@@ -9,14 +9,14 @@
 import Foundation
 
 public class DataQuiz : NSObject, Decodable {
-    var ques : String?
-    var listAnswer : [String]?
-    var correct : Int?
+    var quizQues : String?
+    var quizAnswer : [String]?
+    var quizCorrect : Int?
     
     public init(ques : String, listAnswer : [String], correct : Int) {
-        self.ques = ques
-        self.listAnswer = listAnswer
-        self.correct = correct
+        self.quizQues = ques
+        self.quizAnswer = listAnswer
+        self.quizCorrect = correct
     }
 }
 
