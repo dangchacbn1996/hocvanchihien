@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>376978686960-241laph7kcbs71v0uem0g80gtcpj2hr6.apps.googleusercontent.com</string>
+	<string>376978686960-81alfppkl8u7qgb4jkg66hdh204tbfo8.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.376978686960-241laph7kcbs71v0uem0g80gtcpj2hr6</string>
+	<string>com.googleusercontent.apps.376978686960-81alfppkl8u7qgb4jkg66hdh204tbfo8</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAX6w5yOJOl-eIkNEvlouFXXXaJ1cG3wF4</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.TechNi.HocVanChiHien</string>
+	<string>com.vpbs.smartpro</string>
 	<key>PROJECT_ID</key>
 	<string>hocvanchihien-802fe</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:376978686960:ios:ac82627efed591cd</string>
+	<string>1:376978686960:ios:f7c4e2582f98e5bc</string>
 	<key>DATABASE_URL</key>
 	<string>https://hocvanchihien-802fe.firebaseio.com</string>
 </dict>
