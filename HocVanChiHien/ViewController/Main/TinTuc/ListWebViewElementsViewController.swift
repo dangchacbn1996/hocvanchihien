@@ -65,6 +65,7 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        Loading.sharedInstance.show(in: self.view)
         loadPage(urlString: target.url?.absoluteString ?? "", partialContentQuerySelector: ".NewsEvent")
     }
     
@@ -72,6 +73,7 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
         self.index = index
         self.page = 0
         target = Constant.AddressInfo.getWebInfo(type: self.index, page: page)
+        Loading.sharedInstance.show(in: self.view)
         loadPage(urlString: target.url?.absoluteString ?? "", partialContentQuerySelector: ".NewsEvent")
     }
     
@@ -120,9 +122,11 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
             }
             return
         }
+        
         wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent').length;") {(result, error) in
             guard error == nil else {
                 print("HTMLErr: \(error!)")
+                Loading.sharedInstance.dismiss()
                 return
             }
             print("HTMLEvaC: \(String(describing: result!))")
@@ -136,30 +140,33 @@ class ListWebViewElementsViewController: WebViewController, MainSubViewControlle
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[0].children[\(JSContruct.BoxNewsEvent.EventTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4ContainTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4SubA)].href;", completionHandler: { (result, error) in
                         self.listOption[lastIndex + index].href = "\(result ?? "")"
                         if (index == amount - 1) {
+                            Loading.sharedInstance.dismiss()
                             self.tableView.reloadData()
                         }
                     })
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)].children[0].children[\(JSContruct.BoxNewsEvent.EventTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4ContainTitle)].children[\(JSContruct.BoxNewsEvent.EventTitleSub.h4SubA)].title;", completionHandler: { (result, error) in
                         self.listOption[lastIndex + index].title = "\(result ?? "")"
                         if (index == amount - 1) {
+                            Loading.sharedInstance.dismiss()
                             self.search()
                         }
                     })
                     self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)]\(JSContruct.BoxNewsEvent.getContent)", completionHandler: { (result, error) in
-                        if error != nil {
-                            self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)]\(JSContruct.BoxNewsEvent.getHomePageContent)", completionHandler: { (result, error) in
+                        if error != nil { self.wkWebView.evaluateJavaScript("document.getElementsByClassName('BoxNewsEvent')[\(index)]\(JSContruct.BoxNewsEvent.getHomePageContent)", completionHandler: { (result, error) in
                                 if error != nil {
                                     self.listOption[lastIndex + index].html = ""
                                 } else {
                                     self.listOption[lastIndex + index].html = "\(result ?? "")"
                                 }
                                 if (index == amount - 1) {
+                                    Loading.sharedInstance.dismiss()
                                     self.tableView.reloadData()
                                 }
                             })
                         } else {
                             self.listOption[lastIndex + index].html = "\(result ?? "")"
                             if (index == amount - 1) {
+                                Loading.sharedInstance.dismiss()
                                 self.tableView.reloadData()
                             }
                         }

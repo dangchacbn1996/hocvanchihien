@@ -55,6 +55,7 @@ class MainViewController : UIViewController, ActionMenuParent{
     }
     
     func showViewController(viewController : UIViewController, title : String) {
+//        Loading.sharedInstance.show(in: <#T##UIView#>)
         lbTitle.text = title
         UIView.animate(withDuration: 0.1, animations: {
             self.viewContainer.alpha = 0

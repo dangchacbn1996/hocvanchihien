@@ -22,6 +22,7 @@ class MainAudioViewController: UIViewController {
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewController.modalPresentationStyle = .overCurrentContext
         viewController.didMove(toParent: self)
+        
         self.addChild(viewController)
     }
     
