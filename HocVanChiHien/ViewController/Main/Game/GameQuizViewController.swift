@@ -8,20 +8,29 @@
 
 import UIKit
 
-class GameQuizViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listQues.listSubject?.count ?? 0
-    }
+protocol GameQuizDelegate {
+    func getQuesData() -> (ModelQuiz)
+    func openQues(index : Int)
+    func getListQues() -> (SubModelQuiz)
+    func getCurrent() -> (Int)
+    func backList()
+}
+
+class GameQuizViewController: UIViewController, GameQuizDelegate{
     
+    static let ID_Identify = "GameQuizViewController"
     
+    @IBOutlet weak var viewList : UIView!
+    @IBOutlet weak var viewContent : UIView!
+    var viewListQues : GameMainViewController!
+    var viewQuesContent : QuizContentViewController!
     var listQues = ModelQuiz()
     var current = 0
     var size : CGFloat = 0
-    
-    @IBOutlet weak var collectionView : UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        if (DataManager.instance)
         var subModel = [DataQuiz(ques : "Câu 1: Câu nào dưới đây không nói về cuộc đời của Hàn Mặc Tử?",
                                       listAnswer : ["A. Sinh năm 1912 tại huyện Phong Lộc, tỉnh Đồng Hới (nay thuộc Quảng Bình), mất năm 1940 tại Quy Nhơn."
                                         , "B. Tên khai sinh là Nguyễn Trọng Trí, làm thơ lấy các bút danh là Hàn Mặc Tử, Minh Duệ Thi, Phong Trần, Lệ Thanh."
@@ -37,77 +46,53 @@ class GameQuizViewController: UIViewController, UICollectionViewDataSource, UICo
         listQues.listSubject?.append(SubModelQuiz(title : "Đây thôn Vĩ Dạ", listQues : subModel))
         listQues.listSubject?.append(SubModelQuiz(title : "Sóng", listQues : subModel))
         
-//        tableView.register(UINib(nibName: QuizTableViewCell.NIB_NAME, bundle: nil), forCellReuseIdentifier: QuizTableViewCell.NIB_NAME)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-//        collectionView.collectionViewLayout.flow
-        collectionView.register(UINib(nibName: CellQuizCVC.NIB_NAME, bundle: nil), forCellWithReuseIdentifier: CellQuizCVC.NIB_NAME)
-//        collectionView.collectionViewLayout = self
+        viewListQues = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: GameMainViewController.ID_Identify) as! GameMainViewController
+        viewListQues.delegate = self
+        self.addChild(viewListQues)
+        self.viewList.addSubview(viewListQues.view)
+        viewListQues.view.frame = CGRect(x: 0, y: 0, width: self.viewList.frame.width, height: self.viewList.frame.height)
+        viewListQues.didMove(toParent: self)
+        
+        viewQuesContent = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: QuizContentViewController.ID_Identify) as! QuizContentViewController
+        viewQuesContent.delegate = self
+        self.addChild(viewQuesContent)
+        self.viewContent.addSubview(viewQuesContent.view)
+        viewQuesContent.view.frame = CGRect(x: 0, y: 0, width: self.viewContent.frame.width, height: self.viewContent.frame.height)
+        viewQuesContent.didMove(toParent: self)
+        viewContent.isHidden = true
+        viewContent.alpha = 0
     }
     
-    override func viewWillLayoutSubviews() {
-        size = self.collectionView.bounds.width * 0.5 - 1
+    func getQuesData() -> (ModelQuiz) {
+        return listQues
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: size, height: size)
+    func openQues(index: Int) {
+        viewContent.isHidden = false
+        UIView.animate(withDuration: 1, animations: {
+            self.viewList.alpha = 0
+            self.viewContent.alpha = 1
+        }) { (Bool) in
+            self.viewList.isHidden = true
+        }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath) as! CellQuizCVC
-//        cell.viewContainer.selec
-        Toast.shared.makeToast(string: listQues.listSubject?[indexPath.item].title ?? "Non", inView: self.view)
+    func getListQues() -> (SubModelQuiz) {
+        return (listQues.listSubject?[current])!
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellQuizCVC.NIB_NAME, for: indexPath) as! CellQuizCVC
-        cell.lbContent.text = listQues.listSubject?[indexPath.item].title ?? "NoSub"
-        return cell
+    func getCurrent() -> (Int) {
+        return current
     }
     
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let count = 1 + (listQues.listQues?[current].listAnswer?.count ?? 0)
-//        return count
-//    }
-//
-////    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-////        if (indexPath.row == 0) {
-////            return
-////        }
-////    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: QuizTableViewCell.NIB_NAME, for: indexPath) as! QuizTableViewCell
-//        cell.selectionStyle = .none
-//        if (indexPath.row == 0) {
-//            cell.lbContent.text = listQues.listQues?[current].ques ?? "Cau hoi"
-//            cell.lbContent.font = UIFont.boldSystemFont(ofSize: cell.lbContent.font.pointSize)
-//        } else {
-//            cell.lbContent.text = listQues.listQues?[current].listAnswer?[indexPath.row - 1]
-//        }
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let correct = listQues.listQues?[current].correct {
-//            if (indexPath.row == correct) {
-//                current += 1
-//                Toast.shared.makeToast(string: "Cau tra loi dung :D", inView: self.view)
-//                DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 2000)) {
-//                    if (self.current < self.listQues.listQues!.count) {
-//                        self.tableView.reloadData()
-//                    }
-//                }
-//
-//            } else {
-//                Toast.shared.makeToast(string: "Sai rồi :(", inView: self.view)
-//            }
-//        }
-//    }
-    
+    func backList() {
+        viewList.isHidden = false
+        UIView.animate(withDuration: 1, animations: {
+            self.viewList.alpha = 1
+            self.viewContent.alpha = 0
+        }) { (Bool) in
+            self.viewContent.isHidden = true
+        }
+    }
 
 }
