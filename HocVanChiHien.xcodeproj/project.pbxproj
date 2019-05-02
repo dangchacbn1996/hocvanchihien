@@ -32,7 +32,6 @@
 		53A12FB5225DE9A700B15195 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB4225DE9A700B15195 /* API.swift */; };
 		53A12FB7225DEA2400B15195 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB6225DEA2400B15195 /* APIManager.swift */; };
 		53A12FBA225DEAC300B15195 /* ModelUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */; };
-		53A1D034226F20C300979F24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A1D033226F20C300979F24 /* GoogleService-Info.plist */; };
 		819B78D8D0FE9FC164E46355 /* Pods_HocVanChiHien.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */; };
 		BAC876D30C9DDB58476DCFFE /* Pods_HocVanChiHienTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C2BFC53DE5FCD0F455F264 /* Pods_HocVanChiHienTests.framework */; };
 		DCAC6E3BE3CF8F5B05E0D1B7 /* Pods_HocVanChiHienUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B58F9D6F6FCEBEC48E42F6F /* Pods_HocVanChiHienUITests.framework */; };
@@ -42,6 +41,7 @@
 		F02E04AC225CFAD5003D9FCE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E04AB225CFAD5003D9FCE /* LoginViewController.swift */; };
 		F040F5BA22790DA200CD5386 /* QuizContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040F5B922790DA200CD5386 /* QuizContentViewController.swift */; };
 		F040F5BC22790DAF00CD5386 /* GameMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040F5BB22790DAF00CD5386 /* GameMainViewController.swift */; };
+		F040F5BF227AA8DB00CD5386 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F040F5BE227AA8DB00CD5386 /* GoogleService-Info.plist */; };
 		F045CB30226622EA0022EB1F /* CellNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045CB2E226622EA0022EB1F /* CellNewsTableViewCell.swift */; };
 		F045CB31226622EA0022EB1F /* CellNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F045CB2F226622EA0022EB1F /* CellNewsTableViewCell.xib */; };
 		F045CB332266252C0022EB1F /* DetailSavedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045CB322266252C0022EB1F /* DetailSavedPostViewController.swift */; };
@@ -61,7 +61,6 @@
 		F054E562226E0773007BA7EE /* CellQuizCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F054E560226E0773007BA7EE /* CellQuizCVC.xib */; };
 		F054E564226E0BF2007BA7EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */; };
 		F054E5782273F1B1007BA7EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F054E5772273F1B1007BA7EE /* Assets.xcassets */; };
-
 		F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E19225107DE0058CA31 /* DetailContentViewController.swift */; };
 		F0597E1C22510A0E0058CA31 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E1B22510A0E0058CA31 /* WebViewController.swift */; };
 		F07F3017225F961F004FB615 /* MainAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07F3016225F961F004FB615 /* MainAudioViewController.swift */; };
@@ -121,7 +120,6 @@
 		53A12FB4225DE9A700B15195 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		53A12FB6225DEA2400B15195 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		53A12FB9225DEAC300B15195 /* ModelUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUserInfo.swift; sourceTree = "<group>"; };
-		53A1D033226F20C300979F24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E5C038FE9B00F8FFD65DF90 /* Pods-HocVanChiHienTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienTests.debug.xcconfig"; path = "Target Support Files/Pods-HocVanChiHienTests/Pods-HocVanChiHienTests.debug.xcconfig"; sourceTree = "<group>"; };
 		733F6FE7DB727561DBA3B2D4 /* Pods-HocVanChiHienTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HocVanChiHienTests/Pods-HocVanChiHienTests.release.xcconfig"; sourceTree = "<group>"; };
 		805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HocVanChiHien.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +134,7 @@
 		F02E04AB225CFAD5003D9FCE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F040F5B922790DA200CD5386 /* QuizContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentViewController.swift; sourceTree = "<group>"; };
 		F040F5BB22790DAF00CD5386 /* GameMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMainViewController.swift; sourceTree = "<group>"; };
+		F040F5BE227AA8DB00CD5386 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F045CB2E226622EA0022EB1F /* CellNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNewsTableViewCell.swift; sourceTree = "<group>"; };
 		F045CB2F226622EA0022EB1F /* CellNewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellNewsTableViewCell.xib; sourceTree = "<group>"; };
 		F045CB322266252C0022EB1F /* DetailSavedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSavedPostViewController.swift; sourceTree = "<group>"; };
@@ -159,10 +158,8 @@
 		F0537E86226C953A00C65F97 /* ModelQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelQuiz.swift; sourceTree = "<group>"; };
 		F054E55F226E0773007BA7EE /* CellQuizCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellQuizCVC.swift; sourceTree = "<group>"; };
 		F054E560226E0773007BA7EE /* CellQuizCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellQuizCVC.xib; sourceTree = "<group>"; };
-
 		F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F054E5772273F1B1007BA7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-
 		F0597E19225107DE0058CA31 /* DetailContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentViewController.swift; sourceTree = "<group>"; };
 		F0597E1B22510A0E0058CA31 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F07F3016225F961F004FB615 /* MainAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioViewController.swift; sourceTree = "<group>"; };
@@ -369,6 +366,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		F040F5BD227AA7EC00CD5386 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		F045CB2D226622AF0022EB1F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +392,7 @@
 				F04CCBBA224FE07600503F84 /* Products */,
 				69265085BFF325644C6C8DCE /* Pods */,
 				CB18F2C7C38C54A253B23563 /* Frameworks */,
+				F040F5BD227AA7EC00CD5386 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -413,7 +419,7 @@
 				F04CCBC5224FE07800503F84 /* LaunchScreen.storyboard */,
 				F02E04A8225CF8D8003D9FCE /* Login.storyboard */,
 				F04CCBC8224FE07800503F84 /* Info.plist */,
-				53A1D033226F20C300979F24 /* GoogleService-Info.plist */,
+				F040F5BE227AA8DB00CD5386 /* GoogleService-Info.plist */,
 			);
 			path = HocVanChiHien;
 			sourceTree = "<group>";
@@ -578,10 +584,10 @@
 				F0537E83226C943500C65F97 /* QuizTableViewCell.xib in Resources */,
 				F054E564226E0BF2007BA7EE /* GoogleService-Info.plist in Resources */,
 				F054E5782273F1B1007BA7EE /* Assets.xcassets in Resources */,
-
 				F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */,
 				F04CCBC2224FE07700503F84 /* Main.storyboard in Resources */,
 				F054E562226E0773007BA7EE /* CellQuizCVC.xib in Resources */,
+				F040F5BF227AA8DB00CD5386 /* GoogleService-Info.plist in Resources */,
 				53493640225F448100854EB3 /* AudioTableViewCell.xib in Resources */,
 				F045CB31226622EA0022EB1F /* CellNewsTableViewCell.xib in Resources */,
 			);
@@ -926,7 +932,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DC.HocVanChiHien;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -945,7 +951,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DC.HocVanChiHien;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
