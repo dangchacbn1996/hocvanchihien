@@ -32,7 +32,7 @@ class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         listOption.append("Đăng xuất")
         lbName.text = DataManager.instance.userInfo?.name ?? "No name"
         lbPhone.text = DataManager.instance.userInfo?.phone ?? ""
-        lbCredit.text = "12,000đ"
+        lbCredit.text = "\(DataManager.instance.userInfo?.point ?? 0)"
     }
     
     override func viewDidAppear(_ animated: Bool) {

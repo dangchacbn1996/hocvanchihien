@@ -129,11 +129,12 @@ class MainTabBarViewController: UITabBarController, UIViewControllerTransitionin
 }
 
 //class RAMBounceAnimation : RAMItemAnimation {
-//    
+
 //    override func playAnimation(_ icon: UIImageView, textLabel: UILabel) {
 //        playBounceAnimation(icon)
 //        textLabel.textColor = UIColor.white
 //    }
+
 //    
 //    override func deselectAnimation(_ icon: UIImageView, textLabel: UILabel, defaultTextColor: UIColor, defaultIconColor: UIColor) {
 //        textLabel.textColor = defaultTextColor
@@ -149,7 +150,7 @@ class MainTabBarViewController: UITabBarController, UIViewControllerTransitionin
 //        bounceAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
 //        bounceAnimation.duration = TimeInterval(duration)
 //        bounceAnimation.calculationMode = CAAnimationCalculationMode.cubic
-//        
+
 //        icon.layer.add(bounceAnimation, forKey: "bounceAnimation")
 //    }
 //}

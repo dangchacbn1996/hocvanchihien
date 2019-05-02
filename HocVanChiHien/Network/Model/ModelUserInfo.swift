@@ -12,5 +12,7 @@ public class ModelUserInfo : NSObject, Decodable {
     var audioPermission : [String]?
     var name : String?
     var phone : String?
+    var point : Int?
+    var paymentAudio : [String]?
 }
 

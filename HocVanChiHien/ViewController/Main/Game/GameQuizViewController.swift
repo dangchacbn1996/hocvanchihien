@@ -32,6 +32,7 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
         super.viewDidLoad()
 //        if (DataManager.instance)
         var subModel = [DataQuiz(ques : "Câu 1: Câu nào dưới đây không nói về cuộc đời của Hàn Mặc Tử?",
+
                                       listAnswer : ["A. Sinh năm 1912 tại huyện Phong Lộc, tỉnh Đồng Hới (nay thuộc Quảng Bình), mất năm 1940 tại Quy Nhơn."
                                         , "B. Tên khai sinh là Nguyễn Trọng Trí, làm thơ lấy các bút danh là Hàn Mặc Tử, Minh Duệ Thi, Phong Trần, Lệ Thanh."
                                         , "C. Sinh ra trong một gia đình viên chức nghèo theo đạo Thiên Chúa, có hai năm học trung học ở trường Pe-rơ-lanh."
@@ -65,7 +66,7 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
     
     func getQuesData() -> (ModelQuiz) {
         return listQues
-    }
+     }
     
     func openQues(index: Int) {
         viewContent.isHidden = false
