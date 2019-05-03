@@ -70,9 +70,11 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
     
     func openQues(index: Int) {
         viewContent.isHidden = false
+//        viewQuesContent.lbTitle.text =
         UIView.animate(withDuration: 1, animations: {
             self.viewList.alpha = 0
             self.viewContent.alpha = 1
+            self.viewQuesContent.reloadData()
         }) { (Bool) in
             self.viewList.isHidden = true
         }

@@ -13,6 +13,7 @@ class QuizContentViewController: UIViewController, UITableViewDataSource, UITabl
     static let ID_Identify = "QuizContentViewController"
     
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var lbTitle : UILabel!
     
     var listQues : ModelQuiz!
     var delegate : GameQuizDelegate!
@@ -26,6 +27,10 @@ class QuizContentViewController: UIViewController, UITableViewDataSource, UITabl
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func goBack(){
+        delegate.backList()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -34,12 +39,10 @@ class QuizContentViewController: UIViewController, UITableViewDataSource, UITabl
         let count = 1 + (delegate.getListQues().listQues?[current].quizAnswer?.count ?? 0)
         return count
     }
-
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if (indexPath.row == 0) {
-//            return
-//        }
-//    }
+    
+    func reloadData(){
+        lbTitle.text = delegate.getQuesData().listSubject?[delegate.getCurrent()].title ?? "Chủ đề"
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuizTableViewCell.NIB_NAME, for: indexPath) as! QuizTableViewCell

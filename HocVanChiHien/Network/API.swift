@@ -9,7 +9,7 @@
 import UIKit
 
 struct API {
-    static let apiCore = "https://us-central1-hocvanchihien-802fe.cloudfunctions.net"
+    static let apiCore = "https://us-central1-hocvanchihien-ba5c7.cloudfunctions.net"
     static let apiGetUserInfo = "/getUserInfo"
     static let apiCreateNewAuth = "/createNewAuth"
     static let apiGetAudioList = "/getAudioList"

@@ -35,13 +35,13 @@
 		819B78D8D0FE9FC164E46355 /* Pods_HocVanChiHien.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805362E6B40079F7D5147958 /* Pods_HocVanChiHien.framework */; };
 		BAC876D30C9DDB58476DCFFE /* Pods_HocVanChiHienTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36C2BFC53DE5FCD0F455F264 /* Pods_HocVanChiHienTests.framework */; };
 		DCAC6E3BE3CF8F5B05E0D1B7 /* Pods_HocVanChiHienUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B58F9D6F6FCEBEC48E42F6F /* Pods_HocVanChiHienUITests.framework */; };
+		F0046E2D227B47E300354ADE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0046E2C227B47E200354ADE /* GoogleService-Info.plist */; };
 		F024C01E225246A4007C0887 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024C01D225246A4007C0887 /* CustomImageView.swift */; };
 		F024C02022525C2F007C0887 /* ActionMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024C01F22525C2F007C0887 /* ActionMenuViewController.swift */; };
 		F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02E04A8225CF8D8003D9FCE /* Login.storyboard */; };
 		F02E04AC225CFAD5003D9FCE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E04AB225CFAD5003D9FCE /* LoginViewController.swift */; };
 		F040F5BA22790DA200CD5386 /* QuizContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040F5B922790DA200CD5386 /* QuizContentViewController.swift */; };
 		F040F5BC22790DAF00CD5386 /* GameMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040F5BB22790DAF00CD5386 /* GameMainViewController.swift */; };
-		F040F5BF227AA8DB00CD5386 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F040F5BE227AA8DB00CD5386 /* GoogleService-Info.plist */; };
 		F045CB30226622EA0022EB1F /* CellNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045CB2E226622EA0022EB1F /* CellNewsTableViewCell.swift */; };
 		F045CB31226622EA0022EB1F /* CellNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F045CB2F226622EA0022EB1F /* CellNewsTableViewCell.xib */; };
 		F045CB332266252C0022EB1F /* DetailSavedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045CB322266252C0022EB1F /* DetailSavedPostViewController.swift */; };
@@ -59,7 +59,6 @@
 		F0537E87226C953A00C65F97 /* ModelQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0537E86226C953A00C65F97 /* ModelQuiz.swift */; };
 		F054E561226E0773007BA7EE /* CellQuizCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054E55F226E0773007BA7EE /* CellQuizCVC.swift */; };
 		F054E562226E0773007BA7EE /* CellQuizCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F054E560226E0773007BA7EE /* CellQuizCVC.xib */; };
-		F054E564226E0BF2007BA7EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */; };
 		F054E5782273F1B1007BA7EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F054E5772273F1B1007BA7EE /* Assets.xcassets */; };
 		F0597E1A225107DE0058CA31 /* DetailContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E19225107DE0058CA31 /* DetailContentViewController.swift */; };
 		F0597E1C22510A0E0058CA31 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0597E1B22510A0E0058CA31 /* WebViewController.swift */; };
@@ -128,13 +127,14 @@
 		CB309994393C8A2C60100619 /* Pods-HocVanChiHienUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienUITests.release.xcconfig"; path = "Target Support Files/Pods-HocVanChiHienUITests/Pods-HocVanChiHienUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF399C7C20D0DA3D83815AA5 /* Pods-HocVanChiHienUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HocVanChiHienUITests/Pods-HocVanChiHienUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E0F72BB53D6A0C9171ADD710 /* Pods-HocVanChiHienUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HocVanChiHienUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HocVanChiHienUITests/Pods-HocVanChiHienUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0046E2C227B47E200354ADE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F0046E2E227B4A8400354ADE /* HocVanChiHien.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HocVanChiHien.entitlements; sourceTree = "<group>"; };
 		F024C01D225246A4007C0887 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		F024C01F22525C2F007C0887 /* ActionMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMenuViewController.swift; sourceTree = "<group>"; };
 		F02E04A8225CF8D8003D9FCE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F02E04AB225CFAD5003D9FCE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F040F5B922790DA200CD5386 /* QuizContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentViewController.swift; sourceTree = "<group>"; };
 		F040F5BB22790DAF00CD5386 /* GameMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMainViewController.swift; sourceTree = "<group>"; };
-		F040F5BE227AA8DB00CD5386 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F045CB2E226622EA0022EB1F /* CellNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellNewsTableViewCell.swift; sourceTree = "<group>"; };
 		F045CB2F226622EA0022EB1F /* CellNewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellNewsTableViewCell.xib; sourceTree = "<group>"; };
 		F045CB322266252C0022EB1F /* DetailSavedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSavedPostViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +158,6 @@
 		F0537E86226C953A00C65F97 /* ModelQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelQuiz.swift; sourceTree = "<group>"; };
 		F054E55F226E0773007BA7EE /* CellQuizCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellQuizCVC.swift; sourceTree = "<group>"; };
 		F054E560226E0773007BA7EE /* CellQuizCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellQuizCVC.xib; sourceTree = "<group>"; };
-		F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F054E5772273F1B1007BA7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0597E19225107DE0058CA31 /* DetailContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentViewController.swift; sourceTree = "<group>"; };
 		F0597E1B22510A0E0058CA31 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -369,7 +368,6 @@
 		F040F5BD227AA7EC00CD5386 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				F054E563226E0BF2007BA7EE /* GoogleService-Info.plist */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -409,6 +407,7 @@
 		F04CCBBB224FE07600503F84 /* HocVanChiHien */ = {
 			isa = PBXGroup;
 			children = (
+				F0046E2E227B4A8400354ADE /* HocVanChiHien.entitlements */,
 				53115A5522608C4E007EBC2F /* AudioManager */,
 				53A12FB3225DE98400B15195 /* Network */,
 				F02E04A6225CF89F003D9FCE /* ViewController */,
@@ -419,7 +418,7 @@
 				F04CCBC5224FE07800503F84 /* LaunchScreen.storyboard */,
 				F02E04A8225CF8D8003D9FCE /* Login.storyboard */,
 				F04CCBC8224FE07800503F84 /* Info.plist */,
-				F040F5BE227AA8DB00CD5386 /* GoogleService-Info.plist */,
+				F0046E2C227B47E200354ADE /* GoogleService-Info.plist */,
 			);
 			path = HocVanChiHien;
 			sourceTree = "<group>";
@@ -543,6 +542,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					F04CCBCC224FE07800503F84 = {
@@ -582,12 +584,11 @@
 			files = (
 				F04CCBC7224FE07800503F84 /* LaunchScreen.storyboard in Resources */,
 				F0537E83226C943500C65F97 /* QuizTableViewCell.xib in Resources */,
-				F054E564226E0BF2007BA7EE /* GoogleService-Info.plist in Resources */,
+				F0046E2D227B47E300354ADE /* GoogleService-Info.plist in Resources */,
 				F054E5782273F1B1007BA7EE /* Assets.xcassets in Resources */,
 				F02E04A9225CF8D8003D9FCE /* Login.storyboard in Resources */,
 				F04CCBC2224FE07700503F84 /* Main.storyboard in Resources */,
 				F054E562226E0773007BA7EE /* CellQuizCVC.xib in Resources */,
-				F040F5BF227AA8DB00CD5386 /* GoogleService-Info.plist in Resources */,
 				53493640225F448100854EB3 /* AudioTableViewCell.xib in Resources */,
 				F045CB31226622EA0022EB1F /* CellNewsTableViewCell.xib in Resources */,
 			);
@@ -922,6 +923,7 @@
 			baseConfigurationReference = 4786229DE93F5B508E186CEF /* Pods-HocVanChiHien.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HocVanChiHien/HocVanChiHien.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6SH2UL982;
 				INFOPLIST_FILE = HocVanChiHien/Info.plist;
@@ -941,6 +943,7 @@
 			baseConfigurationReference = 4B73E231283E5D91EF8FF5DD /* Pods-HocVanChiHien.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HocVanChiHien/HocVanChiHien.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6SH2UL982;
 				INFOPLIST_FILE = HocVanChiHien/Info.plist;

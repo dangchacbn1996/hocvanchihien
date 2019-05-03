@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1027709766839-tt4h71cooiirqj9lv2ivsucqcj6r8889.apps.googleusercontent.com</string>
+	<string>313780749946-fdnqgf4b707o2hkjcmrfouren7mbafmh.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1027709766839-tt4h71cooiirqj9lv2ivsucqcj6r8889</string>
+	<string>com.googleusercontent.apps.313780749946-fdnqgf4b707o2hkjcmrfouren7mbafmh</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAA-Yhia2H0mXpDEyr0hcBCt7m3Sv0lsJk</string>
+	<string>AIzaSyCRdP3W0A4IMFll3ESiN1F7xsR3X1obYyM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1027709766839</string>
+	<string>313780749946</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.DC.HocVanChiHien</string>
 	<key>PROJECT_ID</key>
-	<string>hocvanchihien-d6b43</string>
+	<string>hocvanchihien-ba5c7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>hocvanchihien-d6b43.appspot.com</string>
+	<string>hocvanchihien-ba5c7.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1027709766839:ios:ae4a2a0269fe6224</string>
+	<string>1:313780749946:ios:ae4a2a0269fe6224</string>
 	<key>DATABASE_URL</key>
-	<string>https://hocvanchihien-d6b43.firebaseio.com</string>
+	<string>https://hocvanchihien-ba5c7.firebaseio.com</string>
 </dict>
 </plist>
