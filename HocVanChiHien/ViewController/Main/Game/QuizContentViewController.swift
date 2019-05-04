@@ -18,6 +18,7 @@ class QuizContentViewController: UIViewController, UITableViewDataSource, UITabl
     var listQues : ModelQuiz!
     var delegate : GameQuizDelegate!
     var current : Int = 0
+    var last = IndexPath(row: -1, section: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,9 @@ class QuizContentViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func reloadData(){
+        current = 0
         lbTitle.text = delegate.getQuesData().listSubject?[delegate.getCurrent()].title ?? "Chủ đề"
+        tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,11 +60,15 @@ class QuizContentViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! QuizTableViewCell
+        cell.viewContainer.backgroundColor = UIColor(hexString: "A5D6A7")
+        (tableView.cellForRow(at: last) as? QuizTableViewCell)?.viewContainer.backgroundColor = UIColor.white
+        last = indexPath
         if let correct = delegate.getListQues().listQues?[current].quizCorrect {
             if (indexPath.row == correct) {
                 current += 1
                 Toast.shared.makeToast(string: "Cau tra loi dung :D", inView: self.view)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 2000)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     if (self.current < self.delegate.getListQues().listQues?.count ?? 1) {
                         self.tableView.reloadData()
                     }

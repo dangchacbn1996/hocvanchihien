@@ -69,9 +69,9 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
      }
     
     func openQues(index: Int) {
+        self.current = index
         viewContent.isHidden = false
-//        viewQuesContent.lbTitle.text =
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.viewList.alpha = 0
             self.viewContent.alpha = 1
             self.viewQuesContent.reloadData()
@@ -90,7 +90,7 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
     
     func backList() {
         viewList.isHidden = false
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.viewList.alpha = 1
             self.viewContent.alpha = 0
         }) { (Bool) in

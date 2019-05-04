@@ -13,6 +13,7 @@ class QuizTableViewCell: UITableViewCell {
     static let NIB_NAME = "QuizTableViewCell"
     
     @IBOutlet weak var lbContent : UILabel!
+    @IBOutlet weak var viewContainer : CustomView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
