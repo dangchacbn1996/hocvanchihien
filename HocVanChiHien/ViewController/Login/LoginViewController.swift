@@ -46,6 +46,9 @@ class LoginViewController: UIViewController, APIManagerProtocol{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let queue = DispatchQueue(label: "loadListFreeAudio")
         queue.async {
             APIManager.getAudioList(callBack: self)

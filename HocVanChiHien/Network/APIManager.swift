@@ -96,8 +96,12 @@ public class APIManager {
                     do {
                         let responseEx = try JSONDecoder().decode(ModelQuiz.self, from: response.data!)
                         let data = Data(base64Encoded: responseEx.data ?? "")
-                        let responseQuiz = try JSONDecoder().decode([SubModelQuiz].self, from: data!)
-                        callBack.apiOnGetListQuesDone?(data: responseQuiz)
+                        if (data != nil) {
+                            let responseQuiz = try JSONDecoder().decode([SubModelQuiz].self, from: data!)
+                            callBack.apiOnGetListQuesDone?(data: responseQuiz)
+                        } else {
+                            callBack.apiOnGetListQuesDone?(data: [SubModelQuiz]())
+                        }
 //                        callBack.apiOnGetListQues?(data: ModelQuiz)
                     } catch let error {
                         print("Error: Decode: \(error)")

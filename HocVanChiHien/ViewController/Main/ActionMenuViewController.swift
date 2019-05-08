@@ -28,7 +28,7 @@ class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        listOption.append("Cài đặt")
+        listOption.append("Góp ý")
         listOption.append("Đăng xuất")
         lbName.text = DataManager.instance.userInfo?.name ?? "No name"
         lbPhone.text = DataManager.instance.userInfo?.phone ?? ""
@@ -65,6 +65,10 @@ class ActionMenuViewController: UIViewController, UITableViewDelegate, UITableVi
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
+        }
+        if (indexPath.row == 0) {
+            guard let url = URL(string: "https://docs.google.com/forms/d/1faTnSXxG-sfnpG6W3eicBw_8DZT0RTMMsDzzii5x6Rs/viewform?edit_requested=true") else { return }
+            UIApplication.shared.open(url)
         }
 //        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcListWeb) as! ListWebViewElementsViewController
 //        viewController.index = indexPath.row
