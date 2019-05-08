@@ -17,11 +17,8 @@ class LoginViewController: UIViewController, APIManagerProtocol{
     
     func apiOnGetUserInfoDone(data: ModelUserInfo) {
         DataManager.instance.userInfo = data
-        print("DataLogin: \(data.audioPermission)")
-        print("DataLogin: \(data.name)")
-        print("DataLogin: \(data.phone)")
         DataManager.instance.userInfo = data
-        if (DataManager.instance.listAudio != nil) {
+        if (DataManager.instance.listAudio != nil && DataManager.instance.listQues != nil) {
             Loading.sharedInstance.dismiss()
             enterMain()
         }
@@ -29,7 +26,15 @@ class LoginViewController: UIViewController, APIManagerProtocol{
     
     func apiOnGetAudioListDone(data: ModelAudioFreeList) {
         DataManager.instance.listAudio = data
-        if (DataManager.instance.userInfo != nil) {
+        if (DataManager.instance.userInfo != nil && DataManager.instance.listQues != nil) {
+            Loading.sharedInstance.dismiss()
+            enterMain()
+        }
+    }
+    
+    func apiOnGetListQuesDone(data : [SubModelQuiz]){
+        DataManager.instance.listQues = data
+        if (DataManager.instance.userInfo != nil && DataManager.instance.listAudio != nil) {
             Loading.sharedInstance.dismiss()
             enterMain()
         }
@@ -41,20 +46,20 @@ class LoginViewController: UIViewController, APIManagerProtocol{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tfUserName.text = "dangchacbn1996@gmail.com"
-        tfPassword.text = "dangchac"
         let queue = DispatchQueue(label: "loadListFreeAudio")
         queue.async {
             APIManager.getAudioList(callBack: self)
         }
-
+        let queueQues = DispatchQueue(label: "loadListQues")
+        queueQues.async {
+            APIManager.getListQues(callBack: self)
+        }
     }
     
     func enterMain() {
         let viewController = UIStoryboard(name: Constant.storyMain, bundle: nil).instantiateViewController(withIdentifier: Constant.idViewController.vcMain)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
     
     @IBAction func loginView(_ button : UIButton){
         self.view.endEditing(true)

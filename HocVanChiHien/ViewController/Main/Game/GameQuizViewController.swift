@@ -9,11 +9,12 @@
 import UIKit
 
 protocol GameQuizDelegate {
-    func getQuesData() -> (ModelQuiz)
+    func getQuesData() -> ([SubModelQuiz])
     func openQues(index : Int)
     func getListQues() -> (SubModelQuiz)
     func getCurrent() -> (Int)
     func backList()
+    func completeLesson()
 }
 
 class GameQuizViewController: UIViewController, GameQuizDelegate{
@@ -25,28 +26,13 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
     var viewListQues : GameMainViewController!
     var viewQuesContent : QuizContentViewController!
     var listQues = ModelQuiz()
+    var data = [SubModelQuiz]()
     var current = 0
     var size : CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if (DataManager.instance)
-        var subModel = [DataQuiz(ques : "Câu 1: Câu nào dưới đây không nói về cuộc đời của Hàn Mặc Tử?",
-
-                                      listAnswer : ["A. Sinh năm 1912 tại huyện Phong Lộc, tỉnh Đồng Hới (nay thuộc Quảng Bình), mất năm 1940 tại Quy Nhơn."
-                                        , "B. Tên khai sinh là Nguyễn Trọng Trí, làm thơ lấy các bút danh là Hàn Mặc Tử, Minh Duệ Thi, Phong Trần, Lệ Thanh."
-                                        , "C. Sinh ra trong một gia đình viên chức nghèo theo đạo Thiên Chúa, có hai năm học trung học ở trường Pe-rơ-lanh."
-                                        , "D. Tuy gặp nhiều bất hạnh trong cuộc đời nhưng Hàn Mặc Tử vẫn thể hiện niềm lạc quan đến khâm phục."],
-                                      correct : 2),
-                             DataQuiz(ques : "Câu 2: Câu nào dưới đây không nói về cuộc đời của Hàn Mặc Tử?",
-                                      listAnswer : ["A. Sinh năm 1912 tại huyện Phong Lộc, tỉnh Đồng Hới (nay thuộc Quảng Bình), mất năm 1940 tại Quy Nhơn."
-                                        , "B. Tên khai sinh là Nguyễn Trọng Trí, làm thơ lấy các bút danh là Hàn Mặc Tử, Minh Duệ Thi, Phong Trần, Lệ Thanh."
-                                        , "C. Sinh ra trong một gia đình viên chức nghèo theo đạo Thiên Chúa, có hai năm học trung học ở trường Pe-rơ-lanh."
-                                        , "D. Tuy gặp nhiều bất hạnh trong cuộc đời nhưng Hàn Mặc Tử vẫn thể hiện niềm lạc quan đến khâm phục."],
-                                      correct : 1)]
-        listQues.listSubject?.append(SubModelQuiz(title : "Đây thôn Vĩ Dạ", listQues : subModel))
-        listQues.listSubject?.append(SubModelQuiz(title : "Sóng", listQues : subModel))
-        
+        data = DataManager.instance.listQues ?? [SubModelQuiz]()
         viewListQues = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: GameMainViewController.ID_Identify) as! GameMainViewController
         viewListQues.delegate = self
         self.addChild(viewListQues)
@@ -64,8 +50,8 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
         viewContent.alpha = 0
     }
     
-    func getQuesData() -> (ModelQuiz) {
-        return listQues
+    func getQuesData() -> ([SubModelQuiz]) {
+        return data
      }
     
     func openQues(index: Int) {
@@ -81,7 +67,7 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
     }
     
     func getListQues() -> (SubModelQuiz) {
-        return (listQues.listSubject?[current])!
+        return data[current]
     }
     
     func getCurrent() -> (Int) {
@@ -96,6 +82,12 @@ class GameQuizViewController: UIViewController, GameQuizDelegate{
         }) { (Bool) in
             self.viewContent.isHidden = true
         }
+    }
+    
+    func completeLesson() {
+        backList()
+        (viewListQues.collectionView.cellForItem(at: IndexPath(item: current, section: 0)) as! CellQuizCVC).viewContainer.backgroundColor = UIColor(hexString: "A5D6A7")
+        Toast.shared.makeToast(string: "Đã hoàn thành bài học", inView: self.view)
     }
 
 }

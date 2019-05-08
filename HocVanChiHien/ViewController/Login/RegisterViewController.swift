@@ -44,11 +44,6 @@ class RegisterViewController: UIViewController, APIManagerProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tfUsername.text = "dangchacbn1996@gmail.com"
-        tfPhone.text = "0989864537"
-        tfName.text = "Dang Chac"
-        tfPass.text = "dangchac"
-        tfComfirmPass.text = "dangchac"
         // Do any additional setup after loading the view.
     }
     

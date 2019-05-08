@@ -65,6 +65,38 @@ functions.https.onRequest((request, response) => {
 
 // export const getListQues = 
 // functions.https.onRequest((request, response) => {
+//     admin.firestore().collection("quiz/data").get()
+//     .then(querySnapshot => {
+//         const result : FirebaseFirestore.DocumentData[] = [];
+//         querySnapshot.forEach(item => {
+//             result.push(item.data)
+//         })
+//         response.status(200).send(result)
+//       })
+//     .catch(error => {
+//         console.log(error)
+//         response.status(500).send(error)
+//     })
+// })
+
+export const getListQues = 
+functions.https.onRequest((request, response) => {
+    admin.firestore().collection("quiz").get()
+    .then(querySnapshot => {
+        // const result : FirebaseFirestore.DocumentData[] = [];
+        // querySnapshot.forEach(item => {
+        //     result.push(item.data())
+        // })
+        response.status(200).send(querySnapshot.docs[0].data())
+      })
+    .catch(error => {
+        console.log(error)
+        response.status(500).send(error)
+    })
+})
+
+// export const getListQues = 
+// functions.https.onRequest((request, response) => {
 //     admin.firestore().collection("quiz").listDocuments()
 //     .then(querySnapshot => {
 //         const result : FirebaseFirestore.DocumentData[] = [];

@@ -14,6 +14,7 @@ class DataManager {
     static let instance = DataManager()
     var userInfo : ModelUserInfo?
     var listAudio : ModelAudioFreeList?
+    var listQues : [SubModelQuiz]?
     
     private init(){
     }

@@ -15,6 +15,7 @@ import Alamofire
     @objc optional func apiOnGetUserInfoDone(data : ModelUserInfo)
     @objc optional func apiOnUpdateAuthInfoDone(data : ModelUpdateAuthInfo)
     @objc optional func apiOnGetAudioListDone(data : ModelAudioFreeList)
+    @objc optional func apiOnGetListQuesDone(data : [SubModelQuiz])
 }
 
 public class APIManager {
@@ -72,6 +73,32 @@ public class APIManager {
                     do {
                         let responseEx = try JSONDecoder().decode([DataAudioFreeList].self, from: response.data!)
                         callBack.apiOnGetAudioListDone?(data: ModelAudioFreeList(data: responseEx))
+                    } catch let error {
+                        print("Error: Decode: \(error)")
+                        callBack.apiOnDidFail(mess: "Error: Có lỗi xảy ra")
+                    }
+                case .failure:
+                    callBack.apiOnDidFail(mess: "Error: \(String(describing: response.description))")
+                }
+        }
+    }
+    
+    static func getListQues(callBack: APIManagerProtocol) {
+        Alamofire.request(API.apiCore + API.apiGetListQues,
+                          method: HTTPMethod.post,
+                          parameters: nil,
+                          encoding: JSONEncoding.default,
+                          headers: [:])
+            .responseJSON{
+                response in
+                switch response.result {
+                case .success:
+                    do {
+                        let responseEx = try JSONDecoder().decode(ModelQuiz.self, from: response.data!)
+                        let data = Data(base64Encoded: responseEx.data ?? "")
+                        let responseQuiz = try JSONDecoder().decode([SubModelQuiz].self, from: data!)
+                        callBack.apiOnGetListQuesDone?(data: responseQuiz)
+//                        callBack.apiOnGetListQues?(data: ModelQuiz)
                     } catch let error {
                         print("Error: Decode: \(error)")
                         callBack.apiOnDidFail(mess: "Error: Có lỗi xảy ra")

@@ -43,13 +43,14 @@ class QuizContentViewController: UIViewController, UITableViewDataSource, UITabl
     
     func reloadData(){
         current = 0
-        lbTitle.text = delegate.getQuesData().listSubject?[delegate.getCurrent()].title ?? "Chủ đề"
+        lbTitle.text = delegate.getQuesData()[delegate.getCurrent()].title ?? "Chủ đề"
         tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuizTableViewCell.NIB_NAME, for: indexPath) as! QuizTableViewCell
         cell.selectionStyle = .none
+        cell.viewContainer.backgroundColor = UIColor.white
         if (indexPath.row == 0) {
             cell.lbContent.text = delegate.getListQues().listQues?[current].quizQues ?? "Cau hoi"
             cell.lbContent.font = UIFont.boldSystemFont(ofSize: cell.lbContent.font.pointSize)
@@ -60,20 +61,22 @@ class QuizContentViewController: UIViewController, UITableViewDataSource, UITabl
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! QuizTableViewCell
-        cell.viewContainer.backgroundColor = UIColor(hexString: "A5D6A7")
-        (tableView.cellForRow(at: last) as? QuizTableViewCell)?.viewContainer.backgroundColor = UIColor.white
-        last = indexPath
         if let correct = delegate.getListQues().listQues?[current].quizCorrect {
             if (indexPath.row == correct) {
+                let cell = tableView.cellForRow(at: indexPath) as! QuizTableViewCell
+                cell.viewContainer.backgroundColor = UIColor(hexString: "A5D6A7")
                 current += 1
                 Toast.shared.makeToast(string: "Cau tra loi dung :D", inView: self.view)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     if (self.current < self.delegate.getListQues().listQues?.count ?? 1) {
                         self.tableView.reloadData()
+                    } else {
+                        self.delegate.completeLesson()
                     }
                 }
             } else {
+                let cell = tableView.cellForRow(at: indexPath) as! QuizTableViewCell
+                cell.viewContainer.backgroundColor = UIColor(hexString: "EF5350")
                 Toast.shared.makeToast(string: "Sai rồi :(", inView: self.view)
             }
         }

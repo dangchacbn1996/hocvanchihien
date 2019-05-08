@@ -36,7 +36,7 @@ class GameMainViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return delegate.getListQues().listQues?.count ?? 0
+        return delegate.getQuesData().count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -48,7 +48,7 @@ class GameMainViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellQuizCVC.NIB_NAME, for: indexPath) as! CellQuizCVC
-        cell.lbContent.text = delegate.getQuesData().listSubject?[indexPath.item].title ?? "NoSub"
+        cell.lbContent.text = delegate.getQuesData()[indexPath.item].title ?? "NoSub"
         return cell
     }
     

@@ -550,6 +550,6 @@
         <image name="ic_pass" width="36" height="36"/>
         <image name="ic_phone" width="36" height="36"/>
         <image name="ic_username" width="36" height="36"/>
-        <image name="logo_hien" width="425" height="185.5"/>
+        <image name="logo_hien" width="850" height="371"/>
     </resources>
 </document>

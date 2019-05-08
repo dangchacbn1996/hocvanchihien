@@ -31,10 +31,5 @@ public class SubModelQuiz: NSObject, Decodable {
 }
 
 public class ModelQuiz: NSObject, Decodable {
-    var listSubject: [SubModelQuiz]?
-    
-    public override init() {
-        listSubject = [SubModelQuiz]()
-    }
+    var data: String?
 }
-

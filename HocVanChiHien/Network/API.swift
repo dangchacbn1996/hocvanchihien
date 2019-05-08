@@ -13,4 +13,5 @@ struct API {
     static let apiGetUserInfo = "/getUserInfo"
     static let apiCreateNewAuth = "/createNewAuth"
     static let apiGetAudioList = "/getAudioList"
+    static let apiGetListQues = "/getListQues"
 }
