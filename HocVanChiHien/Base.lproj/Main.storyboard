@@ -691,7 +691,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ra7-hB-3fe">
-                                <rect key="frame" x="16" y="60.000000000000007" width="343" height="87.666666666666686"/>
+                                <rect key="frame" x="16" y="60" width="343" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JCa-sV-0vK">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -771,9 +771,14 @@
                                             <constraint firstItem="Yat-4N-iuQ" firstAttribute="width" secondItem="SET-Gh-jwO" secondAttribute="width" id="b8r-xA-jTZ"/>
                                             <constraint firstAttribute="height" constant="40" id="y4f-eq-1bi"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="XEl-b1-kv6"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vBe-7w-86j">
-                                        <rect key="frame" x="0.0" y="56.000000000000007" width="343" height="32.666666666666679"/>
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vBe-7w-86j">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="1"/>
                                         <segments>
                                             <segment title="Audio miễn phí"/>
                                             <segment title="Audio trả phí"/>
@@ -782,11 +787,17 @@
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hrt-dd-l7d"/>
                                     <constraint firstAttribute="width" secondItem="Ra7-hB-3fe" secondAttribute="height" multiplier="375/96" id="M1b-wS-v81"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M1b-wS-v81"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRg-XE-gl5">
-                                <rect key="frame" x="0.0" y="151.66666666666669" width="375" height="577.33333333333326"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="625"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -801,7 +812,6 @@
                             <constraint firstItem="V3S-Rc-2bm" firstAttribute="bottom" secondItem="SRg-XE-gl5" secondAttribute="bottom" id="QE2-0R-VW0"/>
                             <constraint firstItem="Ra7-hB-3fe" firstAttribute="top" secondItem="V3S-Rc-2bm" secondAttribute="top" constant="16" id="bSd-gg-P6L"/>
                             <constraint firstItem="V3S-Rc-2bm" firstAttribute="trailing" secondItem="Ra7-hB-3fe" secondAttribute="trailing" constant="16" id="bbr-fG-YQN"/>
-                            <constraint firstItem="Ra7-hB-3fe" firstAttribute="width" secondItem="Ra7-hB-3fe" secondAttribute="height" multiplier="375/96" id="g4q-Kn-crr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V3S-Rc-2bm"/>
                     </view>

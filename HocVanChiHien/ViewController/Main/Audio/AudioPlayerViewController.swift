@@ -42,7 +42,7 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
     
     func playAudio() {
         if (AudioManager.instance.mediaPlayer == nil) {
-            Toast.shared.makeToast(string: "AudioChuasansang", inView: self.view)
+            Toast.shared.makeToast(string: "Audio chưa sẵn sàng! Quay lại sau 1 lúc nhé!", inView: self.view)
             return
         }
         if (!AudioManager.instance.mediaPlayer.isPlaying) {
