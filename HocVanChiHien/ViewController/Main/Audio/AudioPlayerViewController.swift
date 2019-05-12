@@ -43,6 +43,7 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
     func playAudio() {
         if (AudioManager.instance.mediaPlayer == nil) {
             Toast.shared.makeToast(string: "Audio chưa sẵn sàng! Quay lại sau 1 lúc nhé!", inView: self.view)
+            reloadPlayerView()
             return
         }
         if (!AudioManager.instance.mediaPlayer.isPlaying) {
@@ -85,11 +86,11 @@ class AudioPlayerViewController: UIViewController, AVAudioPlayerDelegate, AudioM
     override func viewDidLoad() {
         super.viewDidLoad()
         AudioManager.instance.reloadDelegate = self
-        Loading.sharedInstance.show(in: self.view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         reloadPlayerView()
+        Loading.sharedInstance.show(in: self.view)
     }
     
     override func viewDidAppear(_ animated: Bool) {

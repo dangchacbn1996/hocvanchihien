@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import M13Checkbox
 
 class LoginViewController: UIViewController, APIManagerProtocol{
     func apiOnDidFail(mess: String) {
@@ -42,10 +43,33 @@ class LoginViewController: UIViewController, APIManagerProtocol{
     
     @IBOutlet weak var tfUserName : UITextField!
     @IBOutlet weak var tfPassword : UITextField!
+    @IBOutlet weak var viewRemember : UIView!
+    var checkBox : M13Checkbox!
     var loadDone = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkBox = M13Checkbox()
+        viewRemember.addSubview(checkBox)
+        checkBox.translatesAutoresizingMaskIntoConstraints = false
+        checkBox.centerXAnchor.constraint(equalTo: viewRemember.centerXAnchor).isActive = true
+        checkBox.centerYAnchor.constraint(equalTo: viewRemember.centerYAnchor).isActive = true
+        checkBox.widthAnchor.constraint(equalTo: viewRemember.widthAnchor).isActive = true
+        checkBox.heightAnchor.constraint(equalTo: viewRemember.heightAnchor).isActive = true
+        checkBox.boxType = .square
+        checkBox.boxLineWidth = 2
+        checkBox.checkmarkLineWidth = 2
+        if let userName = UserDefaults.standard.string(forKey: Constant.DefaultKeys.keyLastUser) {
+            tfUserName.text = userName
+        }
+        let remember = UserDefaults.standard.bool(forKey: Constant.DefaultKeys.keyRememberPass)
+        if remember {
+                checkBox.setCheckState(M13Checkbox.CheckState.checked, animated: false)
+                if let pass = UserDefaults.standard.string(forKey: Constant.DefaultKeys.keyLastPass) {
+                    tfPassword.text = pass
+                }
+//            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +81,10 @@ class LoginViewController: UIViewController, APIManagerProtocol{
         queueQues.async {
             APIManager.getListQues(callBack: self)
         }
+    }
+    
+    @IBAction func rememberPass() {
+        checkBox.toggleCheckState(true)
     }
     
     func enterMain() {
@@ -89,6 +117,14 @@ class LoginViewController: UIViewController, APIManagerProtocol{
                 DataManager.instance.userID = userInfo.uid ?? ""
                 DataManager.instance.userEmail = userInfo.email ?? ""
                 APIManager.getUserInfo(callBack: self!, userID: userInfo.uid)
+                UserDefaults.standard.set(self!.tfUserName.text!, forKey: Constant.DefaultKeys.keyLastUser)
+                if (self!.checkBox.checkState == .checked) {
+                    UserDefaults.standard.set(true, forKey: Constant.DefaultKeys.keyRememberPass)
+                    UserDefaults.standard.set(self!.tfPassword.text!, forKey: Constant.DefaultKeys.keyLastPass)
+                } else {
+                    UserDefaults.standard.set(false, forKey: Constant.DefaultKeys.keyRememberPass)
+                    UserDefaults.standard.set("", forKey: Constant.DefaultKeys.keyLastPass)
+                }
             }
         }
     }

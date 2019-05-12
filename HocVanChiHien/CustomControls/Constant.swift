@@ -26,6 +26,12 @@ struct Constant {
         }
     }
     
+    struct DefaultKeys {
+        static let keyLastUser = "hocvanchihien_last_user"
+        static let keyRememberPass = "hocvanchihien_remember_pass"
+        static let keyLastPass = "hocvanchihien_last_pass"
+    }
+    
     struct AddressInfo {
         static func getWebInfo(type : Int, page : Int) -> (OptionToSave){
             switch type {

@@ -39,7 +39,6 @@ class AudioManager{
                 if (nextSong.audioUrl == self.audioTarget.audioUrl) {
                     reloadDelegate.reloadPlayerView()
                     reloadDelegate.startTimer()
-//                    Loading.sharedInstance.dismiss()
                     return
                 }
             }
@@ -54,7 +53,6 @@ class AudioManager{
                     try AVAudioSession.sharedInstance().setActive(true)
                     self.mediaPlayer = try AVAudioPlayer(data: self.data, fileTypeHint: AVFileType.mp3.rawValue)
                     self.mediaPlayer.delegate = self.delegate
-//                    self.mediaPlayer.
                     reloadDelegate.startTimer()
                     reloadDelegate.playAudio()
                 }

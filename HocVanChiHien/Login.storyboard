@@ -36,10 +36,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGw-7D-wsr" customClass="CustomView" customModule="HocVanChiHien" customModuleProvider="target">
-                                <rect key="frame" x="37.5" y="206.5" width="300" height="274"/>
+                                <rect key="frame" x="37.5" y="186.5" width="300" height="314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Xga-ry-eA2">
-                                        <rect key="frame" x="16" y="16" width="268" height="242"/>
+                                        <rect key="frame" x="16" y="16" width="268" height="282"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Đăng nhập" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf9-hj-7cP">
                                                 <rect key="frame" x="0.0" y="0.0" width="268" height="40"/>
@@ -66,7 +66,7 @@
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="icon" value="ic_username"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên đăng nhập" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YFP-js-7yH">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email đăng nhập" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YFP-js-7yH">
                                                                 <rect key="frame" x="32" y="0.0" width="220" height="24"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
@@ -124,8 +124,67 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="circleView" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="py2-6W-qGI" userLabel="StackRemember">
+                                                <rect key="frame" x="0.0" y="168" width="268" height="24"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Avl-ZY-zgm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="103" height="24"/>
+                                                        <subviews>
+                                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WA3-qc-apO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="WA3-qc-apO" secondAttribute="height" id="UZ6-Ap-Efq"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="boxLineWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryCheckmarkTintColor">
+                                                                        <color key="value" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryTintColor">
+                                                                        <color key="value" red="0.40000000000000002" green="0.73333333329999995" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhớ mật khẩu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMT-8j-Un5">
+                                                                <rect key="frame" x="32" y="0.0" width="71" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <color key="textColor" red="0.08235294118" green="0.086274509799999996" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="DGV-eX-P1K" appends="YES" id="UXA-Vz-yZK"/>
+                                                        </connections>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHt-2N-St6">
+                                                        <rect key="frame" x="103" y="0.0" width="165" height="24"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWW-6v-pGZ">
+                                                                <rect key="frame" x="73" y="0.0" width="92" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <state key="normal" title="Quên mật khẩu?">
+                                                                    <color key="titleColor" red="0.08235294118" green="0.086274509799999996" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="iWW-6v-pGZ" firstAttribute="trailing" secondItem="xHt-2N-St6" secondAttribute="trailing" id="RDz-11-zEq"/>
+                                                            <constraint firstItem="iWW-6v-pGZ" firstAttribute="top" secondItem="xHt-2N-St6" secondAttribute="top" id="pbr-d1-8Iv"/>
+                                                            <constraint firstAttribute="bottom" secondItem="iWW-6v-pGZ" secondAttribute="bottom" id="wb7-I2-l2f"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Cj-HL-jf3" customClass="CustomButton" customModule="HocVanChiHien" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="168" width="268" height="40"/>
+                                                <rect key="frame" x="0.0" y="208" width="268" height="40"/>
                                                 <color key="backgroundColor" red="0.60423094034194946" green="0.63998705148696899" blue="0.40004140138626099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Đăng nhập">
@@ -141,7 +200,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chưa có tài khoản? Đăng ký" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvA-Qj-6lt">
-                                                <rect key="frame" x="0.0" y="224" width="268" height="18"/>
+                                                <rect key="frame" x="0.0" y="264" width="268" height="18"/>
                                                 <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,6 +213,7 @@
                                         <constraints>
                                             <constraint firstItem="4Cj-HL-jf3" firstAttribute="height" secondItem="Q5h-f3-KOS" secondAttribute="height" id="3jM-Ef-liQ"/>
                                             <constraint firstItem="Q5h-f3-KOS" firstAttribute="height" secondItem="5as-84-cHu" secondAttribute="height" id="hZu-it-e12"/>
+                                            <constraint firstItem="py2-6W-qGI" firstAttribute="height" secondItem="Q5h-f3-KOS" secondAttribute="height" multiplier="0.6" id="u1F-CI-1nb"/>
                                             <constraint firstItem="5as-84-cHu" firstAttribute="height" secondItem="Cf9-hj-7cP" secondAttribute="height" id="wVJ-Wr-RsG"/>
                                         </constraints>
                                     </stackView>
@@ -202,12 +262,18 @@
                     <connections>
                         <outlet property="tfPassword" destination="j02-Xy-5r7" id="Txr-Ne-kp7"/>
                         <outlet property="tfUserName" destination="YFP-js-7yH" id="Hdf-d3-w7k"/>
+                        <outlet property="viewRemember" destination="WA3-qc-apO" id="vtb-8s-l1G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sD2-i2-F3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="CeC-bh-8NL" userLabel="Register">
                     <connections>
                         <segue destination="xN4-k9-NuF" kind="presentation" id="Dqp-tR-UdW"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="DGV-eX-P1K" userLabel="Remember">
+                    <connections>
+                        <action selector="rememberPass" destination="52V-ja-KRu" id="tSl-EI-Vnd"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -269,12 +335,12 @@
                                                                     <userDefinedRuntimeAttribute type="image" keyPath="icon" value="ic_username"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên đăng nhập" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-Mb-LMX">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email đăng nhập" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0l1-Mb-LMX">
                                                                 <rect key="frame" x="32" y="0.0" width="220" height="24"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -311,7 +377,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
