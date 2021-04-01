@@ -27,12 +27,12 @@ class DetailContentViewController : WebViewController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let locate = touches.first
-        if (locate?.view != viewContainer) {
-            goBack()
-        }
-    }
+//     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//         let locate = touches.first
+//         if (locate?.view != viewContainer) {
+//             goBack()
+//         }
+//     }
     
     override func didFinishLoadWebview() {
         
