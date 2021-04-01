@@ -93,7 +93,9 @@ class LoginViewController: UIViewController, APIManagerProtocol{
     }
     
     @IBAction func loginView(_ button : UIButton){
+        enterMain()
         self.view.endEditing(true)
+        return
         Loading.sharedInstance.show(in: self.view)
         let email = tfUserName.text ?? ""
         let password = tfPassword.text ?? ""
