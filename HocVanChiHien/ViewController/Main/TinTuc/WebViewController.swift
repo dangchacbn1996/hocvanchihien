@@ -46,8 +46,9 @@ class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate, 
         
         userContentController.addUserScript(userScript)
         
-        let url = URL(string: urlString)!
-        wkWebView.load(URLRequest(url: url))
+        if let url = URL(string: urlString) {
+            wkWebView.load(URLRequest(url: url))
+        }
     }
     
     func scriptWithDOMSelector(selector: String) -> String {
